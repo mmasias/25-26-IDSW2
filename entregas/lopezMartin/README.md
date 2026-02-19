@@ -18,4 +18,4 @@
 | Diagrama |
 |-------|
 | ![Diagrama](images/dominio.svg)|
-| [Código UML](modelosUML\dominio.puml)|
+| [Código UML](modelosUML/dominio.puml)|
