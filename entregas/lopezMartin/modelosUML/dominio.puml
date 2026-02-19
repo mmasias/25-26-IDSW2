@@ -1,0 +1,42 @@
+@startuml
+
+hide empty members
+
+class Persona{
+}
+
+class NombreYApellidos{
+}
+
+class Edad{
+}
+
+class Sexo{
+}
+
+class Religion{
+}
+
+class Educacion{
+}
+
+class Gusto{
+}
+
+class Caracter{
+}
+
+class Nacionalidad{
+}
+
+class RasgoFísico{
+}
+
+class Idioma{
+}
+
+class Profesion{
+}
+
+
+@enduml
