@@ -27,6 +27,5 @@ Repo de materiales y proyectos de la asignatura **IDSW2** del [Grado de Ingenier
 
 NOTA: *Algunos enlaces podrían requerir **credenciales de acceso al campus** o a otros espacios colaborativos.*
 
-- Hoja de asistencia et-al
-- Libro de la asignatura
-- Este repo, versión de ediciones pasadas
+- [Hoja de asistencia et-al](https://docs.google.com/spreadsheets/d/1IrdCLMGwEsAeH-VOJBn7AEESvN7GDMtFaX3M3GFL2wU/edit?usp=sharing)
+
