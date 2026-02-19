@@ -1,21 +1,3 @@
-### Ejemplo: Ecosistema Musical
-
-<div align=center>
-
-| Relación | Clases | Justificación |
-|---|---|---|
-| COMPOSICIÓN | Cancion y ArchivoAudio | El archivo de audio no puede existir sin la canción y su ciclo de vida está ligado a la canción |
-| AGREGACIÓN | Album y Cancion | Las canciones pueden existir independientemente del álbum |
-| | | El álbum no crea las canciones, solo las agrega |
-| ASOCIACIÓN | Artista e Instrumento | Relación duradera donde el artista toca instrumentos específicos |
-| | | El artista mantiene una referencia al instrumento que está tocando |
-| USO | Entorno y Cancion | El Entorno utiliza temporalmente la canción solo para reproducirla |
-| | | Utiliza la canción solo durante la ejecución de este método |
-| | | No mantiene una referencia a la canción después de la reproducción |
-
-</div>
-
-```
 
 class Cancion {
     private String titulo;
@@ -100,28 +82,3 @@ class Entorno {
         System.out.println(nombrePlataforma + " está reproduciendo temporalmente: " + cancion.getTitulo());
     }
 }
-```
-#### Diagrama de  Relaciones de Clases
-
-```mermaid
-classDiagram
-    %% COMPOSICIÓN
-    Cancion *-- ArchivoAudio
-
-    %% AGREGACIÓN
-    Album o-- Cancion
-
-    %% ASOCIACIÓN
-    Artista --> Instrumento
-
-    %% USO (Dependencia)
-    Entorno ..> Cancion
-
-    %% Clases
-    class Cancion
-    class ArchivoAudio
-    class Album
-    class Artista
-    class Instrumento
-    class Entorno
-
