@@ -1,0 +1,37 @@
+@startuml
+
+class Usuario
+class Perfil
+class Suscripcion
+class Plan
+
+class Album
+class EP
+class Cancion
+class Playlist
+class Single
+class Artista
+
+' POR PARTE DEL USUARIO
+Suscripcion --> Plan
+Usuario *-- Perfil
+' es el usuario o el perfil quien tiene una suscripcion?
+Usuario *-- Suscripcion
+Perfil o-- Playlist
+
+'COMO RED SOCIAL
+Perfil --> Perfil
+Perfil --> Artista
+
+' SOBRE EL CONTENIDO
+Album o-- Cancion
+Album <|-- EP
+Cancion <|-- Single
+Playlist o-- Cancion
+
+
+' SOBRE AUTORIA
+Artista <--> Album
+Artista <--> Cancion
+
+@enduml
