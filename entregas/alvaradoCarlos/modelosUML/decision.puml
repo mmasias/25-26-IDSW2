@@ -1,0 +1,18 @@
+@startuml
+class Cuestionamiento
+
+class Alternativa
+
+class Eleccion
+
+class Consecuencia
+
+class Conciencia
+
+Cuestionamiento o-- Alternativa
+Eleccion --> Alternativa
+Eleccion o-- Consecuencia
+Alternativa --> Consecuencia
+Conciencia ..> Cuestionamiento
+Conciencia --> Eleccion
+@enduml
