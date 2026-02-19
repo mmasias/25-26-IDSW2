@@ -1,0 +1,38 @@
+@startuml
+
+class Usuario {
+  +solicitarTarea()
+}
+
+class Chat {
+}
+
+class Orquestador {
+}
+
+class Datos
+class Documentos
+class Workflow
+
+class MotorDecision {
+}
+
+class Explicador {
+}
+
+Usuario --> Chat : solicita tarea
+Chat ..> Orquestador : usa
+
+Orquestador o-- Datos
+Orquestador o-- Documentos
+Orquestador o-- Workflow
+
+MotorDecision *-- Datos
+MotorDecision *-- Documentos
+MotorDecision *-- Workflow
+MotorDecision ..> Explicador
+
+Explicador -- Chat : devuelve explicación
+Chat --> Usuario : decisión final
+
+@enduml
