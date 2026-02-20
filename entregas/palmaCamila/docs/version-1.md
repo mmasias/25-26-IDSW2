@@ -1,6 +1,3 @@
-Jutificación 
-
-EN esta tabla se va ir agregando por cada versión la justificación de las relaciones:
 ## Tabla v1
 
 | Clases | Tipo UML | Por qué esa relación | Ejemplo seguros |
@@ -10,5 +7,3 @@ EN esta tabla se va ir agregando por cada versión la justificación de las rela
 | `MotorDecision → Workflow` | `*--` **Composición** | Motor **EJECUTA** su propio workflow | Motor evalúa reglas tarificación |
 | `Orquestador → Datos` | `o--` **Agregación** | Orquestador **CONSULTA** datos externos | Lee DB clientes (existe sola) |
 | `Chat → Orquestador` | `..>` **Uso** | Chat **USA** Orquestador temporalmente | Chat delega 1 query |
-
-
