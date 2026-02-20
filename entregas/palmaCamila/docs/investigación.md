@@ -21,3 +21,10 @@ Finalmente, un "agente explicador" traduce los registros técnicos y lógicos de
 ### [Explainable AI: Demystifying AI Agents Decision-Making](https://www.youtube.com/watch?v=yJkCuEu3K68)  
 
 Un LLM "decide" eligiendo la ruta estadística más fuerte entre millones de opciones de texto. Como esto carece de juicio humano, dependemos de la IA Explicable (XAI) para auditar esa estadística, asegurando que sea precisa, rastreable y entendible.
+
+## 2think
+
+¿Quién toma mejores decisiones en este campo: la IA o los humanos?
+[Humans vs. AI: Who should make the decision?](https://www.youtube.com/watch?v=8lo1s29ODj8)
+
+Este video de IBM Technology aborda el dilema de delegar la toma de decisiones a algoritmos o mantenerla en manos humanas, utilizando como ejemplo un sistema de detección de fraudes bancarios. Se presentan gráficos de "curvas de rendimiento" que demuestran que la IA es superior cuando tiene alta certeza, mientras que los humanos son mejores gestionando la ambigüedad y el contexto
