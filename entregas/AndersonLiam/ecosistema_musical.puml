@@ -1,0 +1,28 @@
+@startuml
+skinparam style strictuml
+
+class GeneroMusical
+class Instrumento
+class Productor
+class Artista
+class Cancion
+class Dispositivo
+class Oyente
+class Manager
+class SelloDiscografico
+class EstudioGrabacion
+
+Artista --> "1" Instrumento
+Artista --> "1" Manager
+Artista --> "1" SelloDiscografico
+
+Productor --> "1" EstudioGrabacion
+
+Cancion --> "1" Artista
+Cancion --> "1" Productor
+Cancion --> "1" GeneroMusical
+
+Oyente ..> Cancion
+Oyente ..> Dispositivo
+
+@enduml
