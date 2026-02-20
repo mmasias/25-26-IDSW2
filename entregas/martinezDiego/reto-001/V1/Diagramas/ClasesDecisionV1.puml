@@ -1,0 +1,49 @@
+@startuml ClasesDecision
+
+title "Diagrama de clases de una decisión"
+
+
+class Decisión {
+
+}
+
+class Criterio {
+
+}
+
+class Opción {
+
+} 
+
+class Experiencia {
+
+}
+
+class Resultado {
+
+}
+
+class Evaluación {
+
+}  
+
+class Contexto {
+
+}
+
+
+
+
+
+Decisión *-- Opción: tiene
+Decisión o-- Criterio: usa
+Evaluación --> Opción : evalúa
+Evaluación --> Criterio: emplea
+Decisión *-- Resultado: produce
+Resultado --> Experiencia: genera
+Decisión --> Contexto: depende de
+Experiencia --> Criterio: ajusta
+
+
+
+@enduml
