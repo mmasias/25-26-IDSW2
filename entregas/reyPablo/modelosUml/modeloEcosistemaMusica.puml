@@ -1,5 +1,4 @@
-@startuml
-title Ecosistema Musical - Diagrama de Clases
+@startuml modeloEcosistemaMusica
 
 class Letra {
     - texto: String
