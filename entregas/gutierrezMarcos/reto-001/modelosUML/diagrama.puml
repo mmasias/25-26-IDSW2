@@ -1,0 +1,65 @@
+@startuml
+' Ocultamos los atributos y métodos para dejar solo los "cascarones"
+hide empty members
+skinparam roundcorner 5
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+' ==========================================
+' SECCIÓN DE ENUMS
+' ==========================================
+enum TipoSuscripcion
+enum TipoAlbum
+enum FamiliaInstrumento
+
+' ==========================================
+' SECCIÓN DE CLASES PRINCIPALES
+' ==========================================
+class Plataforma
+class Usuario
+class Artista
+class Album
+class Cancion
+class Playlist
+class Instrumento
+class Genero
+
+' ==========================================
+' RELACIONES CON ENUMS (Uso / Dependencia)
+' ==========================================
+Usuario ..> TipoSuscripcion : usa >
+Album ..> TipoAlbum : usa >
+Instrumento ..> FamiliaInstrumento : pertenece a >
+
+' ==========================================
+' RELACIONES ENTRE CLASES 
+' ==========================================
+
+' Agregación: La plataforma agrupa usuarios y artistas, pero 
+' conceptualmente las personas existen fuera de ella.
+Plataforma o-- Usuario : aloja >
+Plataforma o-- Artista : distribuye >
+
+' Composición: La playlist le pertenece exclusivamente al usuario. 
+' Si la cuenta muere, la playlist también.
+Usuario *-- Playlist : posee >
+
+' Agregación: La playlist agrupa canciones. Si borras la playlist, 
+' la canción sigue existiendo en el sistema.
+Playlist o-- Cancion : agrupa >
+
+' Composición: En la industria, las pistas de audio (canciones) 
+' nacen de un lanzamiento (álbum/sencillo).
+Album *-- Cancion : contiene >
+
+' Uso/Dependencia: El artista lanza un álbum e interpreta una canción.
+Artista ..> Album : lanza >
+Artista ..> Cancion : interpreta >
+
+' Uso/Dependencia: Categorización y metadata de las canciones.
+Cancion ..> Genero : clasificada en >
+Cancion ..> Instrumento : suena con >
+@enduml
