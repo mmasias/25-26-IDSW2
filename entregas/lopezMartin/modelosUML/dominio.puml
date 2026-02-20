@@ -5,19 +5,25 @@ hide empty members
 class Persona{
 }
 
-class NombreYApellidos{
+class Nombre{
+}
+
+class Apellido{
 }
 
 class Edad{
 }
 
-class Sexo{
+class Genero{
+}
+
+class DNI{
 }
 
 class Religion{
 }
 
-class Educacion{
+class EducacionAcademica{
 }
 
 class Gusto{
@@ -29,7 +35,7 @@ class Caracter{
 class Nacionalidad{
 }
 
-class RasgoFísico{
+class RasgoFisico{
 }
 
 class Idioma{
@@ -38,5 +44,20 @@ class Idioma{
 class Profesion{
 }
 
+Persona *-- Caracter
+Persona *-- Edad
+Persona *-- Genero
+Persona *-- RasgoFisico
+Persona o-- Nombre
+Persona o-- Apellido
+Persona o-- Nacionalidad
+Persona o-- Idioma
+Persona o-- EducacionAcademica
+Persona --> Religion
+Persona --> Persona : amigos
+Persona --> Persona : familia
+Persona --> Profesion
+Persona ..> Gusto
+Persona --> DNI
 
 @enduml
