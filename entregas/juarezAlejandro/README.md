@@ -2,7 +2,7 @@
 
 Es la primera iteración, por ende, se intentaron buscar la mayoría de clases, pero que creería que aún faltan, sin embargo no sabría como describirlas o como llamarlas, por ende, busqué la manera de hacerlo lo más específico posible.
 
-![Primera Iteración](/25-26-IDSW2/entregas/juarezAlejandro/images/primeraIteracion.png)
+![Primera Iteración](./images/primeraIteracion.png)
 
 ## Explicación de relaciones
 
