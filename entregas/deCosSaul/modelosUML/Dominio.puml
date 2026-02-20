@@ -1,0 +1,42 @@
+@startuml
+
+    class Usuario {
+    }
+
+    class Aplicación {
+    }
+
+    class Artista {
+    }
+
+    class Instrumento {
+    }
+
+    class Cancion {
+    }
+
+    class Album {
+    }
+
+    class EdicionDisco {
+    }
+
+    class Gira {
+    }
+
+    class Concierto {
+    }
+
+    Album <|-- EdicionDisco
+    
+    Gira *-- Concierto
+    
+    Artista o-- Cancion
+    Artista o-- Gira
+    Album o-- Cancion
+    Aplicación o-- Album
+    
+    Usuario --> Aplicación
+    Artista ..> Instrumento
+
+@enduml
