@@ -1,0 +1,39 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam shadowing false
+hide empty members
+
+title Modelo de Dominio: Ecosistema Musical 
+
+class Artista
+class Discografica
+class Album
+class Genero
+class Grabacion
+class Cancion
+class Compositor
+class Letra
+class Concierto
+
+' --- Flujo de Navegación ---
+
+Discografica --> Artista
+Discografica --> Album
+
+Artista --> Concierto
+Artista --> Grabacion
+Artista --> Album
+
+Album --> Grabacion
+Album --> Genero
+
+Grabacion --> Cancion
+
+Cancion --> Letra
+Cancion --> Genero
+
+Compositor --> Cancion
+Compositor --> Letra
+
+@enduml
