@@ -1,0 +1,46 @@
+@startuml
+class Usuario {
+   
+}
+
+class Suscripcion {
+   
+}
+
+class Artista {
+   
+}
+
+class Album {
+    
+}
+
+class Cancion {
+    
+}
+
+class Genero {
+}
+
+class Letra {
+    
+}
+
+class Playlist {
+    
+}
+
+class Reproductor {
+   
+}
+
+Usuario *-- Suscripcion : "Composición"
+Cancion *-- Letra : "Composición"
+Album o-- Cancion : "Agregación"
+Playlist o-- Cancion : "Agregación"
+Usuario --> Playlist : "Asociación"
+Artista --> Album : "Asociación"
+Cancion  --> Genero : "Asociación"
+Reproductor ..> Cancion : "Uso"
+
+@enduml
