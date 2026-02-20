@@ -16,14 +16,14 @@
 | Relación | Tipo | Ciclo de Vida |
 |----------|------|---------------|
 |**Conciencia --> Elección** | [Asociación](/entregas/alvaradoCarlos/src/Conciencia.java) | Independiente |  
-|**Elección --> Alternativa**|	[Asociación]()|	Independiente|	
-|**Cuestionamiento --> Alternativa**|[Agregación]()| Compuesto |  
-| **Elección --> Consecuencia** | [Agregación]() | Gestionado |  
-| **Alternativa --> Consecuencia** | [Asociación]() | Independiente |
-| **Conciencia --> Cuestionamiento** | [Uso]() | Independiente | 
-| **Sentimiento --> Emoción** | [Composición]() | Dependiente |
-| **Sentimiento --> Cuestionamiento** | [Agregación]() | Independiente |  
-| **Consecuencia --> Emoción** | [Uso]() | Independiente |  
+|**Elección --> Alternativa**|	[Asociación](/entregas/alvaradoCarlos/src/Eleccion.java)|	Independiente|	
+|**Cuestionamiento --> Alternativa**|[Agregación](/entregas/alvaradoCarlos/src/Cuestionamiento.java)| Compuesto |  
+| **Elección --> Consecuencia** | [Agregación](/entregas/alvaradoCarlos/src/Eleccion.java) | Gestionado |  
+| **Alternativa --> Consecuencia** | [Asociación](/entregas/alvaradoCarlos/src/Alternativa.java) | Independiente |
+| **Conciencia --> Cuestionamiento** | [Uso](/entregas/alvaradoCarlos/src/Conciencia.java) | Independiente | 
+| **Sentimiento --> Emoción** | [Composición](/entregas/alvaradoCarlos/src/Sentimiento.java) | Dependiente |
+| **Sentimiento --> Cuestionamiento** | [Agregación](/entregas/alvaradoCarlos/src/Sentimiento.java) | Independiente |  
+| **Consecuencia --> Emoción** | [Uso](/entregas/alvaradoCarlos/src/Consecuencia.java) | Independiente |  
 
 
 </div>
