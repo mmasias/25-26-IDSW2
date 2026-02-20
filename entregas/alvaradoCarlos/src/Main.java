@@ -1,26 +1,36 @@
 public class Main {
     public static void main(String[] args) {
-        Cuestionamiento cuestionamiento = new Cuestionamiento("¿Qué prefieres hacer en las tardes, dormir o estudiar?", new Alternativa[2]);
-        Alternativa dormir = new Alternativa();
+        Sentimiento ambicion = new Sentimiento("Ambición Académica");
+        ambicion.agregarEmocion("Entusiasmo", 8);
+        
+        Cuestionamiento duda = new Cuestionamiento("¿Debo estudiar este fin de semana?", new Alternativa[2]);
+        ambicion.dispararCuestionamiento(duda);
+
         Alternativa estudiar = new Alternativa();
-        cuestionamiento.añadirAlternativa(dormir);
-        cuestionamiento.añadirAlternativa(estudiar);
-        Consecuencia descansar = new Consecuencia("Descansar");
-        Consecuencia aprender = new Consecuencia("Aprender cosas nuevas");
-        Consecuencia aburrirse = new Consecuencia("Aburrirse");
-        Consecuencia cansarse = new Consecuencia("Cansarse");
-        dormir.añadirConsecuenciaProbable(descansar);
-        estudiar.añadirConsecuenciaProbable(aburrirse);
-        estudiar.añadirConsecuenciaProbable(cansarse);
-        estudiar.añadirConsecuenciaProbable(aprender);
-        Conciencia conciencia = new Conciencia();
+        Consecuencia exito = new Consecuencia("Aprobar el examen");
+        Consecuencia NoSocializar = new Consecuencia("No salir con amigos");
+        estudiar.añadirConsecuenciaProbable(exito);
+        estudiar.añadirConsecuenciaProbable(NoSocializar);
+
+        duda.añadirAlternativa(estudiar);
+
+        Conciencia miConciencia = new Conciencia();
         Eleccion eleccion = new Eleccion();
-        conciencia.añadirEleccion(eleccion);
         eleccion.seleccionarAlternativa(estudiar);
-        eleccion.añadirConsecuenciaReal(aprender);
-        eleccion.añadirConsecuenciaReal(cansarse);
-        eleccion.añadirConsecuenciaReal(aburrirse);
+
+        miConciencia.añadirEleccion(eleccion);
+
+        eleccion.añadirConsecuenciaReal(exito);
+        eleccion.añadirConsecuenciaReal(NoSocializar);
+
         eleccion.mostrarEfectosReales();
+
+        Emocion satisfaccion = exito.generarRespuestaEmocional("Satisfacción", 10);
+        Emocion arrepentimiento = NoSocializar.generarRespuestaEmocional("Arrepentimiento", 5);
+
+        System.out.println("Estado final: " + ambicion.nombre() + 
+                           " procesado con emoción de: " + satisfaccion.tipo() + 
+                           " y con emoción secundaria de: " + arrepentimiento.tipo());
 
     }
 }

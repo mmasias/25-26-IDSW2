@@ -9,4 +9,9 @@ public class Consecuencia {
     public String descripcion() {
         return descripcion;
     }
+
+    public Emocion generarRespuestaEmocional(String tipo, int intensidad) {
+        System.out.println("La consecuencia '" + descripcion + "' ha disparado la emoción: " + tipo);
+        return new Emocion(tipo, intensidad);
+    }
 }
