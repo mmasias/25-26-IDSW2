@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        Usuario usuario = new Usuario("Mediador");
+        Usuario usuario = new Usuario("Administrador");
         Chat chat = new Chat();
         String query = usuario.iniciaDialogo("¿Opción 1 o 2?");
         String peticion = chat.delegaPeticion(query);
