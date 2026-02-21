@@ -1,51 +1,103 @@
-# Diseño - Relaciones por colaboración
+# Proyecto: Ecosistema Musical
 
-## ¿Por qué?
 
-Código escrito sin una reflexión sobre las relaciones de los componentes que lo conforman produce complejidad arbritraria.
 
-## ¿Qué?
+### 1. Tabla de Relaciones
 
-|Encontrar clases|Organizarlas mediante relaciones justificadas|Describirlas en código
-|:-:|:-:|:-:|
+| Relación | Clases | Justificación |
+| :--- | :--- | :--- |
+| **COMPOSICIÓN** | `Cancion` y `ArchivoAudio` | El archivo de audio no puede existir sin la canción y su ciclo de vida está ligado a ella. Si se elimina la canción, el archivo se destruye. |
+| **AGREGACIÓN** | `Album` y `Cancion` | Las canciones pueden existir independientemente del álbum (ej. como *singles*). El álbum no crea las canciones, solo las agrupa/agrega. |
+| **ASOCIACIÓN** | `Artista` e `Instrumento` | Relación duradera donde el artista toca instrumentos específicos. El artista mantiene una referencia estructural al instrumento que domina o está tocando. |
+| **USO** | `Entorno` y `Cancion` | El Entorno (ej. Spotify, Apple Music) utiliza temporalmente la canción solo para reproducirla mediante un método. No mantiene una referencia permanente a la canción después de la reproducción. |
 
-El objetivo no es llegar a un diagrama correcto. Es **justificar cada decisión** y ser capaz de defenderla ante una decisión alternativa igualmente razonada.
+---
 
-No se evalúan documentos, diagrama ni código (aunque son imprescindibles). Se evalúa la coherencia entre las decisiones de dominio, las relaciones elegidas y el código resultante. Una justificación sólida de una decisión discutible vale más que una decisión convencional sin justificación.
+### 2. Implementación en Código (Java)
 
-## ¿Para qué?
 
-Ver cómo detenerse a pensar en los criterios de ciclo de vida, exclusividad y temporalidad antes de codificar evita refactorizaciones costosas. Una relación mal elegida se paga cada vez que el código cambia.
+```java
+class Cancion {
+    private String titulo;
+    private ArchivoAudio pista; 
+    private Estilo estilo; 
+    
+    public Cancion(String titulo, Estilo estilo, byte[] datosAudio) {
+        this.titulo = titulo;
+        this.estilo = estilo;
+        this.pista = new ArchivoAudio(datosAudio); 
+    }
+    
+    public String getTitulo() {
+        return titulo;
+    }
+}
 
-## ¿Cómo?
+class ArchivoAudio {
+    private byte[] datos;
+    
+    public ArchivoAudio(byte[] datos) {
+        this.datos = datos;
+    }
+}
 
-### Escenarios propuestos
+class Album {
+    private String titulo;
+    private List<Cancion> canciones; 
+    
+    public Album(String titulo) {
+        this.titulo = titulo;
+        this.canciones = new ArrayList<>();
+    }
+ 
+    public void agregarCancion(Cancion pista) {
+        canciones.add(pista);
+    }
+    
+    public void quitarCancion(Cancion pista) {
+        canciones.remove(pista);
+    }
+}
 
-- Ecosistema musical
-- Decisión
-- Identidad
-- Conversación
+class Artista {
+    private String nombre;
+    private List<Instrumento> instrumentos; 
+    
+    public Artista(String nombre) {
+        this.nombre = nombre;
+        this.instrumentos = new ArrayList<>();
+    }
+    
+    public void asignarInstrumento(Instrumento instrumento) {
+        instrumentos.add(instrumento);
+    }
+}
 
-### Identificar
+class Instrumento {
+    private String tipo;
+    
+    public Instrumento(String tipo) {
+        this.tipo = tipo;
+    }
+}
 
-Escribir **en lenguaje natural** los elementos del dominio. Si hay descartes, justifique.
+class Estilo {
+    private String nombreGenero;
+    
+    public Estilo(String nombreGenero) {
+        this.nombreGenero = nombreGenero;
+    }
+}
 
-### Relacionar
+class Entorno {
+    private String nombrePlataforma; 
+    
+    public Entorno(String nombrePlataforma) {
+        this.nombrePlataforma = nombrePlataforma;
+    }
 
-Para cada par de clases, identificar:
+    public void reproducirStream(Cancion cancion) {
+        System.out.println(nombrePlataforma + " está reproduciendo temporalmente: " + cancion.getTitulo());
+    }
+}
 
-- ¿Quién controla el ciclo de vida de quién?
-- ¿La relación es permanente o puntual?
-- ¿Es exclusiva o compartida?
-
-Usar la relación más débil posible que responda las tres preguntas. Justificar por qué no se eligió la inmediatamente más fuerte.
-
-### Codificar *parcialmente*
-
-Implementar en Java las clases identificadas. No es necesario implementar todos los métodos: sí es obligatorio que el constructor refleje las decisiones de relación tomadas en cuenta en la iteración anterior.
-
-El `main` principal debe instanciar al menos una situación del dominio en el que estén involucradas todas las entidades identificadas.
-
-### Cuestionar
-
-- Cuestionaremos diagramas de otros para observar si *la(s) relación(es) elegida(s) sobrevive(n) a cambio(s) de decisión(es) de dominio*.
