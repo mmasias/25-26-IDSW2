@@ -1,0 +1,33 @@
+@startuml
+
+class Persona {
+
+}
+
+class Cultura {
+
+}
+
+class Familia {
+
+}
+
+class RelacionSocial {
+
+}
+
+class Emocion {
+
+}
+
+class Creencia {
+
+}
+
+Persona o-- Cultura
+Persona -- Familia
+Persona -- RelacionSocial
+Persona o-- Creencia
+Persona ..> Emocion : experimenta
+
+@enduml
