@@ -3,14 +3,13 @@ import java.util.List;
 
 public class Artista {
     private String nombre;
-    private List<Album> albumes; 
+    private List<Album> discografia= new ArrayList<>(); 
+    private List<Cancion> singles = new ArrayList<>();
 
     public Artista(String nombre) {
         this.nombre = nombre;
-        this.albumes = new ArrayList<>();
     }
 
-    public void publicarAlbum(Album a) {
-        albumes.add(a);
-    }
+    public void publicarAlbum(Album a) { discografia.add(a);}
+    public void lanzarSingle(Cancion c) { singles.add(c); }
 }
