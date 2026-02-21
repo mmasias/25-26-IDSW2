@@ -4,7 +4,7 @@
 
 Es la primera iteración, por ende, se intentaron buscar la mayoría de clases, pero que creería que aún faltan, sin embargo no sabría como describirlas o como llamarlas, por ende, busqué la manera de hacerlo lo más específico posible.
 
-<div align=center>
+<div align="center">
 
 ![Primera Iteración](./images/primeraIteracionUML.svg)
 [Código](./modelosUML/primeraIteracion.puml)
@@ -26,7 +26,7 @@ Es la primera iteración, por ende, se intentaron buscar la mayoría de clases, 
 Tomando en cuenta las palabras del catedrático se dedujo que también debería de tener una edad (la cuál te da un criterio e identidad) o las experiencias que haz vivido.
 Además, la identidad es un concepto, no naces con ella.
 
-<div align=center>
+<div align="center">
 
 ![Segunda Iteración](./images/segundaIteracionUML.svg)
 [Código](./modelosUML/segundaIteracion.puml)
