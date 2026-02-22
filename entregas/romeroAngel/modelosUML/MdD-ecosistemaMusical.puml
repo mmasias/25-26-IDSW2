@@ -47,7 +47,15 @@
     - allowOffline : boolean
   }
   
-  class Album
+  class Album {
+    id : int
+    title : String
+    releaseDate : LocalDate
+    songs : List‹Song›
+    artists : List‹Artist›
+    coverUrl : String
+  }
+  
   class EP
   class Song
   class Playlist
