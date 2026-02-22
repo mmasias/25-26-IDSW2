@@ -28,7 +28,7 @@
     - id : int 
     - startDate : LocalDate
     - endDate : LocalDate
-    - status : enum
+    - status : SubscriptionStatus
     - paymentMethod : String 
     - plan : Plan
   }
