@@ -1,38 +1,38 @@
-@startuml
-
-class Usuario
-class Perfil
-class Suscripcion
-class Plan
-
-class Album
-class EP
-class Cancion
-class Playlist
-class Single
-class Artista
-
-' POR PARTE DEL USUARIO
-Suscripcion --> Plan
-Usuario *-- Perfil
-' es el usuario o el perfil quien tiene una suscripcion?
-Usuario *-- Suscripcion
-Perfil ..> Suscripcion
-Perfil o-- Playlist
-
-'COMO RED SOCIAL
-Perfil --> Perfil
-Perfil --> Artista
-
-' SOBRE EL CONTENIDO
-Album o-- Cancion
-Album <|-- EP
-Cancion <|-- Single
-Playlist o-- Cancion
-
-
-' SOBRE AUTORIA
-Artista <--> Album
-Artista <--> Cancion
-
-@enduml
+  @startuml
+  
+  class User
+  class Profile
+  class Subscription
+  class Plan
+  
+  class Album
+  class EP
+  class Song
+  class Playlist
+  class Single
+  class Artist
+  
+  ' POR PARTE DEL USUARIO
+  Subscription --> Plan
+  User *-- Profile
+  ' es el usuario o el perfil quien tiene una suscripcion?
+  User *-- Subscription
+  Profile ..> Subscription
+  Profile o-- Playlist
+  
+  'COMO RED SOCIAL
+  Profile --> Profile
+  Profile --> Artist
+  
+  ' SOBRE EL CONTENIDO
+  Album o-- Song
+  Album <|-- EP
+  Song <|-- Single
+  Playlist o-- Song
+  
+  
+  ' SOBRE AUTORIA
+  Artist <--> Album
+  Artist <--> Song
+  
+  @enduml
