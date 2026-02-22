@@ -17,6 +17,7 @@ Suscripcion --> Plan
 Usuario *-- Perfil
 ' es el usuario o el perfil quien tiene una suscripcion?
 Usuario *-- Suscripcion
+Perfil ..> Suscripcion
 Perfil o-- Playlist
 
 'COMO RED SOCIAL
