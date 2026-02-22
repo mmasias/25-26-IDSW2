@@ -1,0 +1,2 @@
+class Single extends Song {
+}
