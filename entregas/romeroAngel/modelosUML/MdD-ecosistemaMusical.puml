@@ -6,7 +6,7 @@
     - email : String
     - password : String
     - country: String
-    - registerDate: Date
+    - registerDate: LocalDate
     - profiles : List‹Profile›
     - subscription : Subscription
   }
@@ -14,14 +14,30 @@
   class Profile {
     - id : int
     - nickname : String
-    - isPrivate : Boolean
+    - isPrivate : boolean
     - playlists : List‹Playlist›
     - followedArtists : List‹Artist›
     - following : List‹Profile›
     - followers : List‹Profile›
   }
-  class Subscription
-  class Plan
+  
+  'autoRenew para autorenovacion??'
+  class Subscription{
+    - id : int 
+    - startDate : LocalDate
+    - endDate : LocalDate
+    - status : Enum
+    - paymentMethod : String 
+    - plan : Plan
+  }
+  
+  class Plan{
+    - id : int
+    - name : String 
+    - price : double
+    - maxProfiles : int 
+    - allowOffline : boolean
+  }
   
   class Album
   class EP
