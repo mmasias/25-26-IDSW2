@@ -58,7 +58,16 @@
   }
   
   class EP
-  class Song
+  
+  class Song {
+    - id : int
+    - title : String
+    - duration : int
+    - fileUrl : String
+    - artists : List‹Artist›
+    - playCount : long
+  }
+  
   class Playlist
   class Single
   class Artist
