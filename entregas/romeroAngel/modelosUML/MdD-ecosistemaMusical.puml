@@ -26,9 +26,17 @@
     - id : int 
     - startDate : LocalDate
     - endDate : LocalDate
-    - status : Enum
+    - status : enum
     - paymentMethod : String 
     - plan : Plan
+  }
+  
+  
+  enum SubscriptionStatus {
+    ACTIVE
+    EXPIRED 
+    CANCELLED
+    PENDING_PAYMENT
   }
   
   class Plan{
@@ -48,6 +56,7 @@
   
   ' POR PARTE DEL USUARIO
   Subscription --> Plan
+  Subscription ..> SubscriptionStatus
   User *-- Profile
   ' es el usuario o el perfil quien tiene una suscripcion?
   User *-- Subscription
