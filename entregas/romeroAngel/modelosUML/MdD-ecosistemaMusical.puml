@@ -50,12 +50,12 @@
   }
   
   class Album {
-    id : int
-    title : String
-    releaseDate : LocalDate
-    songs : List‹Song›
-    artists : List‹Artist›
-    coverUrl : String
+    - id : int
+    - title : String
+    - releaseDate : LocalDate
+    - songs : List‹Song›
+    - artists : List‹Artist›
+    - coverUrl : String
   }
   
   class EP
@@ -72,18 +72,26 @@
   class Single
   
   class Playlist{
-    id : int
-    title : String
-    description : String
-    coverUrl : String 
-    isPublic : boolean
-    songs : List‹Song›
-    owner : Profile
-    creationDate : LocalDate
-    followers : List‹Profile›
+    - id : int
+    - title : String
+    - description : String
+    - coverUrl : String 
+    - isPublic : boolean
+    - songs : List‹Song›
+    - owner : Profile
+    - creationDate : LocalDate
+    - followers : List‹Profile›
   }
 
-  class Artist
+  class Artist {
+    - id : int
+    - name : String
+    - biography : String
+    - country : String
+    - avatarUrl : String
+    - albums : List‹Album›
+    - songs : List‹Song›
+  }
   
   ' POR PARTE DEL USUARIO
   Subscription --> Plan
