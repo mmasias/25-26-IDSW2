@@ -15,7 +15,8 @@
     - id : int
     - nickname : String
     - isPrivate : boolean
-    - playlists : List‹Playlist›
+    - myPlaylists : List‹Playlist›
+    - followedPlaylists : List‹Playlist›
     - followedArtists : List‹Artist›
     - following : List‹Profile›
     - followers : List‹Profile›
