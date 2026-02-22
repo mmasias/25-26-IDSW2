@@ -1,7 +1,25 @@
   @startuml
   
-  class User
-  class Profile
+  class User {
+    - id : int
+    - name : String
+    - email : String
+    - password : String
+    - country: String
+    - registerDate: Date
+    - profiles : List‹Profile›
+    - subscription : Subscription
+  }
+  
+  class Profile {
+    - id : int
+    - nickname : String
+    - isPrivate : Boolean
+    - playlists : List‹Playlist›
+    - followedArtists : List‹Artist›
+    - following : List‹Profile›
+    - followers : List‹Profile›
+  }
   class Subscription
   class Plan
   
