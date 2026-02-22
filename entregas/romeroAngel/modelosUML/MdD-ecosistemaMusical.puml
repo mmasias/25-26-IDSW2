@@ -68,8 +68,20 @@
     - playCount : long
   }
   
-  class Playlist
   class Single
+  
+  class Playlist{
+    id : int
+    title : String
+    description : String
+    coverUrl : String 
+    isPublic : boolean
+    songs : List‹Song›
+    owner : Profile
+    creationDate : LocalDate
+    followers : List‹Profile›
+  }
+
   class Artist
   
   ' POR PARTE DEL USUARIO
