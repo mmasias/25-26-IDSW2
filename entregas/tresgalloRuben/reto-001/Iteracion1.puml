@@ -1,0 +1,14 @@
+@startuml
+
+class Participante
+class Conversacion
+class Interaccion
+class Contexto
+class Tema
+
+Participante -- Conversacion
+Conversacion *-- Interaccion
+Participante --> Interaccion
+Conversacion -- Contexto
+Conversacion o-- Tema
+@enduml
