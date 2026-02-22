@@ -27,6 +27,10 @@ class Playlist
 class Instrumento
 class Genero
 
+' Nuevas clases para el motor de analítica musical
+class Reproduccion
+class Estadistica
+
 ' ==========================================
 ' RELACIONES CON ENUMS (Uso / Dependencia)
 ' ==========================================
@@ -38,28 +42,43 @@ Instrumento ..> FamiliaInstrumento : pertenece a >
 ' RELACIONES ENTRE CLASES 
 ' ==========================================
 
-' Agregación: La plataforma agrupa usuarios y artistas, pero 
-' conceptualmente las personas existen fuera de ella.
+' Agregación: La plataforma agrupa usuarios y artistas.
 Plataforma o-- Usuario : aloja >
 Plataforma o-- Artista : distribuye >
 
-' Composición: La playlist le pertenece exclusivamente al usuario. 
-' Si la cuenta muere, la playlist también.
+' Composición: La playlist le pertenece al usuario. 
 Usuario *-- Playlist : posee >
 
-' Agregación: La playlist agrupa canciones. Si borras la playlist, 
-' la canción sigue existiendo en el sistema.
+' Agregación: La playlist agrupa canciones (independientes).
 Playlist o-- Cancion : agrupa >
 
-' Composición: En la industria, las pistas de audio (canciones) 
-' nacen de un lanzamiento (álbum/sencillo).
+' Composición: Las canciones nacen de un lanzamiento.
 Album *-- Cancion : contiene >
 
-' Uso/Dependencia: El artista lanza un álbum e interpreta una canción.
+' Uso/Dependencia: Acción del artista sobre la música.
 Artista ..> Album : lanza >
 Artista ..> Cancion : interpreta >
 
-' Uso/Dependencia: Categorización y metadata de las canciones.
+' Uso/Dependencia: Categorización.
 Cancion ..> Genero : clasificada en >
 Cancion ..> Instrumento : suena con >
+
+' ==========================================
+' MOTOR DE REPRODUCCIONES Y ESTADÍSTICAS
+' ==========================================
+
+' Composición: El historial de escuchas le pertenece al usuario.
+Usuario *-- Reproduccion : genera >
+
+' Uso: El evento de reproducción simplemente apunta a qué canción sonó.
+Reproduccion ..> Cancion : escucha >
+
+' Composición: La plataforma es dueña de su motor de analíticas.
+Plataforma *-- Estadistica : calcula >
+
+' Uso: Las estadísticas toman las reproducciones sueltas, las consolidan 
+' y miden el rendimiento de artistas y canciones.
+Estadistica ..> Reproduccion : consolida >
+Estadistica ..> Artista : mide a >
+Estadistica ..> Cancion : mide a >
 @enduml
