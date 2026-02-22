@@ -19,6 +19,7 @@
     - followedArtists : List‹Artist›
     - following : List‹Profile›
     - followers : List‹Profile›
+    - avatarUrl : String
   }
   
   'autoRenew para autorenovacion??'
