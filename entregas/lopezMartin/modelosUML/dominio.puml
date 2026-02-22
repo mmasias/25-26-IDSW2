@@ -53,9 +53,9 @@ Persona o-- Apellido
 Persona o-- Nacion
 Persona o-- Idioma
 Persona o-- EducacionAcademica
+Persona o-- Persona : familia
 Persona --> Religion
 Persona --> Persona : amigos
-Persona --> Persona : familia
 Persona --> Profesion
 Persona ..> Gusto
 Persona --> DNI

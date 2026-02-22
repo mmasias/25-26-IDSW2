@@ -1,11 +1,12 @@
-import java.time.LocalDate;
-import java.time.Period;
-
 class Edad{
 
-    private Period tiempoDeVida;
+    private int tiempoDeVida;
 
-    public Edad(LocalDate fechaDeNacimiento){
-        this.tiempoDeVida = Period.between(fechaDeNacimiento, LocalDate.now());
+    public Edad(int edad){
+        this.tiempoDeVida = edad;
+    }
+
+    public void aumentar(){
+        tiempoDeVida++;
     }
 }
