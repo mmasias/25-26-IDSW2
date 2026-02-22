@@ -4,36 +4,42 @@ skinparam monochrome true
 skinparam shadowing false
 hide empty members
 
-title Modelo de Dominio: Ecosistema Musical 
+class Artista {
+}
 
-class Artista
-class Discografica
-class Album
-class Genero
-class Grabacion
-class Cancion
-class Compositor
-class Letra
-class Concierto
+class Discografica {
+}
 
-' --- Flujo de Navegación ---
+class Album {
+}
 
-Discografica --> Artista
-Discografica --> Album
+class Genero {
+}
 
-Artista --> Concierto
-Artista --> Grabacion
-Artista --> Album
+class Grabacion {
+}
 
-Album --> Grabacion
-Album --> Genero
+class Cancion {
+}
 
-Grabacion --> Cancion
+class Compositor {
+}
 
-Cancion --> Letra
-Cancion --> Genero
+class Letra {
+}
 
-Compositor --> Cancion
-Compositor --> Letra
+class Concierto {
+}
+
+Artista *-- Genero
+Artista o-- Album
+Artista o-- Concierto
+Artista o-- Grabacion
+Artista o-- Cancion
+Artista o-- Letra
+Artista --> Discografica
+Artista --> Compositor
+Artista --> Artista : amigos
+Artista --> Artista : familia
 
 @enduml
