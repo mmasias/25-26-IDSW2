@@ -22,6 +22,8 @@ Y para modelar este dominio, he decidido abstraer el concepto de **Conversación
 
 * **Código / Idioma:** El sistema de reglas utilizado (ej. texto, código morse, lenguaje de señas).
 
+* **Formato:** La estructura o representación física/digital de la información (ej. Texto, Nota de voz, Video). Se mantiene separado porque un mismo "Código" (Español) puede viajar en distintos "Formatos" (texto escrito o audio).
+
 * **Adjunto (Recurso):** Un elemento extra aportado al mensaje (un archivo digital o un objeto físico mostrado).
 
 ### Entidades Descartadas (Justificación)
@@ -76,6 +78,17 @@ Y para modelar este dominio, he decidido abstraer el concepto de **Conversación
 
 * **Decisión de Diseño:** **Composición.**
 * **Justificación:** Igual que el mensaje con la conversación, el adjunto es una parte integral de la estructura de *ese* mensaje específico.
+
+### 5. Mensaje <---> Formato
+
+* **Ciclo de vida:** Independiente. Los formatos (Texto, Audio, Video, JSON, Binario) son estándares o definiciones que existen en el sistema independientemente de que se envíen mensajes.
+
+* **Temporalidad:** Permanente respecto a esa instancia del mensaje. Si un mensaje nace como "Texto", esa instancia siempre será texto. (Si se pasa a nota de voz, se crea una *nueva* instancia de mensaje).
+
+* **Exclusividad:** Compartida. Miles de mensajes pueden usar el mismo `Formato`.
+
+* **Decisión de Diseño:** **Asociación simple.**
+* **Justificación:** El Mensaje simplemente referencia en qué formato está envuelto su contenido. Utilizamos la relación más débil posible (Asociación) y favorecemos la composición sobre la herencia (es decir, no creamos clases hijas como `MensajeDeTexto` o `MensajeDeAudio`) para no atar rígidamente el sistema y permitir que un intermediario pueda transformar formatos fácilmente en el futuro.
 
 ## 3. Codigo java
 
