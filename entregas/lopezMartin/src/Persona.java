@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +19,8 @@ class Persona{
     private List<Gusto> gustos; 
     private Dni documentacion; 
 
-    public Persona(int edad, String descripciónDeCaracter, List<RasgoFisico> rasgosFisicos, Genero genero, Nombre nombre, Apellido apellido, List<Nacion> nacionalidad, List<Idioma> idiomas, List<EducacionAcademica> titulosAcademicos, List<Persona> familiares){
-        this.tiempoDeVida = new Edad(edad);
+    public Persona(String descripciónDeCaracter, List<RasgoFisico> rasgosFisicos, Genero genero, Nombre nombre, Apellido apellido, List<Nacion> nacionalidad, List<Idioma> idiomas, List<EducacionAcademica> titulosAcademicos, List<Persona> familiares){
+        this.tiempoDeVida = new Edad();
         this.caracter = new Caracter(descripciónDeCaracter);
         this.rasgosFisicos = rasgosFisicos;
         this.genero = genero;
@@ -102,5 +101,13 @@ class Persona{
 
     public void quitarAmigo(Persona persona){
         this.amigos.remove(persona);
+    }
+
+    public void añadirIdioma(Idioma nuevoIdioma){
+        this.idiomas.add(nuevoIdioma);
+    }
+
+    public void quitarIdioma(Idioma idioma){
+        this.idiomas.remove(idioma);
     }
 }

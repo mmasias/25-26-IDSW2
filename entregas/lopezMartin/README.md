@@ -36,8 +36,8 @@ Persona es la clase principal
 |ASOCIACIÓN|Persona y Religión| La persona tiene una relación duradera con una religión y ambos existen independientemente.
 |ASOCIACIÓN|Persona y Amigos| La relación que una persona tiene con sus amigos tiene una cierta duración. Y ambas partes coexisten independientemente.
 |ASOCIACIÓN|Persona y Profesión| Una persona tiene una ocupación determinada durante un periodo de tiempo, pero puede cambiar.
-|USO|Persona y Gusto| La persona hace uso esporádico de sus gustos para interactuar con otra personas, objetos o actividades.
-|USO|Persona y DNI| El DNI es un documento que una persona usa ocasionalmente para realizar ciertas funciones en una sociedad.
+|USO|Persona y Gusto| La persona hace uso esporádico de sus gustos para interactuar con otras personas, objetos o actividades.
+|USO|Persona y DNI| El DNI es un documento que una persona usa esporádicamente para realizar ciertas funciones en una sociedad.
 
 </div>
 

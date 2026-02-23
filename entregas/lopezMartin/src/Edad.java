@@ -2,8 +2,8 @@ class Edad{
 
     private int tiempoDeVida;
 
-    public Edad(int edad){
-        this.tiempoDeVida = edad;
+    public Edad(){
+        this.tiempoDeVida = 0;
     }
 
     public void aumentar(){
