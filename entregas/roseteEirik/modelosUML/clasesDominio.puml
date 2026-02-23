@@ -1,0 +1,78 @@
+@startuml
+skinparam style strictuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam defaultFontName "Verdana"
+
+left to right direction
+
+title Análisis del Dominio: Abstracciones y Justificación de Diseño
+
+class Cancion {
+    -String titulo
+}
+
+class Partitura {
+    -Acorde[] acordes
+}
+
+class Acorde {
+    -String nombre
+}
+
+class Album {
+    -String titulo
+}
+
+class Edicion {
+    -String tipo
+}
+
+class Musico {
+    -String nombre
+}
+
+class Grupo {
+    -String nombre
+}
+
+Album -- Cancion
+Album -- Edicion
+Partitura -- Acorde
+Grupo -- Musico
+Musico -- Cancion
+
+note as N1
+  **Creación de clases**
+  --
+  Usando el atributo minimo necesario para agregar mas tarde sus atributos.
+end note
+
+note right of Musico
+  **Evitamos subclases**
+  --
+  Se descarta 'Solista'.
+  Ser solista es un **rol** o contexto
+  del Musico, no una extensión estructural.
+  Evita herencia artificial.
+end note
+
+note bottom of Acorde
+  **Granularidad**
+  --
+  Se descarta 'Nota'.
+  El Acorde es la unidad mínima
+  con comportamiento. La nota se
+  encapsula internamente.
+end note
+
+note top of Musico
+  **Instrumento como atributo**
+  --
+  'Instrumento' se agregará como
+  atributo para evitar acoplamiento
+  innecesario en este dominio.
+end note
+
+@enduml

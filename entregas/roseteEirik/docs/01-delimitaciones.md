@@ -10,6 +10,8 @@ Incluimos conceptos que nos permitan explorar los **4 tipos de relación por col
 
 ### Diagrama de delimitación
 
+![Diagrama de delimitación](../images/delimitacionDominio.png)
+
 > Ver [delimitacionDominio.puml](../modelosUML/delimitacionDominio.puml)
 
 El diagrama muestra visualmente los ámbitos que consideramos y la decisión de incluirlos o excluirlos.
