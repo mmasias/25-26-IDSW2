@@ -10,17 +10,27 @@ Y para modelar este dominio, he decidido abstraer el concepto de **Conversación
 
 ### Entidades Seleccionadas
 
-* *Participante (Persona / Sistema):*
-* *Usuario* 
-* *Conversación (Interacción)* 
-* *Mensaje*
-* *Adjunto*
-* *Servidor / Red*
-* *Notificación*
-* *Contacto (Agenda)*
-* *Formato*
-* **Código / Idioma*
-* **Canal / Medio*
+### Entidades Seleccionadas (y su justificación)
+
+* **Participante:** El ente (persona o sistema) que interactúa. Tiene identidad propia y existe independientemente de si está conversando o no.
+
+* **Conversación (Interacción):** El evento donde ocurre el intercambio. Define quiénes participan y el contexto.
+
+* **Mensaje:** La unidad de información transmitida por un Participante dentro de una Conversación.
+
+* **Canal / Medio:** El entorno físico o virtual (ej. digital, acústico, visual). Es muy importante porque dice la temporalidad y persistencia del mensaje.
+
+* **Código / Idioma:** El sistema de reglas utilizado (ej. texto, código morse, lenguaje de señas).
+
+* **Adjunto (Recurso):** Un elemento extra aportado al mensaje (un archivo digital o un objeto físico mostrado).
+
+### Entidades Descartadas (Justificación)
+
+* **Servidor / Red / Cuerdas vocales:** Se descartan porque son infraestructura técnica de bajo nivel. No pertenecen a la lógica pura de "comunicarse".
+
+* **Notificación:** Se descarta para mantener la cohesión del modelo base. Es un efecto secundario de recibir un mensaje, no una parte estructural de la conversación.
+
+* **Contacto (Agenda):** Se descarta porque pertenece al dominio de gestión personal del usuario, no a la conversación en sí (solo nos importan los participantes activos).
 
 ## 2. Relacionar
 
