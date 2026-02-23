@@ -2,11 +2,14 @@
 
 ## Descripción
 
-Primera propuesta del modelo de dominio para un reproductor/plataforma musical en un contexto extendido. Este modelo incluye conceptos de usuarios, suscripciones, contenido musical y aspectos sociales.
+Se presenta un resumen del modelo de dominio para un reproductor/plataforma musical en un contexto extendido. Este modelo incluye conceptos de usuarios, suscripciones, contenido musical y aspectos sociales.
 
 ## Modelo de Dominio
 
-![Modelo de Dominio - Ecosistema Musical](./images/MdD.png)
+![Modelo de Dominio - Ecosistema Musical](./images/MdD.svg)
+
+### Diagrama Extendido - Entidades con Atributos
+![Entidades con sus atributos](./images/MdD_atributos.svg)
 
 ### Componentes principales
 
