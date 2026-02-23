@@ -1,45 +1,29 @@
 @startuml
-skinparam style strictuml
-skinparam monochrome true
-skinparam shadowing false
+
 hide empty members
 
-class Artista {
-}
+class Artista
+class Discografica
+class Album
+class Genero
+class Cancion
+class Instrumento
+class Contrato
+class Concierto
+class Gira
+class Miembro
 
-class Discografica {
-}
-
-class Album {
-}
-
-class Genero {
-}
-
-class Grabacion {
-}
-
-class Cancion {
-}
-
-class Compositor {
-}
-
-class Letra {
-}
-
-class Concierto {
-}
 
 Artista *-- Genero
 Artista o-- Album
-Artista o-- Concierto
-Artista o-- Grabacion
 Artista o-- Cancion
-Artista o-- Letra
 Artista --> Discografica
-Artista --> Compositor
-Artista --> Artista : amigos
-Artista --> Artista : familia
+Artista --> Artista : colaborador
+Artista ..> Instrumento
+Artista *-- Miembro
+Artista o-- Gira
+Gira o-- Concierto
+Artista -- Contrato
+Contrato -- Discografica
 
 @enduml
