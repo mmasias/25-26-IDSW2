@@ -3,14 +3,8 @@ import java.util.List;
 
 public class Playlist {
     private String nombre;
-    private List<Cancion> canciones;
+    private List<Cancion> canciones = new ArrayList<>();
 
-    public Playlist(String nombre) {
-        this.nombre = nombre;
-        this.canciones = new ArrayList<>();
-    }
-
-    public void agregarCancion(Cancion cancion) {
-        canciones.add(cancion); 
-    }
+    public Playlist(String nombre) { this.nombre = nombre; }
+    public void agregarCancion(Cancion c) { canciones.add(c); }
 }
