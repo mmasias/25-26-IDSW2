@@ -6,23 +6,38 @@ public class Analisis {
         
         double lucidezFinal = persona.getConciencia().getNivelConciencia();
         
-        Opcion seleccionada;
+        Opcion seleccionada = null;
         Motivacion motivo;
         Consecuencia efecto;
 
+        if (situacion.getOpciones().isEmpty()) {
+            motivo = new Motivacion("Sin opciones disponibles");
+            efecto = new Consecuencia("No se pudo tomar decisión");
+            return new Decision(null, motivo, efecto);
+        }
 
         if (lucidezFinal < 0.4) {
-            seleccionada = situacion.getOpciones().get(situacion.getOpciones().size() - 1);
+            double minRacionalidad = Double.MAX_VALUE;
+            for (Opcion op : situacion.getOpciones()) {
+                if (op.getNivelRacionalidad() < minRacionalidad) {
+                    minRacionalidad = op.getNivelRacionalidad();
+                    seleccionada = op;
+                }
+            }
             motivo = new Motivacion("Reacción impulsiva por colapso sensorial");
-
             if (persona.getCapacidades().tieneHabilidad("Manejo de armas")) {
                 efecto = new Consecuencia("Tragedia: El acto se ejecuta con precisión letal.");
             } else {
                 efecto = new Consecuencia("Accidente: El acto es torpe y el resultado es incierto.");
             }
-            
         } else {
-            seleccionada = situacion.getOpciones().get(0);
+            double maxRacionalidad = -Double.MAX_VALUE;
+            for (Opcion op : situacion.getOpciones()) {
+                if (op.getNivelRacionalidad() > maxRacionalidad) {
+                    maxRacionalidad = op.getNivelRacionalidad();
+                    seleccionada = op;
+                }
+            }
             motivo = new Motivacion("Análisis lógico y preservación del orden");
             efecto = new Consecuencia("Mantenimiento de la estabilidad");
         }

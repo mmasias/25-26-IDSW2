@@ -10,8 +10,10 @@ public class Main {
         Contexto playaArgel = new Contexto("Playa soleada a mediodía", -0.7);
 
         Situacion encuentro = new Situacion("Encuentro con el árabe en la orilla");
-        encuentro.agregarOpcion(new Opcion("Ignorar y caminar"));   
-        encuentro.agregarOpcion(new Opcion("Disparar el revólver")); 
+        
+        encuentro.agregarOpcion(new Opcion("Ignorar y caminar", 0.9));   
+        
+        encuentro.agregarOpcion(new Opcion("Disparar el revólver", 0.2)); 
 
         System.out.println("Iniciando simulación de análisis...");
         try {
