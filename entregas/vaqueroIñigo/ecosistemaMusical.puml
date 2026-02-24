@@ -1,0 +1,16 @@
+@startuml reto-001
+title Ecosistema musical 
+
+class Usuario
+class Playlist
+class Cancion
+class Artista
+class Album
+
+Usuario *-- Playlist : crea
+Album o-- Cancion : incluye
+Playlist --> Cancion : contiene
+Cancion --> Artista : pertenece
+Artista --> Album : publica
+
+@enduml
