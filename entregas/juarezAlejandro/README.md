@@ -31,7 +31,7 @@ Además, la identidad es un concepto, no naces con ella.
 
 |![Segunda Iteración](./images/segundaIteracionUML.svg)
 |:-:
-|[Códigofuente](./modelosUML/segundaIteracion.puml)
+|[Código fuente](./modelosUML/segundaIteracion.puml)
 
 </div>
 
@@ -40,3 +40,20 @@ Además, la identidad es un concepto, no naces con ella.
 - No naces con una identidad, la vas formando/creando por ende, debería de ser una entidad separada de persona
 - Las personas tienen una edad (redundante)
 - Las experiencias vividas te dan una identidad
+
+## Tercera iteración
+
+Hay muchas cosas que nos hacen ver o crear nuestra identidad dependiendo de factores como el tiempo, rasgos, rol o incluso si las cosas nos pasan en un día lluvioso o un día soleado.
+
+|![Tercera Iteración](./images/terceraIteracion.svg)
+|:-:
+|[Código fuente](./modelosUML/terceraIteracion.puml)
+
+</div>
+
+## Explicación de nuevas relaciones
+
+- La identidad irá cambiando mediante el tiempo que tengamos, no es la misma opinión que tenemos ahora a la que tuvimos hace años y a la que tendremos más adelante o que simplemente dejemos pasar las cosas
+- Nacemos con algunos rasgos (introvertido, extrovertido) y aunque pueden moldearse, no tendremos los mismos rasgo de personalidad de una persona que naciera con eso
+- Nuestra actitudad/identidad depende de nuestro rol o lugar donde nos encontremos (Trabajo, familia, amigos, pareja)
+- Contexto: Depende de donde ocurre, cuando y con quién, por ejemplo, estar solo, puede ser alguno bueno si necesitas tu propio espacio, pero también puede hacernos sentir soledad
