@@ -2,10 +2,11 @@
 
 ---
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
-	<a href="images/README.MD" style="padding: 8px 16px; background: #455a64; color: #fff; border-radius: 5px; text-decoration: none;">Imágenes y modelo UML</a>
-	<a href="docs/README.MD" style="padding: 8px 16px; background: #1976d2; color: #fff; border-radius: 5px; text-decoration: none;">Docs</a>
-	<a href="src/" style="padding: 8px 16px; background: #757575; color: #fff; border-radius: 5px; text-decoration: none;">Código fuente</a>
+<div align="right">
+
+| [![](https://img.shields.io/badge/-Im%C3%A1genes-0D47A1?style=flat&logo=picture-in-picture&logoColor=white)](images/README.MD) [![](https://img.shields.io/badge/-Docs-0D47A1?style=flat&logo=readthedocs&logoColor=white)](docs/README.MD) [![](https://img.shields.io/badge/-C%C3%B3digo%20fuente-0D47A1?style=flat&logo=github&logoColor=white)](src/) |
+| ---- |
+
 </div>
 
 ---
