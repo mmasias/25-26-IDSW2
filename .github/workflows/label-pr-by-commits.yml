@@ -1,7 +1,7 @@
 name: Analyze PR Commit Pattern
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
 
@@ -29,7 +29,7 @@ jobs:
             // Extract unique dates from commits
             const dates = new Set();
             commits.forEach(commit => {
-              const date = new Date(commit.commit.committer.date);
+              const date = new Date(commit.committedDate);
               const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
               dates.add(dateStr);
             });
