@@ -1,13 +1,19 @@
 public class Oyente {
-    private String usuario;
+    private String username;
+    private Playlist miPlaylist; // COMPOSICIÓN
 
-    public Oyente(String usuario) {
-        this.usuario = usuario;
+    public Oyente(String username) {
+        this.username = username;
+        this.miPlaylist = new Playlist("Favoritos de " + username);
     }
 
-    public void escuchar(Cancion cancion, Dispositivo dispositivo) {
-        System.out.println(usuario + " ha dado al play.");
-        dispositivo.activarAltavoz();
-        cancion.reproducir();
+    public Playlist getMiPlaylist() {
+        return miPlaylist;
+    }
+
+   
+    public void escuchar(Cancion cancion, Reproductor reproductor) {
+        System.out.println(username + " ha pulsado play.");
+        reproductor.reproducir(cancion);
     }
 }

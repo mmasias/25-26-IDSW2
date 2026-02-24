@@ -1,28 +1,41 @@
 @startuml
 skinparam style strictuml
+skinparam classAttributeIconSize 0
 
+class Letra
+class Partitura
 class GeneroMusical
-class Instrumento
+class Compositor
 class Productor
+class Instrumento
+class Reproductor
+class Banda
 class Artista
 class Cancion
-class Dispositivo
+class Album
+class Playlist
 class Oyente
-class Manager
-class SelloDiscografico
-class EstudioGrabacion
 
-Artista --> "1" Instrumento
-Artista --> "1" Manager
-Artista --> "1" SelloDiscografico
+' Agregaciones 
+Banda o-- Artista : agrupa 
+Album o-- Cancion : contiene 
+Playlist o-- Cancion : recopila 
 
-Productor --> "1" EstudioGrabacion
+' Composición 
+Oyente *-- Playlist : posee 
 
-Cancion --> "1" Artista
-Cancion --> "1" Productor
-Cancion --> "1" GeneroMusical
+' Asociaciones 
+Artista --> Instrumento : toca 
+Cancion --> Letra : tiene 
+Cancion --> Partitura : escrita en 
+Cancion --> GeneroMusical : pertenece a 
+Cancion --> Compositor : compuesta por 
+Cancion --> Productor : producida por 
+Cancion --> Artista : interpretada por 
 
-Oyente ..> Cancion
-Oyente ..> Dispositivo
+' Dependencias 
+Oyente ..> Cancion : escucha 
+Oyente ..> Reproductor : usa 
+Reproductor ..> Cancion : procesa 
 
 @enduml

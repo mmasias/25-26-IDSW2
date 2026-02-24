@@ -1,7 +1,7 @@
-public class Manager {
+public class Compositor {
     private String nombre;
 
-    public Manager(String nombre) {
+    public Compositor(String nombre) {
         this.nombre = nombre;
     }
 }

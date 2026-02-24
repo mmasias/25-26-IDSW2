@@ -1,21 +1,21 @@
 public class Cancion {
     private String titulo;
-    private Artista artista;
-    private Productor productor;
+    private Letra letra;
+    private Partitura partitura;
     private GeneroMusical genero;
+    private Compositor compositor;
+    private Productor productor;
 
-    public Cancion(String titulo, Artista artista, Productor productor, GeneroMusical genero) {
+    
+    public Cancion(String titulo, Letra letra, Partitura partitura, 
+                   GeneroMusical genero, Compositor compositor, Productor productor) {
         this.titulo = titulo;
-        this.artista = artista;
-        this.productor = productor;
+        this.letra = letra;
+        this.partitura = partitura;
         this.genero = genero;
+        this.compositor = compositor;
+        this.productor = productor;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void reproducir() {
-        System.out.println("Reproduciendo: " + titulo + " - " + artista.getNombre());
-    }
+    public String getTitulo() { return titulo; }
 }

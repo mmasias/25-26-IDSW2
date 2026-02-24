@@ -4,8 +4,4 @@ public class GeneroMusical {
     public GeneroMusical(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
 }
