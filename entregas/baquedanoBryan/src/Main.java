@@ -9,11 +9,18 @@ public class Main {
 
         Contexto playaArgel = new Contexto("Playa soleada a mediodía", -0.7);
 
+
         Situacion encuentro = new Situacion("Encuentro con el árabe en la orilla");
-        
-        encuentro.agregarOpcion(new Opcion("Ignorar y caminar", 0.9));   
-        
-        encuentro.agregarOpcion(new Opcion("Disparar el revólver", 0.2)); 
+
+        Motivacion motivacionIgnorar = new Motivacion("Análisis lógico y preservación del orden", 0.1);
+        Consecuencia consecuenciaIgnorar = new Consecuencia("Mantenimiento de la estabilidad", 0.1);
+        Opcion opcionIgnorar = new Opcion("Ignorar y caminar", 0.9, motivacionIgnorar, consecuenciaIgnorar);
+        encuentro.agregarOpcion(opcionIgnorar);
+
+        Motivacion motivacionDisparar = new Motivacion("Reacción impulsiva por colapso sensorial", -0.1);
+        Consecuencia consecuenciaDisparar = new Consecuencia("Tragedia: El acto se ejecuta con precisión letal.", -0.1);
+        Opcion opcionDisparar = new Opcion("Disparar el revólver", 0.2, motivacionDisparar, consecuenciaDisparar);
+        encuentro.agregarOpcion(opcionDisparar);
 
         System.out.println("Iniciando simulación de análisis...");
         try {

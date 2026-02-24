@@ -7,14 +7,16 @@ public class Analisis {
         double lucidezFinal = persona.getConciencia().getNivelConciencia();
         
         Opcion seleccionada = null;
-        Motivacion motivo;
-        Consecuencia efecto;
+
+        Motivacion motivacionUsada = null;
+        Consecuencia consecuenciaUsada = null;
 
         if (situacion.getOpciones().isEmpty()) {
-            motivo = new Motivacion("Sin opciones disponibles");
-            efecto = new Consecuencia("No se pudo tomar decisión");
-            return new Decision(null, motivo, efecto);
+            motivacionUsada = new Motivacion("Sin opciones disponibles", 0.0);
+            consecuenciaUsada = new Consecuencia("No se pudo tomar decisión", 0.0);
+            return new Decision(null, motivacionUsada, consecuenciaUsada);
         }
+
 
         if (lucidezFinal < 0.4) {
             double minRacionalidad = Double.MAX_VALUE;
@@ -24,12 +26,6 @@ public class Analisis {
                     seleccionada = op;
                 }
             }
-            motivo = new Motivacion("Reacción impulsiva por colapso sensorial");
-            if (persona.getCapacidades().tieneHabilidad("Manejo de armas")) {
-                efecto = new Consecuencia("Tragedia: El acto se ejecuta con precisión letal.");
-            } else {
-                efecto = new Consecuencia("Accidente: El acto es torpe y el resultado es incierto.");
-            }
         } else {
             double maxRacionalidad = -Double.MAX_VALUE;
             for (Opcion op : situacion.getOpciones()) {
@@ -38,10 +34,18 @@ public class Analisis {
                     seleccionada = op;
                 }
             }
-            motivo = new Motivacion("Análisis lógico y preservación del orden");
-            efecto = new Consecuencia("Mantenimiento de la estabilidad");
         }
 
-        return new Decision(seleccionada, motivo, efecto);
+        if (seleccionada != null) {
+            motivacionUsada = seleccionada.getMotivacion();
+            consecuenciaUsada = seleccionada.getConsecuencia();
+        }
+
+        double ajuste = 0.0;
+        if (motivacionUsada != null) ajuste += motivacionUsada.getImpactoLucidez();
+        if (consecuenciaUsada != null) ajuste += consecuenciaUsada.getImpactoLucidez();
+        persona.getConciencia().ajusteNivelConciencia(ajuste);
+
+        return new Decision(seleccionada, motivacionUsada, consecuenciaUsada);
     }
 }
