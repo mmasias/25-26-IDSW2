@@ -2,11 +2,9 @@
 
 skinparam classAttributeIconSize 0
 
-' --- ENUMS ---
 enum EstatusSuscripcion {
 }
 
-' --- BLOQUE DE USUARIOS ---
 class Usuario {
 }
 class Suscripcion {
@@ -14,7 +12,6 @@ class Suscripcion {
 class Playlist {
 }
 
-' --- BLOQUE DE CATÁLOGO MUSICAL ---
 class Artista {
 }
 class Album {
@@ -34,7 +31,6 @@ Artista --> Cancion
 Album o-- Cancion
 Cancion *-- PistaAudio
 
-' DOBLE RELACIÓN DEL USUARIO CON LA PLAYLIST
 Usuario *-- Playlist
 Usuario --> Playlist
 
