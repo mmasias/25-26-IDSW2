@@ -14,6 +14,9 @@ skinparam class {
 enum TipoSuscripcion
 enum TipoAlbum
 enum FamiliaInstrumento
+' NUEVOS ENUMS MUSICALES
+enum Tonalidad 
+enum FiguraMusical
 
 ' ==========================================
 ' SECCIÓN DE CLASES PRINCIPALES
@@ -26,10 +29,13 @@ class Cancion
 class Playlist
 class Instrumento
 class Genero
-
-' Nuevas clases para el motor de analítica musical
 class Reproduccion
 class Estadistica
+
+' NUEVAS CLASES: TEORÍA MUSICAL
+class Partitura
+class Acorde
+class Nota
 
 ' ==========================================
 ' RELACIONES CON ENUMS (Uso / Dependencia)
@@ -38,47 +44,48 @@ Usuario ..> TipoSuscripcion : usa >
 Album ..> TipoAlbum : usa >
 Instrumento ..> FamiliaInstrumento : pertenece a >
 
-' ==========================================
-' RELACIONES ENTRE CLASES 
-' ==========================================
+' La partitura se escribe en una tonalidad (ej. Do Mayor)
+Partitura ..> Tonalidad : escrita en >
+' La nota tiene una duración matemática (ej. Blanca, Negra)
+Nota ..> FiguraMusical : representada como >
 
-' Agregación: La plataforma agrupa usuarios y artistas.
+' ==========================================
+' RELACIONES ENTRE CLASES (Negocio)
+' ==========================================
 Plataforma o-- Usuario : aloja >
 Plataforma o-- Artista : distribuye >
 
-' Composición: La playlist le pertenece al usuario. 
 Usuario *-- Playlist : posee >
-
-' Agregación: La playlist agrupa canciones (independientes).
 Playlist o-- Cancion : agrupa >
-
-' Composición: Las canciones nacen de un lanzamiento.
 Album *-- Cancion : contiene >
 
-' Uso/Dependencia: Acción del artista sobre la música.
 Artista ..> Album : lanza >
 Artista ..> Cancion : interpreta >
-
-' Uso/Dependencia: Categorización.
 Cancion ..> Genero : clasificada en >
 Cancion ..> Instrumento : suena con >
 
-' ==========================================
-' MOTOR DE REPRODUCCIONES Y ESTADÍSTICAS
-' ==========================================
-
-' Composición: El historial de escuchas le pertenece al usuario.
 Usuario *-- Reproduccion : genera >
-
-' Uso: El evento de reproducción simplemente apunta a qué canción sonó.
 Reproduccion ..> Cancion : escucha >
-
-' Composición: La plataforma es dueña de su motor de analíticas.
 Plataforma *-- Estadistica : calcula >
-
-' Uso: Las estadísticas toman las reproducciones sueltas, las consolidan 
-' y miden el rendimiento de artistas y canciones.
 Estadistica ..> Reproduccion : consolida >
 Estadistica ..> Artista : mide a >
 Estadistica ..> Cancion : mide a >
+
+' ==========================================
+' RAMIFICACIÓN: ESTRUCTURA MUSICAL (Composición de la Canción)
+' ==========================================
+
+' Composición: La partitura (arreglo específico) le pertenece a la canción.
+Cancion *-- Partitura : transcrita en >
+
+' Composición: La partitura es literalmente un conjunto ordenado de notas. 
+' Si destruyes la partitura, esas notas en ese orden específico desaparecen.
+Partitura *-- Nota : contiene >
+
+' Agregación: La partitura utiliza acordes (progresión armónica).
+Partitura o-- Acorde : progresa con >
+
+' Agregación: Un acorde es una agrupación simultánea de notas. 
+' (Las notas existen independientemente del acorde).
+Acorde o-- Nota : formado por >
 @enduml
