@@ -7,16 +7,19 @@
 
 </div>
 
-# Clases fuente
+# Código fuente
 
-- [Analisis.java](Analisis.java)
-- [Capacidades.java](Capacidades.java)
-- [Conciencia.java](Conciencia.java)
-- [Consecuencia.java](Consecuencia.java)
-- [Contexto.java](Contexto.java)
-- [Decision.java](Decision.java)
-- [Main.java](Main.java)
-- [Motivacion.java](Motivacion.java)
-- [Opcion.java](Opcion.java)
-- [Persona.java](Persona.java)
-- [Situacion.java](Situacion.java)
+- [Main.java](Main.java) (principal)
+
+## Clases del modelo (carpeta Decision/)
+
+- [Analisis.java](Decision/Analisis.java)
+- [Capacidades.java](Decision/Capacidades.java)
+- [Conciencia.java](Decision/Conciencia.java)
+- [Consecuencia.java](Decision/Consecuencia.java)
+- [Contexto.java](Decision/Contexto.java)
+- [Decision.java](Decision/Decision.java)
+- [Motivacion.java](Decision/Motivacion.java)
+- [Opcion.java](Decision/Opcion.java)
+- [Persona.java](Decision/Persona.java)
+- [Situacion.java](Decision/Situacion.java)
