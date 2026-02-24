@@ -1,0 +1,45 @@
+@startuml
+
+class Cancion {
+
+}
+
+class Audio {
+
+}
+
+class Artista {
+
+}
+
+class Playlist {
+
+}
+
+class Album {
+
+}
+
+class Usuario {
+
+}
+
+class Reproductor {
+
+}
+
+' Composición
+Cancion *-- Audio
+
+' Agregaciones
+Playlist o-- Cancion
+Album o-- Cancion
+
+' Asociaciones
+Artista --> Cancion
+Usuario --> Playlist
+
+' Uso
+Reproductor ..> Cancion
+
+@enduml
