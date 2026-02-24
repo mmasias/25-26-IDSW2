@@ -1,9 +1,10 @@
 public class Oyente {
     private String username;
-    private Playlist miPlaylist; // COMPOSICIÓN
+    private Playlist miPlaylist; 
 
     public Oyente(String username) {
         this.username = username;
+      
         this.miPlaylist = new Playlist("Favoritos de " + username);
     }
 
@@ -11,9 +12,11 @@ public class Oyente {
         return miPlaylist;
     }
 
-   
-    public void escuchar(Cancion cancion, Reproductor reproductor) {
-        System.out.println(username + " ha pulsado play.");
-        reproductor.reproducir(cancion);
+    
+    public void generarReproduccion(Cancion cancion, Reproductor reproductor) {
+        System.out.println(username + " ha pulsado PLAY.");
+        Reproduccion evento = new Reproduccion(); 
+        evento.procesar(cancion);
+        reproductor.emitirAudio();
     }
 }

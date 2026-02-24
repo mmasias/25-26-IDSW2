@@ -5,11 +5,9 @@ public class Artista {
         this.nombre = nombre;
     }
 
-
+    // USO: Pasa el instrumento por parámetro de forma puntual
     public void tocar(Instrumento instrumento) {
-        System.out.print(nombre + " está tocando... ");
+        System.out.print(nombre + " se prepara para tocar. ");
         instrumento.sonar();
     }
-    
-    public String getNombre() { return nombre; }
 }

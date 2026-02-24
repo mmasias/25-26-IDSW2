@@ -1,41 +1,42 @@
 @startuml
-skinparam style strictuml
-skinparam classAttributeIconSize 0
 
-class Letra
-class Partitura
-class GeneroMusical
-class Compositor
-class Productor
-class Instrumento
+class Plataforma
+class Estadistica
+class Reproduccion
+class Oyente
+class Playlist
 class Reproductor
+class Cancion
+class Partitura
+class Nota
+class GeneroMusical
+class Letra
+class Productor
+class Album
 class Banda
 class Artista
-class Cancion
-class Album
-class Playlist
-class Oyente
+class Instrumento
 
-' Agregaciones 
+' --- COMPOSICIÓN ---
+Plataforma *-- Oyente : aloja 
+Plataforma *-- Estadistica : calcula 
+Oyente *-- Playlist : posee 
+Partitura *-- Nota : contiene 
+
+' --- AGREGACIÓN ---
 Banda o-- Artista : agrupa 
 Album o-- Cancion : contiene 
 Playlist o-- Cancion : recopila 
+Cancion o-- Letra : tiene 
+Cancion o-- Partitura : transcrita en 
+Cancion o-- GeneroMusical : clasificada en 
+Cancion o-- Productor : producida por 
+Cancion o-- Artista : interpretada por 
 
-' Composición 
-Oyente *-- Playlist : posee 
-
-' Asociaciones 
-Artista --> Instrumento : toca 
-Cancion --> Letra : tiene 
-Cancion --> Partitura : escrita en 
-Cancion --> GeneroMusical : pertenece a 
-Cancion --> Compositor : compuesta por 
-Cancion --> Productor : producida por 
-Cancion --> Artista : interpretada por 
-
-' Dependencias 
-Oyente ..> Cancion : escucha 
+' --- USO ---
 Oyente ..> Reproductor : usa 
-Reproductor ..> Cancion : procesa 
+Oyente ..> Reproduccion : genera 
+Reproduccion ..> Cancion : procesa 
+Artista ..> Instrumento : toca 
 
 @enduml

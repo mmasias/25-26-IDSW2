@@ -3,13 +3,14 @@ import java.util.List;
 
 public class Playlist {
     private String nombre;
-    private List<Cancion> canciones; // AGREGACIÓN
+    private List<Cancion> canciones; 
 
     public Playlist(String nombre) {
         this.nombre = nombre;
-        this.canciones = new ArrayList<>(); // Lista vacía al inicio
+        this.canciones = new ArrayList<>();
     }
 
+    
     public void añadirCancion(Cancion cancion) {
         this.canciones.add(cancion);
     }

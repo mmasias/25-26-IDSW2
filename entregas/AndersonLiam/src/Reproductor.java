@@ -1,8 +1,8 @@
 public class Reproductor {
-    public Reproductor() {}
+    public Reproductor() {
+    }
 
-   
-    public void reproducir(Cancion cancion) {
-        System.out.println("▶ Reproduciendo pista: " + cancion.getTitulo());
+    public void emitirAudio() {
+        System.out.println(" Emitiendo audio por los altavoces...");
     }
 }

@@ -4,5 +4,4 @@ public class Letra {
     public Letra(String texto) {
         this.texto = texto;
     }
-    public String getTexto() { return texto; }
 }

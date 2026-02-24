@@ -7,6 +7,6 @@ public class Banda {
     
     public Banda(String nombre, List<Artista> miembros) {
         this.nombre = nombre;
-        this.miembros = miembros; 
+        this.miembros = miembros;
     }
 }

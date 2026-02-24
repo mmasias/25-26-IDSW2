@@ -3,19 +3,21 @@ public class Cancion {
     private Letra letra;
     private Partitura partitura;
     private GeneroMusical genero;
-    private Compositor compositor;
     private Productor productor;
+    private Artista interprete;
 
     
     public Cancion(String titulo, Letra letra, Partitura partitura, 
-                   GeneroMusical genero, Compositor compositor, Productor productor) {
+                   GeneroMusical genero, Productor productor, Artista interprete) {
         this.titulo = titulo;
         this.letra = letra;
         this.partitura = partitura;
         this.genero = genero;
-        this.compositor = compositor;
         this.productor = productor;
+        this.interprete = interprete;
     }
 
-    public String getTitulo() { return titulo; }
+    public String getTitulo() {
+        return titulo;
+    }
 }

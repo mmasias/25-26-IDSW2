@@ -4,7 +4,8 @@ public class Instrumento {
     public Instrumento(String tipo) {
         this.tipo = tipo;
     }
+
     public void sonar() {
-        System.out.println("Sonando el instrumento: " + tipo);
+        System.out.println("Sonando: " + tipo);
     }
 }
