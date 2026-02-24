@@ -1,8 +1,8 @@
 # Diseño - Relaciones por colaboración
 
-A continuación se justifican las decisiones de diseño basándonos en los criterios de ciclo de vida, temporalidad y exclusividad, eligiendo siempre la relación más débil posible:
 
-| Clase A (Todo/Origen) | Clase B (Parte/Destino) | Relación | Justificación (¿Por qué es esta relación?) |
+
+| Origen | Clase B Destino | Relación | Justificación  |
 | :--- | :--- | :--- | :--- |
 | **Oyente** | **Reproductor** | **Uso** | El oyente solo interactúa con el reproductor de forma **puntual** para escuchar música. No lo posee como atributo. |
 | **Oyente** | **Cancion** | **Uso** | Interacción **puntual** y compartida. El oyente consume la canción, pero esta sigue existiendo independientemente en el catálogo. |
@@ -16,4 +16,5 @@ A continuación se justifican las decisiones de diseño basándonos en los crite
 | **Cancion** | **GeneroMusical** | **Agregación** | La canción pertenece a un género, pero el género musical existe por sí solo en el sistema aunque se borre la canción. |
 | **Cancion** | **Compositor** | **Agregación** | El compositor forma parte de los créditos fijos de la obra, pero tiene un ciclo de vida independiente (no muere si la canción es censurada o eliminada). |
 | **Cancion** | **Productor** | **Agregación** | El productor es parte fundamental de la creación de la pista, pero sigue existiendo en el sistema de forma independiente a esta canción en concreto. |
+
 | **Oyente** | **Playlist** | **Composición** | Relación "todo-parte" dependiente. La playlist personal nace y muere con su creador; si el oyente elimina su cuenta, la playlist se destruye con él. |
