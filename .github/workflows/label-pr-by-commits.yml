@@ -1,0 +1,142 @@
+name: Analyze PR Commit Pattern
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  analyze-commits:
+    runs-on: ubuntu-latest
+    name: Analyze commit pattern and label PR
+    steps:
+      - name: Get PR commits
+        id: get_commits
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: commits } = await github.rest.pulls.listCommits({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              per_page: 100
+            });
+
+            // Extract unique dates from commits
+            const dates = new Set();
+            commits.forEach(commit => {
+              const date = new Date(commit.commit.committer.date);
+              const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
+              dates.add(dateStr);
+            });
+
+            const uniqueDays = dates.size;
+            const totalCommits = commits.length;
+
+            console.log(`Total commits: ${totalCommits}, Unique days: ${uniqueDays}`);
+
+            // Determine label based on pattern
+            let label;
+            let color;
+            let description;
+
+            if (uniqueDays >= 6) {
+              label = 'sostenido-excelente';
+              color = '0e8a16'; // green
+              description = '✅ Trabajo diario constante (6+ días)';
+            } else if (uniqueDays >= 4) {
+              label = 'sostenido-bueno';
+              color = 'c2e0c6'; // light green
+              description = '✅ Buen trabajo sostenido (4-5 días)';
+            } else if (uniqueDays === 3) {
+              label = 'sostenido-parcial';
+              color = 'ffcc33'; // yellow
+              description = '⚠️ Trabajo parcialmente sostenido (3 días)';
+            } else {
+              label = 'no-sostenido';
+              color = 'ff4444'; // red
+              description = '❌ Trabajo no sostenido (1-2 días)';
+            }
+
+            // Store for next step
+            core.setOutput('label', label);
+            core.setOutput('color', color);
+            core.setOutput('description', description);
+            core.setOutput('unique_days', uniqueDays.toString());
+            core.setOutput('total_commits', totalCommits.toString());
+
+      - name: Add label to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const label = '${{ steps.get_commits.outputs.label }}';
+            const description = '${{ steps.get_commits.outputs.description }}';
+            const uniqueDays = '${{ steps.get_commits.outputs.unique_days }}';
+            const totalCommits = '${{ steps.get_commits.outputs.total_commits }}';
+
+            // Remove old labels if they exist
+            const oldLabels = [
+              'sostenido-excelente',
+              'sostenido-bueno',
+              'sostenido-parcial',
+              'no-sostenido'
+            ];
+
+            const currentLabels = context.payload.pull_request.labels.map(l => l.name);
+
+            for (const oldLabel of oldLabels) {
+              if (currentLabels.includes(oldLabel) && oldLabel !== label) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  name: oldLabel
+                });
+              }
+            }
+
+            // Add new label
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [label]
+            });
+
+            // Post comment with analysis
+            const comment = `## 📊 Análisis de patrón de commits\n\n` +
+              `- **Total de commits:** ${totalCommits}\n` +
+              `- **Días únicos de trabajo:** ${uniqueDays}\n` +
+              `- **Etiqueta:** ${description}`;
+
+            // Find existing comment to edit or create new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(comment =>
+              comment.user.type === 'Bot' &&
+              comment.body.includes('Análisis de patrón de commits')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: comment
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: comment
+              });
+            }
