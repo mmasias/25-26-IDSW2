@@ -29,9 +29,13 @@ jobs:
             // Extract unique dates from commits
             const dates = new Set();
             commits.forEach(commit => {
-              const date = new Date(commit.committedDate);
-              const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
-              dates.add(dateStr);
+              if (commit.committedDate) {
+                const date = new Date(commit.committedDate);
+                if (!isNaN(date.getTime())) {
+                  const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
+                  dates.add(dateStr);
+                }
+              }
             });
 
             const uniqueDays = dates.size;
