@@ -1,6 +1,8 @@
 public class Estudio {
-    // Uso: Recibe al artista y al instrumento solo para la sesión de grabación
-    public void grabar(Cantante artista, Instrumento inst) { 
-        inst.sonar();
+    // USO: El estudio es el escenario donde coinciden los actores.
+    // No mantiene referencias permanentes a ninguno.
+    public void realizarSesion(Cantante c, Instrumento i, IngenieroDeSonido eng) {
+        eng.ecualizar(i);
+        c.actuar(i, new Microfono()); 
     }
 }
