@@ -48,19 +48,19 @@ jobs:
 
             if (uniqueDays >= 6) {
               label = 'sostenido-excelente';
-              color = '0e8a16';
+              color = '#006b75';
               description = '✅ Trabajo diario constante (6+ días)';
             } else if (uniqueDays >= 4) {
               label = 'sostenido-bueno';
-              color = 'c2e0c6';
+              color = '#0e8a16';
               description = '✅ Buen trabajo sostenido (4-5 días)';
             } else if (uniqueDays === 3) {
               label = 'sostenido-parcial';
-              color = 'ffcc33';
+              color = '#fef2c0';
               description = '⚠️ Trabajo parcialmente sostenido (3 días)';
             } else {
               label = 'no-sostenido';
-              color = 'ff4444';
+              color = '#d73a4a';
               description = '❌ Trabajo no sostenido (1-2 días)';
             }
 
