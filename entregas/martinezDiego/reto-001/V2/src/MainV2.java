@@ -12,9 +12,9 @@ public class MainV2 {
 
         DecisionV2 decision = new DecisionV2(criterios, contexto);
 
-        decision.addOpcion("Callar");
-        decision.addOpcion("Responder educadamente");
-        decision.addOpcion("Responder agresivamente");
+        decision.agregarOpcion("Callar");
+        decision.agregarOpcion("Responder educadamente");
+        decision.agregarOpcion("Responder agresivamente");
 
         decision.mostrarOpciones();
 

@@ -14,7 +14,7 @@ public class DecisionV2 {
         this.contexto = contexto;
     }
 
-    public void addOpcion(String nombre) {
+    public void agregarOpcion(String nombre) {
         opciones.add(new OpcionV2(nombre));
     }
 
