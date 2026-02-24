@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Main {
@@ -12,11 +11,9 @@ public class Main {
         familiares.add(padre);
         familiares.add(madre);
 
-        RasgoFisico rasgo1 = new RasgoFisico("Moreno");
-        RasgoFisico rasgo2 = new RasgoFisico("Alto");
+        RasgoFisico rasgo1 = new RasgoFisico("Ojos marrones");
         ArrayList<RasgoFisico> rasgosHijo = new ArrayList<RasgoFisico>();
         rasgosHijo.add(rasgo1);
-        rasgosHijo.add(rasgo2);
 
         Nacion argentina = new Nacion("Argentina");
         Nacion italia = new Nacion("Italia");
@@ -27,43 +24,48 @@ public class Main {
         Idioma espanol = new Idioma("Español");
         Idioma italiano = new Idioma("Italiano");
         ArrayList<Idioma> idiomasHijo = new ArrayList<Idioma>();
-        idiomasHijo.add(espanol);
-        idiomasHijo.add(italiano);
 
-        EducacionAcademica titulo1 = new EducacionAcademica("Grado en Informática");
-        EducacionAcademica titulo2 = new EducacionAcademica("Máster en Inteligencia Artificial");
         ArrayList<EducacionAcademica> titulosHijo = new ArrayList<EducacionAcademica>();
-        titulosHijo.add(titulo1);
-        titulosHijo.add(titulo2);
 
         Persona hijo = new Persona("Gracioso y tímido", rasgosHijo, new Genero("Masculino"), new Nombre("Juan"), new Apellido("Pérez"), nacionalidadesHijo, idiomasHijo, titulosHijo, familiares);
 
         hijo.cumplirAños();
         hijo.cambiarPersonalidad("Extrovertido y gracioso");
-        hijo.añadirRasgoFisico(new RasgoFisico("Tatuaje en el brazo derecho"));
+        hijo.añadirIdioma(espanol);
+        hijo.añadirIdioma(italiano);
+        RasgoFisico rasgo2 = new RasgoFisico("Alto");
+        hijo.añadirRasgoFisico(rasgo2);
         hijo.cambiarGenero("Femenino");
         hijo.cambiarNombre("Pepe");
         hijo.cambiarApellido("López");
-        hijo.añadirNacionalidad(new Nacion("España"));
-        hijo.quitarNacionalidad(argentina);
-        hijo.añadirTituloAcademico(new EducacionAcademica("Master en Big Data")); 
+        Nacion españa = new Nacion("España");
+        hijo.añadirNacionalidad(españa);
+        EducacionAcademica titulo1 = new EducacionAcademica("Grado en Informática");
+        EducacionAcademica titulo2 = new EducacionAcademica("Máster en Inteligencia Artificial");
+        hijo.añadirTituloAcademico(titulo1); 
+        hijo.añadirTituloAcademico(titulo2); 
         
-        Persona novia = new Persona();
-        hijo.añadirFamiliar(novia);
+        Persona esposa = new Persona();
+        hijo.añadirFamiliar(esposa);
 
         hijo.convertir("Cristianismo");
         hijo.abjurar();
+
         hijo.conseguirTrabajo("Programador");
         hijo.irAlParo();
 
         Persona amigo = new Persona();
         hijo.añadirAmigo(amigo);
-        hijo.quitarAmigo(amigo);
 
         Idioma ruso = new Idioma("Ruso");
 
         hijo.añadirIdioma(ruso);
 
-        hijo.quitarIdioma(italiano);
+        Gusto futbol = new Gusto("Fútbol");
+        hijo.consumir(futbol);
+
+        Dni dni = new Dni("12345678A");
+        hijo.identificar(dni);
+    
     }
 }

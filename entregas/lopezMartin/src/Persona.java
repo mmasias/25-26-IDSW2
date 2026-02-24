@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,6 +72,14 @@ class Persona{
         this.nacionalidad.remove(nacion);
     }
 
+    public void añadirIdioma(Idioma nuevoIdioma){
+        this.idiomas.add(nuevoIdioma);
+    }
+
+    public void quitarIdioma(Idioma idioma){
+        this.idiomas.remove(idioma);
+    }
+
     public void añadirTituloAcademico(EducacionAcademica nuevoTitulo){
         this.titulosAcademicos.add(nuevoTitulo);
     }
@@ -103,11 +112,12 @@ class Persona{
         this.amigos.remove(persona);
     }
 
-    public void añadirIdioma(Idioma nuevoIdioma){
-        this.idiomas.add(nuevoIdioma);
+    public void consumir(Gusto gusto) {
+        gusto.practicar();
     }
 
-    public void quitarIdioma(Idioma idioma){
-        this.idiomas.remove(idioma);
+    public void identificar(Dni documento) {
+        documento.mostrar();
     }
+    
 }

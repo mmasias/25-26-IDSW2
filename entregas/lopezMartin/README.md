@@ -45,3 +45,7 @@ Persona es la clase principal
 |-------|
 | ![Diagrama](images/dominio.svg)|
 | [Código UML](modelosUML/dominio.puml)|
+
+| Traducción a código parcial |
+|-------|
+| [Código](src/)|

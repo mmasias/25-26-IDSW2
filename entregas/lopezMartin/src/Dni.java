@@ -6,8 +6,8 @@ class Dni{
         this.numero = numero;
     }
 
-    public String presentar(){
-        return numero;
+    public void mostrar(){
+        System.out.println("Número de DNI: " + this.numero);
     }
     
 }
