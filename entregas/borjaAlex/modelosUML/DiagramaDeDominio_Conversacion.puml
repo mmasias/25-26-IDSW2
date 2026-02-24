@@ -1,0 +1,58 @@
+@startuml DiagramaDeDominio_Conversacion
+
+title Diagrama de Dominio - Conversación
+
+hide methods
+hide attributes
+
+class Conversacion
+class Mensaje
+class Contenido
+class Adjunto
+class Reaccion
+class Notificacion
+class Participante
+class Medio
+class Canal
+class Contexto
+
+enum TipoMedio {
+    ORAL
+    ESCRITO
+    DIGITAL
+    PRESENCIAL
+}
+
+enum TipoContenido {
+    TEXTO
+    AUDIO
+    IMAGEN
+    VIDEO
+}
+
+enum EstadoParticipante {
+    ACTIVO
+    INACTIVO
+    AUSENTE
+}
+
+Conversacion *-- "0..*" Mensaje
+Conversacion *-- "1" Contexto
+Conversacion o-- "2..*" Participante
+Conversacion o-- "1" Medio
+Conversacion o-- "1" Canal
+
+Mensaje *-- "1" Contenido
+Mensaje *-- "0..*" Adjunto
+Mensaje *-- "0..*" Reaccion
+Mensaje *-- "0..*" Notificacion
+Mensaje --> "1" Participante : emisor
+Mensaje --> "1..*" Participante : receptor(es)
+
+Reaccion --> "1" Participante : autor
+
+Medio --> TipoMedio
+Contenido --> TipoContenido
+Participante --> EstadoParticipante
+
+@enduml
