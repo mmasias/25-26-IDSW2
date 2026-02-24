@@ -1,37 +1,32 @@
-# Carpeta de entregas
+# Modelo de Dominio – Ecosistema musical
 
-Para cada entrega, cree en esta carpeta su carpeta personal usando el estándar `apellidoNombre`.
+Este modelo representa un ecosistema musical basico , centrado en cómo se crea y se organiza la música.
 
-## Estructura
+## Clases
+- **Usuario**: persona que utiliza la aplicación.
+- **Playlist**: lista creada por un usuario para organizar canciones.
+- **Cancion**: música en si.
+- **Artista**: persona o grupo que crea canciones.
+- **Album**: conjunto de canciones publicadas por un artista.
 
-```
-/entregas/apellidoNombre/README.md   <-- Presentación de la entrega
-                        /src         <-- Código fuente
-                        /modelosUML  <-- Modelos en plantUML
-                        /docs        <-- Documentación adicional
-                        /images      <-- Imágenes, diagramas...
-```
+## Relaciones
 
-## Artefactos habituales
+### Usuario – Playlist (Composición)
+Un usuario crea sus playlists.  
+La playlist existe porque el usuario la ha creado.
 
-||||
-|-|-|-|
-|1|**README.md**|Presentación de la entrega, con explicación de la solución y referencias al resto de artefactos. ¡Navegabilidad!|
-|2|**Código fuente**|Proyecto ordenado dentro de `/src`.|
-|3|**Diagramas**|Fuente en `/modelosUML`, exportado en `/images`, referenciado en los .md pertinentes.|
-|4|**Documentación adicional**|En `/docs`, en formato markdown (u otro formato, solo si se solicita explícitamente).|
+### Album – Cancion (Agregación)
+Un álbum incluye canciones.  
+Una canción puede existir sin álbum.
 
-> Cada reto indicará qué artefactos son obligatorios y cuáles opcionales.
+### Playlist – Cancion (Asociación)
+Una playlist contiene canciones.  
+Las canciones no dependen de la playlist para existir.
 
-## Criterios de valoración
+### Cancion – Artista (Asociación)
+Una canción pertenece a uno o varios artistas.  
+Un artista puede tener muchas canciones.
 
-- **Proceso de creación** — commits bien descritos, un cambio por commit.
-- **Código limpio** — innegociable.
-- **Adecuado reparto de responsabilidades** entre módulos.
-- **Aplicación de lo visto en la vida, en el grado, en la asignatura y en las clases**, en ese orden.
+### Artista – Album (Asociación)
+Un artista publica álbumes.
 
-## Tenga en cuenta
-
-- **Planificar** antes de codificar (diagramas, esquemas, pseudocódigo).
-- **Construir código que se autoexplique**.
-- **Usar los commits** para documentar el proceso.
