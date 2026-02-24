@@ -1,4 +1,4 @@
----
+
 # El extranjero — Albert Camus
 
 ## Resumen del fragmento
@@ -16,4 +16,4 @@ El árabe saca un cuchillo. En ese instante, la luz del sol golpea la hoja de ac
 Aturdido por el calor, agobiado por la luz y sintiendo que el sol lo empuja hacia adelante, Meursault aprieta el gatillo del revólver que lleva en el bolsillo.
 
 Dispara una vez, y tras una pausa, dispara cuatro veces más sobre el cuerpo inerte.
----
+
