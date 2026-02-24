@@ -101,3 +101,94 @@ class Entorno {
     }
 }
 
+```
+---
+
+## Iteración 2: Herencia y Usuarios
+
+
+
+### 1. Nuevas Relaciones Añadidas
+
+A la tabla de la Iteración 1, le sumamos las siguientes relaciones:
+
+| Relación | Clases | Justificación |
+| :--- | :--- | :--- |
+| **HERENCIA** | `Usuario` (Padre) <br> `UsuarioPremium`, `UsuarioGratuito` (Hijas) | Los usuarios premium y gratuitos comparten atributos básicos (nombre), pero tienen comportamientos específicos (el premium puede descargar, el gratuito escucha anuncios). |
+| **ASOCIACIÓN** | `Usuario` y `Playlist` | Un usuario puede crear y gestionar múltiples listas de reproducción. Es una relación estructural a largo plazo. |
+
+---
+
+### 2. Implementación en Código (Java) Actualizada
+
+Añadimos las nuevas clases al código base para reflejar la herencia y las nuevas interacciones:
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Cancion {
+    private String titulo;
+    private ArchivoAudio pista;
+    public Cancion(String titulo, byte[] datos) { this.titulo = titulo; this.pista = new ArchivoAudio(datos); }
+    public String getTitulo() { return titulo; }
+}
+class ArchivoAudio { private byte[] datos; public ArchivoAudio(byte[] datos) { this.datos = datos; } }
+class Album { /* ... */ }
+class Artista { /* ... */ }
+class Instrumento { /* ... */ }
+class Entorno { /* ... */ }
+
+
+abstract class Usuario {
+    protected String nombre;
+    protected List<Cancion> favoritos; 
+    
+    public Usuario(String nombre) {
+        this.nombre = nombre;
+        this.favoritos = new ArrayList<>();
+    }
+    
+    public void meGusta(Cancion cancion) {
+        favoritos.add(cancion);
+    }
+    
+    
+    public abstract void escucharCancion(Cancion cancion);
+}
+
+class UsuarioGratuito extends Usuario {
+    
+    public UsuarioGratuito(String nombre) {
+        super(nombre);
+    }
+    
+    @Override
+    public void escucharCancion(Cancion cancion) {
+        System.out.println("Reproduciendo anuncio de 30 segundos...");
+        System.out.println(this.nombre + " está escuchando: " + cancion.getTitulo());
+    }
+}
+
+class UsuarioPremium extends Usuario {
+    
+    public UsuarioPremium(String nombre) {
+        super(nombre);
+    }
+    
+    @Override
+    public void escucharCancion(Cancion cancion) {
+        System.out.println(this.nombre + " está escuchando en alta calidad: " + cancion.getTitulo());
+    }
+    
+    public void descargarCancion(Cancion cancion) {
+        System.out.println("Descargando " + cancion.getTitulo() + " para escuchar offline.");
+    }
+}
+
+```
+---
+
+### Diagrama de Relaciones de Clases
+
+![Diagrama UML](diagramaUML.png)
