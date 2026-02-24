@@ -4,7 +4,7 @@
 
 <div align=center>
 
-![Modelo de Decisión](/entregas/alvaradoCarlos/images/decisión_iteración2.svg)
+![Modelo de Decisión](/entregas/alvaradoCarlos/images/decisión_iteración3.svg)
 
 </div>
 
@@ -24,7 +24,9 @@
 | **Sentimiento --> Emoción** | [Composición](/entregas/alvaradoCarlos/src/Sentimiento.java) | Dependiente |
 | **Sentimiento --> Cuestionamiento** | [Agregación](/entregas/alvaradoCarlos/src/Sentimiento.java) | Independiente |  
 | **Consecuencia --> Emoción** | [Uso](/entregas/alvaradoCarlos/src/Consecuencia.java) | Independiente |  
-
+| **Entorno --> Cuestionamiento** | [Uso](/entregas/alvaradoCarlos/src/Entorno.java) | Independiente |  
+| **Entorno --> Alternativa** | [Uso](/entregas/alvaradoCarlos/src/Entorno.java) | Independiente |  
+| **Consecuencia --> Entorno** | [Asociación](/entregas/alvaradoCarlos/src/Consecuencia.java) | Independiente |  
 
 </div>
 
@@ -36,6 +38,7 @@ Aquí se encuentra la justificación detallada para cada decisión de diseño:
 - Justificación de Relaciones
     - [Primera Iteración](/entregas/alvaradoCarlos/docs/iteracion1/relaciones.md)
     - [Segunda Iteración](/entregas/alvaradoCarlos/docs/iteracion2/relaciones.md)
+    - [Tercera Iteración](/entregas/alvaradoCarlos/docs/iteracion3/relaciones.md)
 - [Implementación en Código](/entregas/alvaradoCarlos/src/Main.java)
 
 

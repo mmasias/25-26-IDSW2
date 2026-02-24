@@ -52,3 +52,9 @@ Es necesaria para procesar el output de la decisión. Una **Consecuencia** en t�
 
 > Ej: Hice tarea y ya es de noche y la consecuencia fue que no pude jugar en todo el día. Me siento triste, enfadado e impaciente. Esto me genera frustración, así que ahora voy a jugar toda la madrugada para reponer esas horas que perdí por decidir de esa forma.
 (Esta situación en concreto se refiere a la muy concurrida **Procrastinación por Venganza**)
+
+## Tercera Iteración
+
+### Entorno
+
+Es la entidad que representa las variables externas (sociales, económicas, físicas) que condicionan el proceso de decisión. Permite modelar la diferencia entre lo que la Conciencia quiere hacer (Sentimiento) y lo que puede hacer (Entorno). Actúa como un filtro. Puede inyectar un Cuestionamiento de forma obligatoria (un despido inyecta la duda "¿Cómo pago las deudas?") o filtrar qué Alternativas son viables en un momento dado.
