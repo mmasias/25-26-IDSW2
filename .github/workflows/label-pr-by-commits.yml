@@ -60,7 +60,7 @@ jobs:
               description = '⚠️ Trabajo parcialmente sostenido (3 días)';
             } else {
               label = 'no-sostenido';
-              color = '#d73a4a';
+              color = '#e99695';
               description = '❌ Trabajo no sostenido (1-2 días)';
             }
 
