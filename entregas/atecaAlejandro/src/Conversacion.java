@@ -12,8 +12,9 @@ public class Conversacion {
         this.historial = new ArrayList<>();
     }
 
-    public void registrarMensaje(String texto) {
-        Contenido contenido = new Palabras(texto);
+    public void realizarIntercambio(Persona emisor, String idea, Idioma idioma) {
+        Contenido contenido = emisor.emitirMensaje(idea, idioma);
+        
         Mensaje nuevoMsj = new Mensaje(contenido, this.medioActual);
         this.historial.add(nuevoMsj);
     }
