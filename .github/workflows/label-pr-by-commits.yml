@@ -26,14 +26,13 @@ jobs:
               per_page: 100
             });
 
-            // Extract unique dates from commits
             const dates = new Set();
             commits.forEach(commit => {
-              if (commit.committedDate) {
-                const date = new Date(commit.committedDate);
+              const rawDate = commit.commit.author.date || commit.commit.committer.date;
+              if (rawDate) {
+                const date = new Date(rawDate);
                 if (!isNaN(date.getTime())) {
-                  const dateStr = date.toISOString().split('T')[0]; // YYYY-MM-DD
-                  dates.add(dateStr);
+                  dates.add(date.toISOString().split('T')[0]);
                 }
               }
             });
@@ -43,30 +42,28 @@ jobs:
 
             console.log(`Total commits: ${totalCommits}, Unique days: ${uniqueDays}`);
 
-            // Determine label based on pattern
             let label;
             let color;
             let description;
 
             if (uniqueDays >= 6) {
               label = 'sostenido-excelente';
-              color = '0e8a16'; // green
+              color = '0e8a16';
               description = '✅ Trabajo diario constante (6+ días)';
             } else if (uniqueDays >= 4) {
               label = 'sostenido-bueno';
-              color = 'c2e0c6'; // light green
+              color = 'c2e0c6';
               description = '✅ Buen trabajo sostenido (4-5 días)';
             } else if (uniqueDays === 3) {
               label = 'sostenido-parcial';
-              color = 'ffcc33'; // yellow
+              color = 'ffcc33';
               description = '⚠️ Trabajo parcialmente sostenido (3 días)';
             } else {
               label = 'no-sostenido';
-              color = 'ff4444'; // red
+              color = 'ff4444';
               description = '❌ Trabajo no sostenido (1-2 días)';
             }
 
-            // Store for next step
             core.setOutput('label', label);
             core.setOutput('color', color);
             core.setOutput('description', description);
@@ -82,7 +79,6 @@ jobs:
             const uniqueDays = '${{ steps.get_commits.outputs.unique_days }}';
             const totalCommits = '${{ steps.get_commits.outputs.total_commits }}';
 
-            // Remove old labels if they exist
             const oldLabels = [
               'sostenido-excelente',
               'sostenido-bueno',
@@ -103,7 +99,6 @@ jobs:
               }
             }
 
-            // Add new label
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -111,13 +106,11 @@ jobs:
               labels: [label]
             });
 
-            // Post comment with analysis
             const comment = `## 📊 Análisis de patrón de commits\n\n` +
               `- **Total de commits:** ${totalCommits}\n` +
               `- **Días únicos de trabajo:** ${uniqueDays}\n` +
               `- **Etiqueta:** ${description}`;
 
-            // Find existing comment to edit or create new one
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
