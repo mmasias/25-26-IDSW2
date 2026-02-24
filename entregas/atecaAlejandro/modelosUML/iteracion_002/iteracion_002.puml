@@ -1,0 +1,20 @@
+@startuml
+hide members
+
+interface Contenido
+class Palabras
+class Silencio
+class Medio
+class Mensaje
+class Persona
+class Conversacion
+
+Palabras ..|> Contenido
+Silencio ..|> Contenido
+
+Conversacion o-- Persona
+Conversacion *-- Mensaje
+Mensaje *-- Contenido
+Mensaje --> Medio
+
+@enduml
