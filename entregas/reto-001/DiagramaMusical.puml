@@ -16,6 +16,9 @@ class Playlist {
 class Gira {
 }
 
+class Entrada {
+}
+
 class SelloDiscografico {
 }
 
@@ -34,12 +37,17 @@ class Instrumento {
 class Microfono {
 }
 
-Disco *-- Cancion 
+class Fan {
+}
+
+Disco *-- Cancion
+Gira *-- Entrada
 
 Playlist o-- Cancion
 Gira o-- Cantante
 SelloDiscografico o-- Disco
 PlataformaStreaming o-- Disco
+Fan o-- Disco
 
 Cantante -- Disco
 
@@ -50,5 +58,6 @@ Estudio ..> Cantante
 Estudio ..> Instrumento
 Estudio ..> IngenieroDeSonido
 IngenieroDeSonido ..> Instrumento
+Fan ..> Entrada
 
 @enduml

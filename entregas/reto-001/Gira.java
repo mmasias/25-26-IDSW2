@@ -1,6 +1,10 @@
 public class Gira {
     public Gira(String nombre) { }
 
-    // AGREGACIÓN: El artista no nace con la gira, se une a ella.
     public void agregarFecha(String ciudad, Cantante artista) { }
+
+    // Composición: La gira crea la entrada internamente
+    public void generarEntrada(double precio) {
+        // Internamente: new Entrada(precio, "ID-001");
+    }
 }
