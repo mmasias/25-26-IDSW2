@@ -19,7 +19,7 @@ Album --> Grabacion : incluye
 Artista --> Grabacion : graba
 Grabacion --> Cancion : corresponde a
 Artista --> Concierto : actua en
-Concierto *-- Entrada : emite
+Concierto *-- Entrada : dispone de
 Compositor --> Cancion : compone
 Artista --> Compositor : colabora con
 Cancion *-- Letra : tiene
