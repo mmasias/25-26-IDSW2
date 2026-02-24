@@ -3,7 +3,10 @@
     class Usuario {
     }
 
-    class Aplicación {
+    class Aplicacion {
+    }
+
+    class Playlist {
     }
 
     class Artista {
@@ -32,11 +35,17 @@
     Gira *-- Concierto
     
     Artista o-- Cancion
-    Artista o-- Gira
+    Artista o-- Album
     Album o-- Cancion
-    Aplicación o-- Album
     
-    Usuario --> Aplicación
+    Aplicacion o-- Cancion
+    Aplicacion o-- Playlist
+    Playlist o-- Cancion
+    
+    Artista o-- Gira
+    
+    Usuario --> Aplicacion
+    
     Artista ..> Instrumento
 
 @enduml
