@@ -1,0 +1,14 @@
+@startuml
+hide members
+
+interface Emisor
+interface Receptor
+class Persona
+class Conversacion
+
+Persona ..|> Emisor
+Persona ..|> Receptor
+
+Conversacion o--Persona
+
+@enduml
