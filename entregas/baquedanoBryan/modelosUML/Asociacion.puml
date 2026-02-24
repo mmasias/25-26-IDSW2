@@ -1,0 +1,17 @@
+@startuml
+title Bloque de Asociación
+
+class Decision
+class Motivacion
+class Consecuencia
+class Opcion
+
+Decision --> Motivacion : basada en
+note on link: **Asociación**: La decisión apunta a\nuna motivación como su causa justificativa.
+
+Decision --> Consecuencia : provoca
+note on link: **Asociación**: Existe una conexión de\nflujo; la decisión desencadena un nuevo objeto.
+
+Decision --> Opcion : elige
+note on link: **Asociación**: La decisión vincula el proceso\nmental con una de las opciones reales.
+@endum

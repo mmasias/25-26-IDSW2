@@ -1,0 +1,17 @@
+@startuml
+title Bloque de Uso
+
+class Analisis
+class Persona
+class Situacion
+class Decision
+
+Analisis ..> Persona : consulta
+note on link: **Uso**: El análisis necesita\n"consultar" a la persona, pero no la posee\nni la define permanentemente.
+
+Analisis ..> Situacion : evalúa
+note on link: **Uso**: Es una relación de uso temporal\npara procesar los datos del entorno.
+
+Analisis ..> Decision : genera
+note on link: **Uso**: El análisis es el origen lógico,\ninstancia o crea el objeto Decisión.
+@endum

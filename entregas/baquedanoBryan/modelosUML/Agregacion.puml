@@ -1,0 +1,14 @@
+@startuml
+title Bloque de Agregación
+
+class Persona
+class Capacidades
+class Contexto
+
+Persona o-- Capacidades
+note on link: **Agregación**: La persona posee capacidades,\npero estas pueden cambiar o ser externas\n(ej. herramientas o conocimientos adquiridos).
+
+Persona o-- Contexto
+note on link: **Agregación**: La persona está en un contexto,\npero el contexto preexiste y sobrevive\na la persona individual.
+@endum
+@enduml
