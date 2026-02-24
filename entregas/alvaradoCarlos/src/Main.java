@@ -38,7 +38,7 @@ public class Main {
             Emocion satisfaccion = exito.generarRespuestaEmocional("Satisfacción", 10);
             Emocion arrepentimiento = noSocializar.generarRespuestaEmocional("Arrepentimiento", 5);
 
-            System.out.println("\n--- Resumen de Estado Final ---");
+            System.out.println("--- Resumen de Estado Final ---");
             System.out.println("Sentimiento: " + ambicion.nombre());
             System.out.println("Impacto Emocional: " + satisfaccion.tipo() + " y " + arrepentimiento.tipo());
             System.out.println("Estado Final del Entorno Académico: " + contextoAcademico.estadoActual());
