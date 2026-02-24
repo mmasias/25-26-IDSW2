@@ -10,5 +10,5 @@ public class Partitura {
     }
 
     public void añadirNota(String tono) { notas.add(new Nota(tono)); }
-    public void añadirAcorde(Acorde a) { acordes.add(a); }
+    public void añadirAcorde(Acorde acorde) { acordes.add(acorde); }
 }

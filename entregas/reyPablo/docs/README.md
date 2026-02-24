@@ -1,5 +1,5 @@
 ## 1. IDENTIFICACIÓN DE CLASES
-Para la cuarta iteración se han identificado nuevas clases pricipales, que junto con las anteriores quedaría así:
+Se han identificado finalmente las siguientes clases para modelar el ecosistema de la música:
 - Letra
 - Nota
 - Acorde
@@ -32,6 +32,7 @@ Para la cuarta iteración se han identificado nuevas clases pricipales, que junt
 | | **Album** y **Cancion** | • El álbum agrupa canciones. Las canciones pueden existir fuera del álbum (como singles). |
 | | **Usuario** y **Playlist** | • El usuario accede a listas de reproducción pero si eliminas al usuario, las listas permanecen vivas. |
 | | **Cancion** e **Instrumento** | • Los instrumentos pueden existir independientemente de la canción. La canción solo los agrega. |
+| | **Estudio** e **Instrumento** | • El estudio provee los instrumentos como recursos disponibles, pero pueden existir independientemente del estudio. |
 | **ASOCIACIÓN**| **Artista** y **Album** | • Vínculo de autoría entre el artista y su discografía oficial completa. |
 | | **Artista** y **Cancion** | • Permite al artista gestionar "Singles" (canciones que no pertenecen a un álbum). |
 | | **Cancion** y **Genero** | • Clasificación duradera. La canción conoce su género (Rock, Pop, etc.). |
@@ -39,6 +40,7 @@ Para la cuarta iteración se han identificado nuevas clases pricipales, que junt
 | | **Cancion** y **Estudio** | • Relación de registro donde la canción mantiene una referencia histórica al estudio donde fue grabada. |
 | | **Partitura** y **Compás** | • El compás es una referencia métrica externa que la partitura mantiene para definir su ritmo. |
 | | **Productor** y **Artista** | • Relación profesional donde el productor gestiona y mantiene referencia a los artistas que dirige. |
+| | **Usuario** e **Artista** | • El usuario sigue al artista, es decir, es fan del artista |
 | **USO** | **Usuario** y **Reproductor** | • El usuario elige una canción sin usar una playlist que reproduce mediante el uso del reproductor. |
 | | **Reproductor** y **Playlist**| • El reproductor usa la playlist que contiene unas canciones y las carga. |
 | | **Reproductor** y **Cancion** | • El reproductor carga la canción temporalmente para procesar el sonido. |
