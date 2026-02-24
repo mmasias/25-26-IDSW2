@@ -6,7 +6,7 @@ He elegido este escenario porque, aunque es un dominio cotidiano que todos enten
 
 Y para modelar este dominio, he decidido abstraer el concepto de **Conversación** para que soporte tanto interacciones digitales (apps de mensajería) como físicas (encontrarse a un amigo en la calle, hablar en lenguaje de señas o usar código morse).
 
-## 1. Identificar
+## 1. Identificar (Análisis de Dominio)
 
 ### Entidades Seleccionadas
 
@@ -90,18 +90,180 @@ Y para modelar este dominio, he decidido abstraer el concepto de **Conversación
 * **Decisión de Diseño:** **Asociación simple.**
 * **Justificación:** El Mensaje simplemente referencia en qué formato está envuelto su contenido. Utilizamos la relación más débil posible (Asociación) y favorecemos la composición sobre la herencia (es decir, no creamos clases hijas como `MensajeDeTexto` o `MensajeDeAudio`) para no atar rígidamente el sistema y permitir que un intermediario pueda transformar formatos fácilmente en el futuro.
 
-## 3. Codigo java
+## 3. Código java
 
-*(Pendiente)*
+A continuación, presento la implementación en Java donde los constructores reflejan las decisiones de ciclo de vida y exclusividad tomadas en la parte 2 (relacionar).
+
+### 1. Entidades Independientes (Agregación / Asociación)
+Estas clases tienen un ciclo de vida independiente. Sus constructores son básicos y pueden instanciarse por sí solas.
+
+```java
+public class Participante {
+
+    private String nombre;
+
+    public Participante(String nombre) { 
+
+        this.nombre = nombre; 
+        
+        }
+
+    public String getNombre() {
+
+        return nombre; 
+        
+        }
+}
+
+public class Canal {
+
+    private String tipo; 
+
+    public Canal(String tipo) { 
+
+        this.tipo = tipo; 
+    }
+}
+
+public class Codigo {
+
+    private String idioma;
+
+    public Codigo(String idioma) { 
+        
+        this.idioma = idioma; 
+        
+        }
+
+}
+
+public class Formato {
+
+    private String tipo; 
+
+    public Formato(String tipo) { 
+
+        this.tipo = tipo; 
+        
+        }
+
+}
+```
+
+### 2. Entidades Dependientes (Composición)
+
+Aquí se refleja la decisión de **Composición**. Ni un `Mensaje` ni un `Adjunto` deben crearse "sueltos" en el sistema, por lo que sus constructores son protegidos y su ciclo de vida lo controlan otras clases.
+
+```java
+public class Adjunto {
+
+    private String contenido;
+
+    protected Adjunto(String contenido) 
+    { 
+        this.contenido = contenido; 
+    }
+}
+
+public class Mensaje {
+
+    private Participante emisor;
+    private Canal canal;
+    private Codigo codigo;
+    private Formato formato;
+    private String texto;
+    private Adjunto adjunto; 
+
+    protected Mensaje(Participante emisor, Canal canal, Codigo codigo, Formato formato, String texto) {
+
+        this.emisor = emisor;
+        this.canal = canal;
+        this.codigo = codigo;
+        this.formato = formato;
+        this.texto = texto;
+
+    }
+
+    public void agregarAdjunto(String contenidoAdjunto) {
+
+        this.adjunto = new Adjunt (contenidoAdjunto);
+    }
+}
+```
+
+### 3. Contenedor Principal: Conversacion
+
+Esta clase centraliza las reglas. Recibe a los participantes desde fuera (Agregación) pero es la única capaz de crear mensajes (Composición).
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Conversacion {
+
+    private List<Participante> participantes; 
+    private List<Mensaje> historial;          
+
+    public Conversacion(List<Participante> participantes) {
+
+        this.participantes = new ArrayList<>(participantes);
+        this.historial = new ArrayList<>();
+
+    }
+
+    public Mensaje emitirMensaje(Participante emisor, Canal canal, Codigo codigo, Formato formato, String texto) {
+
+        if (!participantes.contains(emisor)) {
+
+            throw new IllegalArgumentException("El participante no está en esta conversación.");
+        }
+
+        Mensaje nuevoMensaje = new Mensaje(emisor, canal, codigo, formato, texto);
+        this.historial.add(nuevoMensaje);
+        return nuevoMensaje;
+    }
+}
+```
+
+### 4. Ejecución del Escenario (Main)
+
+Para demostrar que las relaciones sobreviven a cambios de dominio, el `main` instancia dos situaciones usando las **mismas clases**: un chat asíncrono y un encuentro físico en la calle.
+
+```java
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Participante kelvia = new Participante("Kelvia");
+        Participante amigo = new Participante("Amigo");
+        Canal digital = new Canal("Internet");
+        Canal fisico = new Canal("Aire / Acústico");
+        Codigo espanol = new Codigo("Español");
+        Formato texto = new Formato("Texto escrito");
+        Formato audio = new Formato("Voz hablada");
+
+        Conversacion chatDigital = new Conversacion(Arrays.asList(kelvia, amigo));
+        Mensaje msg1 = chatDigital.emitirMensaje(kelvia, digital, espanol, texto, "¡Hola! Mira los apuntes");
+        msg1.agregarAdjunto("apuntes.pdf");
+
+        Conversacion charlaCalle = new Conversacion(Arrays.asList(kelvia, amigo));
+        Mensaje msg2 = charlaCalle.emitirMensaje(amigo, fisico, espanol, audio, "¡Qué casualidad verte!");
+        msg2.agregarAdjunto("Mostrando foto en la pantalla del móvil");
+
+    }
+}
+```
 
 ## 4. Cuestionar
 
-*(Ver si las relaciones elegidas sobreviven a cambios en las decisiones de dominio)*
+### ¿Las relaciones sobreviven a los cambios de dominio?
+
+**Sí.** Al separar `Canal`, `Código` y `Formato` del concepto de `Mensaje`, logré que la relación estricta de Composición (`Conversación` -> `Mensaje`) se mantenga intacta sin importar si la interacción es asíncrona por internet o en vivo y en directo en la calle. 
 
 ### Visión a futuro (Expansión del Dominio)
 
-Para poner a prueba la resistencia de este diseño en fases posteriores planteo:
+1. **Paso a Tiempo Real:** El modelo actual ya lo soporta conceptualmente (segundo scenario del Main). Para implementarlo a nivel de sistema, el `Canal` podría incorporar un socket abierto, pero la relación central no se rompe.
 
-1. **Paso a Tiempo Real:** Ampliar el modelo para incluir una conversación en vivo (llamada de voz/video). Esto servirá para evaluar si entidades como `Mensaje` deben evolucionar hacia `Streaming` o `Sesion`, alterando las reglas de temporalidad.
-
-2. **Traducción / Transformación:** Al haber identificado el `Formato` como una entidad o propiedad clave, el sistema debería ser capaz de soportar un intermediario que reciba un mensaje en código morse y lo entregue en texto, sin romper la relación de la `Conversación`.
+2. **Traducción / Transformación:** Al ser entidades separadas, es importante añadir un patrón *Interceptor* que tome un `Mensaje` en código "Morse", y cree una copia en la `Conversacion` con código "Texto", manteniendo la coherencia.
