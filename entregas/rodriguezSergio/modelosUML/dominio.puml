@@ -1,27 +1,25 @@
 @startuml Dominio
 hide empty members
 
-class Cancion {
-}
+class Album
+class Cancion
+class Playlist
+class Plataforma
+class Usuario
+class Artista
+class EstiloMusical
+class Reproductor
 
-class Artista {
-}
 
-class Album {
-}
+Album *-- Cancion
+Playlist o-- Cancion
+Plataforma o-- Album
+Plataforma o-- Playlist
+Usuario --> Artista : sigue a
+Usuario --> Usuario : amigos
+Artista --> EstiloMusical : se define por
+Cancion --> EstiloMusical : pertenece a
+Reproductor ..> Cancion : reproduce
+Usuario ..> Reproductor : interactúa con
 
-class Estilo {
-}
-
-class Instrumento {
-}
-
-class Plataforma {
-}
-
-class Usuario {
-}
-
-class ListaDeReproduccion {
-}
 @enduml
