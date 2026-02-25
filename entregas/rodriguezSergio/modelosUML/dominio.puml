@@ -1,43 +1,80 @@
-@startuml Dominio
-hide empty members
-
-abstract class Artista {
-  + nombre: String
-}
-class Banda {
-  + añoFormacion: Integer
-}
-class Solista {
-  + nombreReal: String
-}
-Artista <|-- Banda
-Artista <|-- Solista
+@startuml
+skinparam classAttributeIconSize 0
 
 class Usuario {
-  + id: String
+  - nickname: String
+  - email: String
+  - esPremium: Boolean
 }
-class UsuarioGratuito {
-  + anunciosEscuchados: Integer
+
+class Suscripcion {
+  - tipo: String
+  - precioMes: Double
 }
-class UsuarioPremium {
-  + fechaRenovacion: Date
+
+class Plataforma {
+  - nombre: String
+  - version: String
 }
-Usuario <|-- UsuarioGratuito
-Usuario <|-- UsuarioPremium
+
+class Album {
+  - titulo: String
+  - fechaLanzamiento: Date
+}
+
+class Playlist {
+  - nombre: String
+  - esPublica: Boolean
+}
+
+class Reproductor {
+  - volumen: Integer
+  - estado: String
+}
+
+class Artista {
+  - nombreArtistico: String
+  - oyentesMensuales: Integer
+}
 
 class Cancion {
-  + titulo: String
-}
-class Album {
-  + titulo: String
-}
-class Playlist {
-  + nombre: String
+  - titulo: String
+  - duracionSegundos: Integer
 }
 
-Album *-- Cancion
-Playlist o-- Cancion
+class EstiloMusical {
+  - nombre: String
+  - origenGeografico: String
+}
+
+class Instrumento {
+  - nombre: String
+  - familia: String
+}
+
+class Idioma {
+  - codigoIso: String
+  - nombre: String
+}
+
+' COMPOSICIONES (Rombo relleno)
+Usuario *-- Suscripcion 
+Album *-- Cancion 
+
+' AGREGACIONES (Rombo vacío)
+Plataforma o-- Album 
+Playlist o-- Cancion 
+Plataforma o-- Idioma 
+
+' ASOCIACIONES (Flecha normal)
 Usuario --> Artista : sigue a
 Usuario --> Usuario : amigos
+Artista --> EstiloMusical : género
+Artista --> Instrumento : toca
+Cancion --> EstiloMusical : pertenece a
+
+' USO / DEPENDENCIA (Línea punteada)
+Reproductor ..> Cancion : usa
+Usuario ..> Reproductor : usa
 
 @enduml

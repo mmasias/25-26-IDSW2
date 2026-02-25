@@ -1,9 +1,17 @@
 import java.util.List;
 
 public class Playlist {
-    private String nombre;
-    private Boolean esPublica;
+    public Playlist(String nombre, Boolean esPublica) { ... }
+
+    public String getNombre() { ... }
+    public void setNombre(String nombre) { ... }
+
+    public Boolean getEsPublica() { ... }
+    public void setEsPublica(Boolean esPublica) { ... }
+
+    public List<Cancion> getCanciones() { ... }
     
-    // AGREGACIÓN
-    private List<Cancion> canciones;
+    // Gestión de Agregación
+    public void agregarCancion(Cancion cancion) { ... }
+    public void quitarCancion(Cancion cancion) { ... }
 }
