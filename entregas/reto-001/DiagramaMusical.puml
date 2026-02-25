@@ -1,0 +1,63 @@
+@startuml
+title Ecosistema Musical - Relaciones
+
+class Cantante {
+}
+
+class Disco {
+}
+
+class Cancion {
+}
+
+class Playlist {
+}
+
+class Gira {
+}
+
+class Entrada {
+}
+
+class SelloDiscografico {
+}
+
+class PlataformaStreaming {
+}
+
+class Estudio {
+}
+
+class IngenieroDeSonido {
+}
+
+class Instrumento {
+}
+
+class Microfono {
+}
+
+class Fan {
+}
+
+Disco *-- Cancion
+Gira *-- Entrada
+
+Playlist o-- Cancion
+Gira o-- Cantante
+SelloDiscografico o-- Disco
+PlataformaStreaming o-- Disco
+Fan o-- Disco
+
+Cantante -- Disco
+
+Cantante ..> Instrumento
+Cantante ..> Microfono
+Cantante ..> Playlist
+Estudio ..> Cantante
+Estudio ..> Instrumento
+Estudio ..> IngenieroDeSonido
+IngenieroDeSonido ..> Instrumento
+Fan ..> Entrada
+
+@enduml
