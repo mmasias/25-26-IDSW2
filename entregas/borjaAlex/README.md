@@ -8,9 +8,9 @@ Se eligió modelar una **Conversación** porque es un concepto que tiene de todo
 
 ---
 
-## Diagrama de Dominio
+## Modelo de Dominio
 
-![Diagrama de Dominio](images/diagrama.png)
+![Modelo de Dominio](images/diagrama.png)
 
 > Fuente PlantUML: [`modelosUML/DiagramaDeDominio_Conversacion.puml`](modelosUML/DiagramaDeDominio_Conversacion.puml)
 

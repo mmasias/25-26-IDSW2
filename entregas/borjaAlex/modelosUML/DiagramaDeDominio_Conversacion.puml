@@ -1,6 +1,6 @@
 @startuml DiagramaDeDominio_Conversacion
 
-title Diagrama de Dominio - Conversación
+title Modelo de Dominio - Conversación
 
 hide methods
 hide attributes
