@@ -4,9 +4,7 @@
 
 - [Cómo surgió todo](./docs/investigación.md)
 - [Glosario](./docs/glosario.md)
-- [Justificación – Versión 1](./docs/version-1.md)
-- [Justificación – Versión 2](./docs/version-2.md)
-- [Justificación – Versión 3](./docs/version-3.md)
+- [Justificación](./docs/decision.md)
 
 ## Código Fuente
 
