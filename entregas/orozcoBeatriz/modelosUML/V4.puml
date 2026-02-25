@@ -1,0 +1,31 @@
+@startuml V4
+title Ecosistema musical
+
+class Artista
+class Cancion
+class Grabacion
+class Album
+class Discografica
+class Concierto
+class Entrada
+class Instrumento
+class Genero
+class Compositor
+class Letra
+
+Discografica --> Album : publica
+Artista --> Discografica : trabaja con
+Album --> Grabacion : incluye
+Artista --> Grabacion : graba
+Grabacion --> Cancion : corresponde a
+Artista --> Concierto : actua en
+Concierto *-- Entrada : dispone de
+Compositor --> Cancion : compone
+Artista --> Compositor : colabora con
+Cancion *-- Letra : tiene
+Cancion --> Genero : pertenece a
+Artista --> Genero : se especializa en
+Artista --> Instrumento : toca
+Grabacion ..> Instrumento : utiliza
+
+@enduml
