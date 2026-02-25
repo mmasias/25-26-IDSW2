@@ -1,15 +1,44 @@
 @startuml Dominio
-hide empty members
+class Album {
+  + titulo: String
+  + fechaLanzamiento: Date
+}
 
-class Album
-class Cancion
-class Playlist
-class Plataforma
-class Usuario
-class Artista
-class EstiloMusical
-class Reproductor
+class Cancion {
+  + titulo: String
+  + duracionSegundos: Integer
+}
 
+class Playlist {
+  + nombre: String
+  + esPublica: Boolean
+}
+
+class Plataforma {
+  + nombre: String
+  + version: String
+}
+
+class Usuario {
+  + nickname: String
+  + email: String
+  + esPremium: Boolean
+}
+
+class Artista {
+  + nombreArtistico: String
+  + oyentesMensuales: Integer
+}
+
+class EstiloMusical {
+  + nombre: String
+  + origenGeografico: String
+}
+
+class Reproductor {
+  + volumen: Integer
+  + estado: String
+}
 
 Album *-- Cancion
 Playlist o-- Cancion
@@ -17,9 +46,8 @@ Plataforma o-- Album
 Plataforma o-- Playlist
 Usuario --> Artista : sigue a
 Usuario --> Usuario : amigos
-Artista --> EstiloMusical : se define por
-Cancion --> EstiloMusical : pertenece a
-Reproductor ..> Cancion : reproduce
-Usuario ..> Reproductor : interactúa con
-
+Artista --> EstiloMusical
+Cancion --> EstiloMusical
+Reproductor ..> Cancion
+Usuario ..> Reproductor
 @enduml
