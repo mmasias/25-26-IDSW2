@@ -1,0 +1,33 @@
+@startuml modeloEcosistemaMusica
+
+class Letra {
+    - texto: String
+}
+
+class Cancion {
+    - titulo: String
+    - letra: Letra
+    + Cancion(titulo: String, textoLetra: String)
+}
+
+class Playlist {
+    - nombre: String
+    - canciones: List<Cancion>
+    + agregarCancion(c: Cancion)
+}
+
+class Usuario {
+    - nombre: String
+    - misPlaylists: List<Playlist>
+    + crearPlaylist(nombre: String)
+}
+
+class Reproductor {
+}
+
+Cancion *-- Letra : "Composición"
+Playlist o-- Cancion : "Agregación"
+Usuario --> Playlist : "Asociación"
+Reproductor ..> Cancion : "Uso"
+
+@enduml

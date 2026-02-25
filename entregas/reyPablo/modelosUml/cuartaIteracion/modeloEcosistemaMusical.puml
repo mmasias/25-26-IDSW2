@@ -1,0 +1,42 @@
+@startuml modeloEcosistemaMusical
+class Artista
+class Album
+class Cancion
+class Letra
+class Genero
+class Playlist
+class Usuario
+class Suscripcion
+class Reproductor
+
+class Productor
+class Estudio
+class Instrumento
+class Partitura
+class Nota
+class Acorde
+class Compás
+
+Usuario *-- Suscripcion : tiene
+Cancion *-- Letra : tiene
+Cancion *-- Partitura : tiene
+Partitura *-- Nota : contiene
+Partitura *-- Acorde : contiene
+Acorde *-- Nota : agrupa
+Album o-- Cancion : contiene
+Playlist o-- Cancion : contiene
+Usuario o-- Playlist : accede
+Cancion o-- Instrumento : utiliza
+Artista --> Album : publica
+Artista --> Cancion : publica
+Cancion --> Genero : pertenece
+Productor --> Cancion : supervisa
+Cancion --> Estudio : grabada en
+Partitura --> Compás : sigue
+Productor --> Artista : dirige
+Usuario ..> Reproductor : utiliza 
+Reproductor ..> Playlist : utiliza
+Reproductor ..> Cancion : utiliza
+Artista ..> Estudio : utiliza
+
+@enduml

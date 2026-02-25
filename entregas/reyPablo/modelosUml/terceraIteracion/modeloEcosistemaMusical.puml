@@ -1,0 +1,28 @@
+@startuml modeloEcosistemaMusical
+
+class Artista
+class Album
+class Cancion
+class Letra
+class Genero
+class Playlist
+class Usuario
+class Suscripcion
+class Reproductor
+
+Usuario *-- Suscripcion : tiene
+Cancion *-- Letra : tiene
+
+Album o-- Cancion : contiene
+Playlist o-- Cancion : contiene
+Usuario o-- Playlist : accede
+
+Artista --> Album : publica
+Artista --> Cancion : publica
+Cancion --> Genero : pertenece
+
+Usuario ..> Reproductor : utiliza 
+Reproductor ..> Playlist : utiliza
+Reproductor ..> Cancion : utiliza
+
+@enduml
