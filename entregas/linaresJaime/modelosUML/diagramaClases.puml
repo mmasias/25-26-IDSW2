@@ -2,39 +2,52 @@
 
 skinparam classAttributeIconSize 0
 
-enum EstatusSuscripcion {
+' --- ENUMS ---
+enum TipoSuscripcion {
 }
 
+enum EstadoSuscripcion {
+}
+
+' --- CLASES ---
 class Usuario {
 }
+
 class Suscripcion {
 }
+
 class Playlist {
 }
 
 class Artista {
 }
+
 class Album {
 }
+
 class Cancion {
 }
+
 class PistaAudio {
 }
 
 ' --- RELACIONES ---
 
 Usuario *-- Suscripcion
-Suscripcion --> EstatusSuscripcion
-
-Artista --> Album
-Artista --> Cancion
-Album o-- Cancion
-Cancion *-- PistaAudio
+Suscripcion --> TipoSuscripcion
+Suscripcion --> EstadoSuscripcion
 
 Usuario *-- Playlist
 Usuario --> Playlist
-
-Playlist o-- Cancion
 Usuario --> Artista
+Usuario --> Cancion
+
+Artista --> Album
+Artista --> Cancion
+
+Album o-- Cancion
+Playlist o-- Cancion
+
+Cancion *-- PistaAudio
 
 @enduml
