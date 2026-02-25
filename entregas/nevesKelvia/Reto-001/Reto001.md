@@ -267,3 +267,7 @@ public class Main {
 1. **Paso a Tiempo Real:** El modelo actual ya lo soporta conceptualmente (segundo scenario del Main). Para implementarlo a nivel de sistema, el `Canal` podría incorporar un socket abierto, pero la relación central no se rompe.
 
 2. **Traducción / Transformación:** Al ser entidades separadas, es importante añadir un patrón *Interceptor* que tome un `Mensaje` en código "Morse", y cree una copia en la `Conversacion` con código "Texto", manteniendo la coherencia.
+
+## Diagrama UML
+
+![](/entregas/nevesKelvia/Reto-001/digramaConversacion.svg)
