@@ -1,0 +1,2 @@
+class EP extends Album {
+}
