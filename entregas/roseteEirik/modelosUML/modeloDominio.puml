@@ -1,0 +1,54 @@
+@startuml modeloDominio
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+title Ecosistema Musical — Modelo de dominio
+
+class Cancion {
+    -String titulo
+    -int duracionSegundos
+    -String instrumento
+}
+
+class Partitura {
+    -Acorde[] acordes
+}
+
+class Acorde {
+    -String nombre
+}
+
+class Album {
+    -String titulo
+    -int anio
+    -Cancion[] canciones
+    -Edicion[] ediciones
+}
+
+class Edicion {
+    -String tipo
+    -double precio
+}
+
+class Musico {
+    -String nombre
+    -Cancion[] canciones
+    -String instrumento
+}
+
+class Grupo {
+    -String nombre
+    -Musico[] integrantes
+    -Album[] albumes
+}
+
+Cancion *-- Partitura : composición
+Partitura *-- Acorde : composición
+Album *-- Edicion : composición
+Album o-- Cancion : agregación
+Grupo o-- Musico : agregación
+Musico --> Cancion : asociación
+Grupo --> Album : asociación
+
+@enduml
