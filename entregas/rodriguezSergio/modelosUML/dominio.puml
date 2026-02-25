@@ -1,0 +1,27 @@
+@startuml Dominio
+hide empty members
+
+class Cancion {
+}
+
+class Artista {
+}
+
+class Album {
+}
+
+class Estilo {
+}
+
+class Instrumento {
+}
+
+class Plataforma {
+}
+
+class Usuario {
+}
+
+class ListaDeReproduccion {
+}
+@enduml
