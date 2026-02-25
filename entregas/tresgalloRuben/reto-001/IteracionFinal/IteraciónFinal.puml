@@ -1,0 +1,28 @@
+@startuml
+
+class Participante
+class Conversacion
+class Interaccion
+class Contexto
+class Tema
+class Silencio
+class Turno
+class Medio
+class Resultado
+class Intencion
+class Estado
+
+Interaccion <|-- Silencio
+Participante -- Conversacion
+Conversacion -- Contexto
+Conversacion o-- Tema
+Conversacion *-- Turno
+Participante --> Turno
+Turno o-- Interaccion
+Participante --> Interaccion
+Interaccion --> Participante
+Conversacion -- Medio
+Conversacion --> Resultado
+Interaccion o-- Intencion
+Conversacion -- Estado
+@enduml
