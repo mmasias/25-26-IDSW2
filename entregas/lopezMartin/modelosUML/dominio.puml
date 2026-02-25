@@ -1,0 +1,63 @@
+@startuml
+
+hide empty members
+
+class Persona{
+}
+
+class Nombre{
+}
+
+class Apellido{
+}
+
+class Edad{
+}
+
+class Genero{
+}
+
+class DNI{
+}
+
+class Religion{
+}
+
+class EducacionAcademica{
+}
+
+class Gusto{
+}
+
+class Caracter{
+}
+
+class Nacion{
+}
+
+class RasgoFisico{
+}
+
+class Idioma{
+}
+
+class Profesion{
+}
+
+Persona *-- Caracter
+Persona *-- Edad
+Persona o-- RasgoFisico
+Persona o-- Genero
+Persona o-- Nombre
+Persona o-- Apellido
+Persona o-- Nacion
+Persona o-- Idioma
+Persona o-- EducacionAcademica
+Persona o-- Persona : familia
+Persona --> Religion
+Persona --> Persona : amigos
+Persona --> Profesion
+Persona ..> Gusto
+Persona --> DNI
+
+@enduml

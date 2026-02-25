@@ -1,0 +1,51 @@
+# Modelado de la identidad de una persona
+
+Persona es la clase principal
+
+## Elementos que tienen relacion con la identidad de una `Persona`
+
+- Nombre
+- Apellido
+- Edad 
+- Género 
+- DNI
+- Religión 
+- Educación académica
+- Gusto
+- Carácter 
+- Nacion 
+- Rasgo físico
+- Idioma 
+- Persona(familiares y amigos) 
+- Profesión 
+
+<div align=center>
+
+|Relación|Clases|Justificación|
+|-|-|-|
+|COMPOSICIÓN|Persona y Carácter| El carácter de una persona muere si la persona muere. Su existencia queda a total dependencia de la persona.
+|COMPOSICIÓN|Persona y Edad| El tiempo de vida de una persona muere cuando esta muere.
+|AGREGACIÓN|Persona y Rasgo físico| Si la persona muere su combinación de rasgos físicos muere, pero los rasgos físicos por separado no.
+|AGREGACIÓN|Persona y Género| El género masculino o femenino existe independientemente de si la persona que lo posee muere.
+|AGREGACIÓN|Persona y Nombre| El nombre puede existir independientemente de la persona.
+|AGREGACIÓN|Persona y Apellido| El apellido puesde existir independientemente de la persona.
+|AGREGACIÓN|Persona y Nacion| La nación a la que una persona pertenece existe independientemente de esa persona.
+|AGREGACIÓN|Persona y Idioma| Los idiomas que una persona habla son independientes de la persona.
+|AGREGACIÓN|Persona y Educación académica| La educación académica que recibe una persona sigue existiendo aunque la persona muera.
+|AGREGACIÓN|Persona y Familia| La familia sigue existiendo a pesar de que la familia muera.
+|ASOCIACIÓN|Persona y Religión| La persona tiene una relación duradera con una religión y ambos existen independientemente.
+|ASOCIACIÓN|Persona y Amigos| La relación que una persona tiene con sus amigos tiene una cierta duración. Y ambas partes coexisten independientemente.
+|ASOCIACIÓN|Persona y Profesión| Una persona tiene una ocupación determinada durante un periodo de tiempo, pero puede cambiar.
+|USO|Persona y Gusto| La persona hace uso esporádico de sus gustos para interactuar con otras personas, objetos o actividades.
+|USO|Persona y DNI| El DNI es un documento que una persona usa esporádicamente para realizar ciertas funciones en una sociedad.
+
+</div>
+
+| Diagrama |
+|-------|
+| ![Diagrama](images/dominio.svg)|
+| [Código UML](modelosUML/dominio.puml)|
+
+| Traducción a código parcial |
+|-------|
+| [Código](src/)|
