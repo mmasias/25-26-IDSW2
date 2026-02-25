@@ -183,3 +183,6 @@ class Usuario {
 
 ```
 
+#### Diagrama de Clases con Atributos
+
+![Diagrama de clases](./modelosUML/diagramaClasesExtenso.svg)
