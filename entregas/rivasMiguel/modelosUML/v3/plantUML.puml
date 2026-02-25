@@ -1,0 +1,25 @@
+@startuml
+
+class Interaccion
+class Lenguaje
+class Medio
+class Mensaje
+class Retroalimentacion
+class Sujeto
+class Tema
+
+Mensaje -* Interaccion
+Interaccion -* Retroalimentacion
+Retroalimentacion -o Mensaje
+
+Tema -* Interaccion
+
+Sujeto -o Mensaje
+
+Sujeto ..> Medio
+Sujeto ..> Lenguaje
+
+Medio - Lenguaje
+
+
+@enduml

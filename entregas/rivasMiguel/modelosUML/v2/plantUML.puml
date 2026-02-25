@@ -1,0 +1,17 @@
+@startuml
+
+Interacción o- Sujeto
+
+Interacción *- Mensaje
+Interacción *- Retroalimentación
+Interacción *- Tema
+
+Retroalimentación *- Mensaje
+
+Sujeto --> Medio
+Sujeto --> Lenguaje
+
+Medio - Lenguaje
+
+
+@enduml
