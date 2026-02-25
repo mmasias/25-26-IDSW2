@@ -1,0 +1,15 @@
+@startuml
+title Bloque de Composición
+
+class Persona
+class Conciencia
+class Situacion
+class Opcion
+
+Persona *-- Conciencia
+note on link: **Composición**: La conciencia es intrínseca.\nNo se concibe una persona (en este modelo)\nsin su capacidad de ser consciente.
+
+Situacion *-- Opcion
+note on link: **Composición**: Una situación de decisión\nexiste solo porque existen opciones.\nSin opciones, no hay situación que analizar.
+@endum
+@enduml
