@@ -1,0 +1,68 @@
+@startuml delimitacionDominio
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title Ecosistema Musical — Delimitación del dominio
+
+package "Alcance del modelo" {
+
+    package "Producción Musical" {
+        class Cancion
+        class Acorde
+        class Partitura
+    }
+
+    package "Artistas" {
+        class Musico
+        class Grupo
+    }
+
+    package "Distribución" {
+        class Album
+        class Edicion
+    }
+}
+
+package "Fuera de alcance" {
+
+    package "Industria y negocio" {
+        class Discografica <<descartada>>
+        class Manager <<descartada>>
+        class AgenteBooking <<descartada>>
+    }
+
+    package "Plataformas digitales" {
+        class Spotify <<descartada>>
+        class YouTube <<descartada>>
+        class AppleMusic <<descartada>>
+    }
+
+    package "Infraestructura física" {
+        class EstudioGrabacion <<descartada>>
+        class SalaConciertos <<descartada>>
+        class TiendaInstrumentos <<descartada>>
+    }
+
+    package "Gestión de derechos" {
+        class SGAE <<descartada>>
+        class DerechosAutor <<descartada>>
+    }
+}
+
+note bottom of "Fuera de alcance"
+    **Criterio de exclusión:**
+    * Industria: Solo contratos burocráticos.
+    * Plataformas: Canales de uso puntual.
+    * Infraestructura: Meros escenarios físicos.
+    * Derechos: Dominio legal complejo.
+end note
+
+note bottom of "Alcance del modelo"
+    **Criterio de inclusión:**
+    * ADN creativo del sistema.
+    * Relaciones estructurales ricas.
+    * Variedad de tipos y relaciones por colaboración.
+end note
+
+@enduml

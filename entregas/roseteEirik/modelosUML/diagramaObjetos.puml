@@ -1,0 +1,177 @@
+@startuml diagramaObjetos
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+title Ecosistema Musical — Diagrama de objetos
+
+object "guitarrista : Musico" as guitarrista {
+    nombre = "Jimi Hendrix"
+    instrumento = "Guitarra"
+}
+
+object "bajista : Musico" as bajista {
+    nombre = "Noel Redding"
+    instrumento = "Bajo"
+}
+
+object "baterista : Musico" as baterista {
+    nombre = "Mitch Mitchell"
+    instrumento = "Bateria"
+}
+
+object "grupo : Grupo" as grupo {
+    nombre = "The Jimi Hendrix Experience"
+}
+
+object "cancion1 : Cancion" as cancion1 {
+    titulo = "Purple Haze"
+    duracionSegundos = 170
+}
+
+object "cancion2 : Cancion" as cancion2 {
+    titulo = "Hey Joe"
+    duracionSegundos = 210
+}
+
+object "cancion3 : Cancion" as cancion3 {
+    titulo = "The Wind Cries Mary"
+    duracionSegundos = 200
+}
+
+object "partitura1 : Partitura" as partitura1 {
+}
+
+object "partitura2 : Partitura" as partitura2 {
+}
+
+object "partitura3 : Partitura" as partitura3 {
+}
+
+object "acorde1a : Acorde" as acorde1a {
+    nombre = "Mi7"
+}
+
+object "acorde1b : Acorde" as acorde1b {
+    nombre = "Sol"
+}
+
+object "acorde1c : Acorde" as acorde1c {
+    nombre = "La"
+}
+
+object "acorde2a : Acorde" as acorde2a {
+    nombre = "Do"
+}
+
+object "acorde2b : Acorde" as acorde2b {
+    nombre = "Sol"
+}
+
+object "acorde2c : Acorde" as acorde2c {
+    nombre = "Re"
+}
+
+object "acorde2d : Acorde" as acorde2d {
+    nombre = "La"
+}
+
+object "acorde2e : Acorde" as acorde2e {
+    nombre = "Mi"
+}
+
+object "acorde3a : Acorde" as acorde3a {
+    nombre = "Fa"
+}
+
+object "acorde3b : Acorde" as acorde3b {
+    nombre = "Mib"
+}
+
+object "acorde3c : Acorde" as acorde3c {
+    nombre = "Sib"
+}
+
+object "acorde3d : Acorde" as acorde3d {
+    nombre = "Lab"
+}
+
+object "album : Album" as album {
+    titulo = "Are You Experienced"
+    anio = 1967
+}
+
+object "recopilatorio : Album" as recopilatorio {
+    titulo = "Greatest Hits"
+    anio = 1999
+}
+
+object "edicionVinilo : Edicion" as edicionVinilo {
+    tipo = "Vinilo"
+    precio = 29.99
+}
+
+object "edicionCD1 : Edicion" as edicionCD1 {
+    tipo = "CD"
+    precio = 14.99
+}
+
+object "edicionDigital1 : Edicion" as edicionDigital1 {
+    tipo = "Digital"
+    precio = 9.99
+}
+
+object "edicionCD2 : Edicion" as edicionCD2 {
+    tipo = "CD"
+    precio = 12.99
+}
+
+object "edicionDigital2 : Edicion" as edicionDigital2 {
+    tipo = "Digital"
+    precio = 7.99
+}
+
+grupo o-- guitarrista
+grupo o-- bajista
+grupo o-- baterista
+
+grupo --> album
+
+guitarrista --> cancion1
+guitarrista --> cancion2
+guitarrista --> cancion3
+
+cancion1 *-- partitura1
+cancion2 *-- partitura2
+cancion3 *-- partitura3
+
+partitura1 *-- acorde1a
+partitura1 *-- acorde1b
+partitura1 *-- acorde1c
+
+partitura2 *-- acorde2a
+partitura2 *-- acorde2b
+partitura2 *-- acorde2c
+partitura2 *-- acorde2d
+partitura2 *-- acorde2e
+
+partitura3 *-- acorde3a
+partitura3 *-- acorde3b
+partitura3 *-- acorde3c
+partitura3 *-- acorde3d
+
+album o-- cancion1
+album o-- cancion2
+album o-- cancion3
+
+album *-- edicionVinilo
+album *-- edicionCD1
+album *-- edicionDigital1
+
+recopilatorio o-- cancion1
+recopilatorio o-- cancion3
+
+recopilatorio *-- edicionCD2
+recopilatorio *-- edicionDigital2
+
+@enduml
