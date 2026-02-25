@@ -1,0 +1,70 @@
+@startuml
+
+class Persona {
+
+}
+
+class Identidad {
+
+}
+
+class Edad {
+
+}
+
+class ExperienciaVivida {
+
+}
+
+class Cultura {
+
+}
+
+class Familia {
+
+}
+
+class RelacionSocial {
+
+}
+
+class Emocion {
+
+}
+
+class Creencia {
+
+}
+
+class Tiempo {
+
+}
+
+class RasgoPersonalidad {
+
+}
+
+class Rol {
+
+}
+
+class Contexto {
+
+}
+
+Persona *-- Identidad
+Persona *-- Edad
+Persona *-- ExperienciaVivida
+ExperienciaVivida -- Identidad : construye
+Identidad o-- Cultura
+Identidad -- Familia
+Identidad -- RelacionSocial
+Identidad o-- Creencia
+Identidad ..> Emocion : experimenta
+ExperienciaVivida *-- Tiempo
+Identidad -- Tiempo : evoluciona
+Identidad o-- RasgoPersonalidad
+Persona o-- Rol
+ExperienciaVivida o-- Contexto
+
+@enduml
