@@ -1,0 +1,30 @@
+@startuml
+class Cuestionamiento
+
+class Alternativa
+
+class Eleccion
+
+class Consecuencia
+
+class Conciencia
+
+class Sentimiento
+
+class Emocion
+
+class Entorno
+
+Cuestionamiento o-- Alternativa
+Eleccion --> Alternativa
+Eleccion o-- Consecuencia
+Alternativa --> Consecuencia
+Conciencia ..> Cuestionamiento
+Conciencia --> Eleccion
+Sentimiento o-- Cuestionamiento
+Consecuencia ..> Emocion
+Sentimiento *-- Emocion
+Entorno ..> Cuestionamiento
+Entorno ..> Alternativa
+Consecuencia --> Entorno
+@enduml
