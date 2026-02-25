@@ -1,0 +1,31 @@
+@startuml
+
+class Usuario
+class Chat
+class Orquestador
+class MotorDecision {
+}
+class Explicador
+class Datos
+class Documentos
+class Workflow
+
+Usuario ..> Chat : inicia diálogo
+Chat ..> Orquestador : delega petición
+
+Orquestador *-- MotorDecision : contiene lógica de decisión
+
+MotorDecision --> Explicador : solicita explicación
+
+MotorDecision o-- Datos : consulta datos
+MotorDecision o-- Documentos : analiza documentos
+MotorDecision o-- Workflow : evalúa reglas
+
+note right of MotorDecision
+  Motor matemático:
+  logits=[2.3,1.1]
+  ↓ decide()
+  "Opción 1" (78%)
+end note
+
+@enduml
