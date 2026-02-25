@@ -1,0 +1,91 @@
+@startuml
+' Ocultamos los atributos y métodos para dejar solo los "cascarones"
+hide empty members
+skinparam roundcorner 5
+skinparam class {
+    BackgroundColor White
+    ArrowColor Black
+    BorderColor Black
+}
+
+' ==========================================
+' SECCIÓN DE ENUMS
+' ==========================================
+enum TipoSuscripcion
+enum TipoAlbum
+enum FamiliaInstrumento
+' NUEVOS ENUMS MUSICALES
+enum Tonalidad 
+enum FiguraMusical
+
+' ==========================================
+' SECCIÓN DE CLASES PRINCIPALES
+' ==========================================
+class Plataforma
+class Usuario
+class Artista
+class Album
+class Cancion
+class Playlist
+class Instrumento
+class Genero
+class Reproduccion
+class Estadistica
+
+' NUEVAS CLASES: TEORÍA MUSICAL
+class Partitura
+class Acorde
+class Nota
+
+' ==========================================
+' RELACIONES CON ENUMS (Uso / Dependencia)
+' ==========================================
+Usuario ..> TipoSuscripcion : usa >
+Album ..> TipoAlbum : usa >
+Instrumento ..> FamiliaInstrumento : pertenece a >
+
+' La partitura se escribe en una tonalidad (ej. Do Mayor)
+Partitura ..> Tonalidad : escrita en >
+' La nota tiene una duración matemática (ej. Blanca, Negra)
+Nota ..> FiguraMusical : representada como >
+
+' ==========================================
+' RELACIONES ENTRE CLASES (Negocio)
+' ==========================================
+Plataforma o-- Usuario : aloja >
+Plataforma o-- Artista : distribuye >
+
+Usuario *-- Playlist : posee >
+Playlist o-- Cancion : agrupa >
+Album *-- Cancion : contiene >
+
+Artista ..> Album : lanza >
+Artista ..> Cancion : interpreta >
+Cancion ..> Genero : clasificada en >
+Cancion ..> Instrumento : suena con >
+
+Usuario *-- Reproduccion : genera >
+Reproduccion ..> Cancion : escucha >
+Plataforma *-- Estadistica : calcula >
+Estadistica ..> Reproduccion : consolida >
+Estadistica ..> Artista : mide a >
+Estadistica ..> Cancion : mide a >
+
+' ==========================================
+' RAMIFICACIÓN: ESTRUCTURA MUSICAL (Composición de la Canción)
+' ==========================================
+
+' Composición: La partitura (arreglo específico) le pertenece a la canción.
+Cancion *-- Partitura : transcrita en >
+
+' Composición: La partitura es literalmente un conjunto ordenado de notas. 
+' Si destruyes la partitura, esas notas en ese orden específico desaparecen.
+Partitura *-- Nota : contiene >
+
+' Agregación: La partitura utiliza acordes (progresión armónica).
+Partitura o-- Acorde : progresa con >
+
+' Agregación: Un acorde es una agrupación simultánea de notas. 
+' (Las notas existen independientemente del acorde).
+Acorde o-- Nota : formado por >
+@enduml
