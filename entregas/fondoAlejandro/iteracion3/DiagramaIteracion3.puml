@@ -1,0 +1,61 @@
+@startuml
+
+class Cancion {
+
+}
+
+class Audio {
+
+}
+
+class Artista {
+
+}
+
+class Playlist {
+
+}
+
+class Album {
+
+}
+
+class Usuario {
+
+}
+
+class PlataformaMusical {
+
+}
+
+class Suscripcion {
+
+}
+
+class Genero {
+
+}
+
+class HistorialReproduccion {
+
+}
+
+class Reproductor {
+
+}
+
+' Relaciones
+Cancion *-- Audio
+Playlist o-- Cancion
+Album o-- Cancion
+Usuario o-- HistorialReproduccion
+
+Artista --> Cancion
+Usuario --> Playlist
+Usuario --> Suscripcion
+PlataformaMusical --> Usuario
+Cancion --> Genero
+
+Reproductor ..> Cancion
+
+@enduml
