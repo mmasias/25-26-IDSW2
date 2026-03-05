@@ -143,9 +143,9 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |**Nombrado**|Ejemplo +|
 ||Ejemplo -|Según el principio “Los nombres deben revelar su intención”, un buen nombre debe indicar qué hace el código. “AdivinadorNumeros” comunica claramente que el programa adivina números, mejorando la mantenibilidad porque cualquier desarrollador entiende el propósito sin leer el código|<a href="https://github.com/rubentresgallob/23-24-prg1/pull/1">PR correción</a>
 ||Ejemplo -| El principio “Nombres no ambiguos” indica evitar nombres que puedan interpretarse de múltiples maneras. caja podría ser el objeto caja, el número de caja, o los clientes en la caja; clientesPorCaja elimina la ambigüedad.| <a href="https://github.com/rubentresgallob/23-24-prg2/pull/1">PR correción</a>
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Comentarios**|Ejemplo +|No hay comentarios
+||Ejemplo -|No hay comentarios|PR corrección
+||Ejemplo -|No hay comentarios|PR corrección
 |**Formato**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
