@@ -38,12 +38,10 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Nombrado**|[archivos](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg2-examen-final-mariaarroniz/tree/main/src)|Se ve claramente qué es cada uno
+||[commit](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-parcial-mariaarroniz/commit/53d4759b17a854907dfb623b328cbe0dfe027472)|Nombre inapropiado para un examen|Repositorio de examen, no se puede pushear después de haberlo entregado
+||[language](https://github.com/mariaarroniz/23-24-prg2-ep/blob/main/ArronizMaria/Teacher.java)|Todo en inglés y de pronto castellano|[refactor: language changes on main and question classes](https://github.com/mariaarroniz/23-24-prg2-ep/pull/1) 
+|**Comentarios**|No encontrados|mmasias del pasado se avergonzaría si hubiera alguno||||||||
 |**Formato**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
