@@ -147,13 +147,13 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -|No hay comentarios|PR corrección
 ||Ejemplo -|No hay comentarios|PR corrección
 |**Formato**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Los System.out.println de las tarjetas no seguían la indentación del método main.  El principio de formato establece que “un código es una jerarquía” y “hay que sangrar las líneas de forma proporcional a su posición”. La indentación inconsistente dificulta ver la estructura lógica del código.|<a href="https://github.com/rubentresgallob/23-24-prg1/pull/1">PR correción</a>
 ||Ejemplo -||PR corrección
 |**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Recurso scanner sin cerrar, cerrado, estandar de gestión de recursos en java|<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
 ||Ejemplo -||PR corrección
 |**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|
 ||Ejemplo -||PR corrección
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
