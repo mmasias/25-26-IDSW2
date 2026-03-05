@@ -1,30 +1,62 @@
-# Bibliografía
+Nombrado:
+https://github.com/Camila-Lesly/23-24-prg1/blob/main/entregas/palmaCamila/reto004/Desconstruccion.java
+https://github.com/mmasias/23-24-prg1/pull/61/changes/BASE..b79982d33b42d7c3151890877209555a8dddb988#diff-5216a3e76402c1a23004053d1f30f5f911235b10470205f5a07eff711350d054 
+num1 era un nombre cuestionable
 
-> **NOTA:** He realizado una investigación profunda sobre cómo los ingenieros programan a los LLM para que sean capaces de proporcionar decisiones o simular procesos de decisión. Sin embargo, los dos recursos que más me llamaron la atención fueron estos, ya que están explicados por ingenieros de IBM. A partir de ellos me inspiré para elaborar los diagramas y tratar de recrear cómo un LLM toma esas decisiones y la complejidad que implica dicho proceso.
+Elige nombres descriptivos	Utiliza nombres que expresen claramente el propósito o función del elemento, evitando abreviaciones confusas o nombres genéricos.
 
-### [How AI Agents and Decision Agents Combine Rules & ML in Automation](https://www.youtube.com/watch?v=-mldKsBR0UM)
+Malo:
+https://github.com/Camila-Lesly/23-24-prg1/blob/main/entregas/palmaCamila/reto003/DevolverCambioMejorado.java
+https://github.com/Camila-Lesly/23-24-prg1/blob/main/entregas/palmaCamila/reto004/Desconstruccion.java
 
-La tesis central del video es que los LLM deben encargarse de las decisiones de contexto y orquestación, actuando como el enlace inteligente entre el usuario y los sistemas rígidos del banco. Específicamente, el video muestra cómo los LLM toman cuatro tipos de decisiones operativas:
+bueno:
+https://github.com/Camila-Lesly/23-24-prg2/blob/main/entregas/palmaCamila/reto-001/src/Main.java 
 
-### 1. Decidir la intención  
-El sistema utiliza un agente de chat para interpretar si el cliente solo tiene una duda sobre políticas o si quiere iniciar un proceso de compra real.
+malo y bueno 
+   final static int MINUTESOFDAY = 720;
+    final static double CLIENT_ARRIVAL_PROBABILITY = 0.4;
 
-### 2. Decidir la delegación (Orquestación)  
-Un "agente orquestador" decide qué herramienta especializada activar. Por ejemplo, si el cliente pregunta por requisitos, llama a un agente de políticas; si quiere el préstamo, llama a un agente de flujo de trabajo.
+Comentarios:
+https://github.com/Camila-Lesly/Hilos/blob/master/Servidor/Program.cs
+https://github.com/Camila-Lesly/API_EXPRESS/blob/main/modules/product/product.service.js
+https://github.com/Camila-Lesly/API_EXPRESS/blob/main/routes/index.js 
+https://github.com/Camila-Lesly/23-24-prg2-PPT/blob/main/entregas/palmaCamila/Jugador.java
 
-### 3. Decidir la relevancia de los datos  
-Mediante "agentes de ingestión", el LLM decide qué información es válida dentro de documentos desordenados (como un folleto de un barco con notas a mano) para estructurarla y enviarla al sistema.
 
-### 4. Decidir la explicación  
-Finalmente, un "agente explicador" traduce los registros técnicos y lógicos de por qué se pausó una solicitud (generados por un sistema de reglas) a un lenguaje natural que un humano pueda entender y resolver.
+Formato y consistencia 
+https://github.com/Camila-Lesly/23-24-prg2/blob/develop/entregas/palmaCamila/reto-001/src/Main.java
+https://github.com/Camila-Lesly/23-24-prg2/commits/c11c1d7806dab1765a4d179bd429b0df3e84cf8a/entregas/camilaPalma/reto-001/src/Main.java?browsing_rename_history=true&new_path=entregas/palmaCamila/reto-001/src/Main.java&original_branch=develop  commits raros
+https://github.com/Camila-Lesly/23-24-prg1/commits/main/entregas/palmaCamila/reto006/LecturaCartas.java
 
-### [Explainable AI: Demystifying AI Agents Decision-Making](https://www.youtube.com/watch?v=yJkCuEu3K68)  
+Estandares:
+https://github.com/Camila-Lesly/23-24-prg2/commits/c11c1d7806dab1765a4d179bd429b0df3e84cf8a/entregas/camilaPalma/reto-001/src/Main.java?browsing_rename_history=true&new_path=entregas/palmaCamila/reto-001/src/Main.java&original_branch=develop
 
-Un LLM "decide" eligiendo la ruta estadística más fuerte entre millones de opciones de texto. Como esto carece de juicio humano, dependemos de la IA Explicable (XAI) para auditar esa estadística, asegurando que sea precisa, rastreable y entendible.
 
-## 2think
+https://github.com/Camila-Lesly/24-25-EDA2/tree/reto-07/Entregas/palmaCamila 
+https://github.com/Camila-Lesly/23-24-prg1/blob/main/entregas/palmaCamila/reto003/DevolverCambioMejorado.java 
 
-¿Quién toma mejores decisiones en este campo: la IA o los humanos?
-[Humans vs. AI: Who should make the decision?](https://www.youtube.com/watch?v=8lo1s29ODj8)
+### Justificaciones
 
-Este video de IBM Technology aborda el dilema de delegar la toma de decisiones a algoritmos o mantenerla en manos humanas, utilizando como ejemplo un sistema de detección de fraudes bancarios. Se presentan gráficos de "curvas de rendimiento" que demuestran que la IA es superior cuando tiene alta certeza, mientras que los humanos son mejores gestionando la ambigüedad y el contexto
+|Categoría||Justificación||
+|-|-|-|-|
+|**Nombrado**|Ejemplo +|
+||Ejemplo -||PR corrección
+||Ejemplo -||PR corrección
+|**Comentarios**|Ejemplo +|
+||Ejemplo -||PR corrección
+||Ejemplo -||PR corrección
+|**Formato**|Ejemplo +|
+||Ejemplo -||PR corrección
+||Ejemplo -||PR corrección
+|**Estándares**|Ejemplo +|
+||Ejemplo -||PR corrección
+||Ejemplo -||PR corrección
+|**Consistencia**|Ejemplo +|
+||Ejemplo -||PR corrección
+||Ejemplo -||PR corrección
+|**Código muerto**|Ejemplo +|
+||Ejemplo -||PR corrección
+|**DRY**|Ejemplo +|
+||Ejemplo -||PR corrección
+|**YAGNI**|Ejemplo +|
+||Ejemplo -||PR corrección
