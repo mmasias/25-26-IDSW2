@@ -41,9 +41,9 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 |**Nombrado**|Ejemplo +|NumeroMayor: Cumple perfectamente. Usa nombres en su dominio (primerNumero, mayor), sin codificaciones, camelCase correcto y la clase es un sustantivo en PascalCase.|<a href="https://github.dev/marcosgutierrez6/23-24-prg1/blob/correccion/entregas/gutierrezMarcos/reto-001/NumeroMayor.java">Archivo</a>|
 ||Ejemplo -|Extras: Clase con nombre desinformativo que no indica su función. Usa nombres ambiguos (metrosBaja) y números para booleanos (int coche = 1).|<a href="https://github.com/marcosgutierrez6/23-24-prg1/pull/1">PR corección</a>
 ||Ejemplo -|DevolverCambio: El nombre de la clase es un verbo (acción) en lugar de un sustantivo (entidad). Además usa la variable cantidad (muy ambigua).|<a href="https://github.com/marcosgutierrez6/23-24-prg1/pull/1">PR corección</a>
-|**Comentarios**|Ejemplo +|||
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Comentarios**|Ejemplo +|No tengo comentarios||
+||Ejemplo -|No tengo comentarios|PR corrección
+||Ejemplo -|No tengo comentarios|PR corrección
 |**Formato**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
