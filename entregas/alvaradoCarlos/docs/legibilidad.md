@@ -141,16 +141,16 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |Categoría||Justificación||
 |-|-|-|-|
 |**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+||Ejemplo -|La palabra Simulador, la considero palabra "vacia" y redundante, ya que no es un simulador de una lista, esta clase es una implementación de una lista.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
+||Ejemplo -|La variable MULTIPLICADOR_ARRAY no sabemos exactamente que "multiplica" y como tal no hace una operación, es más correcto denominarla como un factor de crecimiento|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
 |**Comentarios**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Formato**|Ejemplo +|
+|**Formato**|Ejemplo +| 
+||[Ejemplo -]()|
 ||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**Estándares**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/Elemento.java#L1-L26)| Se puede ver claramente la utilización del estándar que hemos definido a lo largo de la carrera. Atributos privados, constructor simple y métodos que únicamente hacen lo que deben hacer. (Podría ser ejemplo positivo de YAGNI también)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/24-25-PRG2/blob/c11b921cd315988bcc6b9e679dca96cfa28a6152/entregas/alvaradoCarlos/reto001/Escalas.java#L8)|Mala práctica de formato, se prefieren líneas de como máximo 80/120 caracteres, y que siempre sean visibles sin necesidad de moverse en la pantalla.|[PR corrección](https://github.com/carlos-alvarado-25/24-25-PRG2/pull/1)
 ||Ejemplo -||PR corrección
 |**Consistencia**|Ejemplo +|
 ||Ejemplo -||PR corrección
@@ -160,4 +160,4 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |**DRY**|Ejemplo +|
 ||Ejemplo -||PR corrección
 |**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Método público innecesario para declarar el tamaño como constante, no es necesario implementarlo así, puede pasarse el tamaño directamente en el constructor. Además el método público getCapacidad() incumple YAGNI ya qué clases externas no necesitan saber que espacios le sobran al array.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/2)
