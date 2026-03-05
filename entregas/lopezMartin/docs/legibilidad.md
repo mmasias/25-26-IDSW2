@@ -141,7 +141,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |Categoría||Justificación||
 |-|-|-|-|
 |**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|El nombre de la variable `pila` es un nombre técnico pero no representa correctamente el dominio. Cambiándolo a `pilaOperadores` al leerlo vas a entender mejor el contenido, el comportamiento y el contexto de esta variable.|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA2/pull/1)
 ||Ejemplo -||PR corrección
 |**Comentarios**|Ejemplo +|
 ||Ejemplo -||PR corrección
