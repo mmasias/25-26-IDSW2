@@ -140,22 +140,22 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
+|**Nombrado**|Ejemplo +|Términos como `colaReproduccion`, `historial`, `cancionActual;`, `repetir`, `aleatorio`, `cancionesDisponibles`, `cancionEnHistorial` son correctos del dominio de un reproductor de música, facilitando su lectura. |[Enlace a código](https://github.com/martinlopez7/24-25-EDA1/blob/f15887def0eb106a1c84aa8a43834b3971a49823/entregas/lopezMartin/reto_004/Reproductor.java#L6-L12)|
 ||Ejemplo -|El nombre de la variable `pila` es un nombre técnico pero no representa correctamente el dominio. Cambiándolo a `pilaOperadores` al leerlo vas a entender mejor el contenido, el comportamiento y el contexto de esta variable.|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA2/pull/1)
-||Ejemplo -||PR corrección
+||Ejemplo -|La variable `tamaño` usa una tilde. No es estándar Java y rompe la nomenclatura estándar|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA2/pull/2)
 |**Comentarios**|No tengo comentarios en mi codigo debido a la insistencia del profesor desde el inicio, por lo que no puedo proporcionar ejemplos de buen o mal uso de ellos. |
-|**Formato**|Ejemplo +|
+|**Formato**|Ejemplo +|La variable `random` se declara justo antes de su utilización para minimizar su intervalo de vida |[Enlace a código](https://github.com/martinlopez7/24-25-EDA1/blob/f15887def0eb106a1c84aa8a43834b3971a49823/entregas/lopezMartin/reto_004/Reproductor.java#L40-L41)||
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
 |**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|En vez de tener dos métodos para marcar o desmarcar una cancion como favorita. El estandar de la comunidad aplicado a este caso es simplemente tener un metodo y pasar si es favorito o no por parámetro a la función.|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA1/pull/4)
 ||Ejemplo -||PR corrección
 |**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+||Ejemplo -|En `Cola` el campo `tamaño` se decrementa tanto en `dequeue()` como en `peek()`. La segunda es una inconsistencia lógica: peek no debería tener efectos en la variable ya que, como su propio nombre indica, es simplemente asomarse a la cima de la cola.|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA2/pull/3)
+||Ejemplo -|El comportamiento actual del método `isEmpty()` de la clase `List` es el contrario del esperado por lo que rompe la consistencia.|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA1/pull/3)
 |**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -| Las variables `memoriaKB` y `tasaHZ` recuerdo que estaban en el enunciado del ejercicio, y como no sabía si se iba a utilizar para algo lo añadí por si caso, pero evidentemente es un fragmentos de código injustificable que no está relacionado con el sistema|[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA2/pull/4)
 |**DRY**|Ejemplo +|
 ||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**YAGNI**|Ejemplo +|Las clases que relacionadas a las estructuras de datos utilizadas (`Cola`,`ListaCanciones`, `ListaPlaylist`, `NodoCancion`, `NodoPlaylist`) son completamente funcionales y no tienen características innecesarias. Todo lo que contienen es utilizado.|[Enlace a código](https://github.com/martinlopez7/24-25-EDA1/tree/main/entregas/lopezMartin/reto_004)|
+||Ejemplo -|El método `obtenerUltimo()` de la clase `List` no se utiliza y añade complejidad innecesaria al código |[Enlace PR Corrección](https://github.com/martinlopez7/24-25-EDA1/pull/2)
