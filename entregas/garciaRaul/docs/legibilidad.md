@@ -148,7 +148,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -|Mal uso de declaración de la variable billetes al principio del código, aumentando innecesariamente su intervalo de vida|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/4)
 ||Ejemplo -||PR corrección
 |**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Mal uso de los estándares de Java al intentar asignar un valor null a un tipo primitivo int. El estandar de la comunidad aplicado a este caso es simplemente poner un valor 0.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/6)
 ||Ejemplo -||PR corrección
 |**Consistencia**|Ejemplo +|
 ||Ejemplo -||PR corrección
