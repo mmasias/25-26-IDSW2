@@ -140,15 +140,15 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Formato**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Nombrado**|Ejemplo + [CompraDevolucion.java](https://github.com/Alejandrojuarez0105/23-24-prg1/blob/main/entregas/juarezAlejandro/reto-001/CompraDevolucion.java)| Las variables `billeteDe100` (y sus variables), `pendiente`, `dineroDado` y `precioProducto` son nombres descriptivos y revelan su intención. Se entiende el valor que almacena cada uno lo que hace que el cálculo de la devolución sea fácil de seguir
+||Ejemplo - [CompraDevolucion.java](https://github.com/Alejandrojuarez0105/23-24-prg1/blob/d460c60c7ee3aa0a740745861fce5e25237f8b9b/entregas/juarezAlejandro/reto-001/CompraDevolucion.java#L6)| Recuerdo que este fue el primer reto de toda la carrera y cuando pasé a presentar, el catedrático no entendía que era `vuelto`, debido a que así se le conoce únicamente en mi país, para hacerlo entendible para cualquier persona, debería de cambiarse a `devolución` |[PR corrección](https://github.com/Alejandrojuarez0105/23-24-prg1/pull/2)
+||Ejemplo - [Cliente.java](https://github.com/Alejandrojuarez0105/23-24-prg2/blob/main/entregas/juarezAlejandro/reto-003/Cliente.java#L1)| Los nombres de actualizar no coincidian `actualizaNombre` vs `actualizarDNI`, `actualizarNumero` ¿De qué? y faltaban los atributos que los métodos pretendían modificar |[PR corrección](https://github.com/Alejandrojuarez0105/23-24-prg2/pull/1)
+|**Comentarios**|Ejemplo + [Juego.java](https://github.com/Alejandrojuarez0105/23-24-prg2-PPT/blob/c5060164e1bbdc8f682972a0cd1315c19550b482/entregas/JuarezAlejandro/PPT/src/Juego.java#L9-L13)| Los comentarios de Piedra, Papel, Tijera, Lagarto y Spock me parecen bastante buenos para aclarar lo que describe cada una de las líneas
+||Ejemplo - [CompraDevolucionConScanner](https://github.com/Alejandrojuarez0105/23-24-prg1/blob/d460c60c7ee3aa0a740745861fce5e25237f8b9b/entregas/juarezAlejandro/reto-003/CompraDevolucionConScanner.java#L16-L19)|Se repetía lo que ya se ingresaba en las cantidades, siendo ruido visual. Y se aplica el principio de legibilidad aplicado. Si el código necesita un comentario que repite lo que ya es obvio, el comentario sobra|[PR corrección](https://github.com/Alejandrojuarez0105/23-24-prg1/pull/2)
+||Ejemplo - [SpotAlejo.java](https://github.com/Alejandrojuarez0105/24-25-EDA1/blob/72cdcd47575fb886fcee4d2bb8185e75091d1075/entregas/juarezAlejandro/reto-004/SpotAlejo.java#L34-L50)| ¿Porqué se deja un comentario de algo a mejorar en vez de hacerlo y ya? Se mejoró la encapsulación |[PR corrección](https://github.com/Alejandrojuarez0105/24-25-EDA1/pull/1)
+|**Formato**|Ejemplo + [List.java](https://github.com/Alejandrojuarez0105/24-25-EDA1/blob/main/entregas/juarezAlejandro/reto-002/List.java)| Me parece un buen ejemplo de formato debido a que cada método está separado por su funcionalidad (inserción, borrado y consulta)
+||Ejemplo - [Mundo.java](https://github.com/Alejandrojuarez0105/-23--24--PRG2-pyCCCF/blob/main/src/Mundo.java)|Se puede observar que es algo desagradable de ver, debido a que dentro del do-while no se cuenta con muchos espacios, por lo que puede llegar a marear. Además que en el constructor, no se seguir el estándar|[PR corrección](https://github.com/Alejandrojuarez0105/-23--24--PRG2-pyCCCF/pull/1)
+||Ejemplo - [Main.java](https://github.com/Alejandrojuarez0105/23-24-prg2-ep/blob/main/src/Main.java)|Se incumple el principio de *Las variables deberían declararse tan cerca comos sea posible de su utilización*|[PR corrección](https://github.com/Alejandrojuarez0105/23-24-prg2-ep/pull/1)
 |**Estándares**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
