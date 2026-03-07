@@ -140,24 +140,24 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
+|**Nombrado**|[Ejemplo +](https://github.com/carlos-alvarado-25/TicTacToe/blob/da696fed273dae9364967d81c78af0e260193bba/src/alvaradoCarlos/TresEnRaya.java#L1-L30)| Se puede ver claramente un buen nombrado de cada linea de código, jerarquizado y que va contando a través del mismo su función, que es iniciar el Juego del TicTacToe.
 ||Ejemplo -|La palabra Simulador, la considero palabra "vacia" y redundante, ya que no es un simulador de una lista, esta clase es una implementación de una lista.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
-||Ejemplo -|La variable MULTIPLICADOR_ARRAY no sabemos exactamente que "multiplica" y como tal no hace una operación, es más correcto denominarla como un factor de crecimiento|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
-|**Comentarios**|Ejemplo +|
+||Ejemplo -|La variable MULTIPLICADOR_ARRAY exactamente no "multiplica" y como tal no hace una operación, es más correcto denominarla como un factor de crecimiento|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
+|**Comentarios**|Ejemplo +| No he encontrado comentarios, siguiendo la teoría, apropiadamente utilizados.
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Formato**|Ejemplo +| 
-||[Ejemplo -]()|
-||Ejemplo -||PR corrección
-|**Estándares**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/Elemento.java#L1-L26)| Se puede ver claramente la utilización del estándar que hemos definido a lo largo de la carrera. Atributos privados, constructor simple y métodos que únicamente hacen lo que deben hacer. (Podría ser ejemplo positivo de YAGNI también)
+|**Formato**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L1-L14)| Tengo un uso correcto del formato de los atributos en esta implementación de una Monitora. Se puede ver claramente la sangría bien utilizada y jerarquizado de forma tal que sigue el formato definido que hemos tenido desde siempre. 
 ||[Ejemplo -](https://github.com/carlos-alvarado-25/24-25-PRG2/blob/c11b921cd315988bcc6b9e679dca96cfa28a6152/entregas/alvaradoCarlos/reto001/Escalas.java#L8)|Mala práctica de formato, se prefieren líneas de como máximo 80/120 caracteres, y que siempre sean visibles sin necesidad de moverse en la pantalla.|[PR corrección](https://github.com/carlos-alvarado-25/24-25-PRG2/pull/1)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L189-L259)| Estos métodos estan muy mezclados y rompen el flujo de lectura "de arriba hacia abajo" en general para toda la clase del formato que tenemos definido, ya que `separarNiñosMenoresDe5` llama a `reorganizarCola`, pero este último está definido justo después. Re organicé todos los métodos y reduje lo innecesario.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/4)
+|**Estándares**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/Elemento.java#L1-L26)| Se puede ver claramente la utilización del estándar que hemos definido a lo largo de la carrera. Atributos privados, constructor simple y métodos que únicamente hacen lo que deben hacer. (Podría ser ejemplo positivo de YAGNI también)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L227-L238)|Este método `reorganizarCola` toca lógica que no debería de sera accesible por la vista pública de la clase, por lo que incumple el estándar de encapsulamiento. Debe cambiarse a private|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/5)
 ||Ejemplo -||PR corrección
-|**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**Consistencia**|[Ejemplo +](https://github.com/carlos-alvarado-25/24-25-PRG2/blob/32be95fa2371c0b2b334052fc2d8bb760ac46d76/entregas/alvaradoCarlos/reto002/EscalasAcordes.java#L7-L20)| Se puede ver claramente como es consistente la asignación de la variable TONO y SEMITONO para construir la escala una única vez en todo el código.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L256)| Había aspectos notables de inconsistencia en esta clase, primero se usaba al mismo tiempo `monitora.nombre()` y `monitora.nombre`.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/6)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L71-L81)|Además, en la misma clase se imprimían listas de niños de tres formas distintas. He unificado la impresión de nombres y edades para que sea idéntica en `separarNiñosMenoresDe5`, `mostrarEstado` y `mostrarGrupo`. Y he unificado el uso de `reorganizarCola` y `reacomodarNiños` para que el vaciado de los arrays siga siempre el mismo patrón de limpieza.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/6)
+|**Código muerto**|Ejemplo +| No he encontrado código muerto en ninguno de mis repositorios utilizado "apropiadamente" o documentado. Únicamente clases sin implementar como los de debajo.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/TicTacToe/blob/da696fed273dae9364967d81c78af0e260193bba/src/alvaradoCarlos/Turno.java#L3-L15)|El código de esta clase `Turno` no esta implementado, es una clase fantasma a la cual se le llaman sus funciones desde otras clases pero no sirve de nada.|PR corrección
 |**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -|Método público innecesario para declarar el tamaño como constante, no es necesario implementarlo así, puede pasarse el tamaño directamente en el constructor. Además el método público getCapacidad() incumple YAGNI ya qué clases externas no necesitan saber que espacios le sobran al array.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/2)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/24-25-pyKlondike/blob/daaa7eee0492132ea0202f427ce87b7b9ae5cdee/src/alvaradoCarlos/Klondike.java#L263-L283)|Estamos duplicando la lógica de pedir una carta ya sea desde la columna o desde la fundación. Se debe centralizar la lógica de pedir para que únicamente los métodos de columna y fundación hagan una labor.|[PR corrección](https://github.com/carlos-alvarado-25/24-25-pyKlondike/pull/5)
+|**YAGNI**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/ArraySimulado.java#L1-L29)| En commits anteriores pude ver que agregué un par de métodos innecesarios dandome cuenta que en esta clase lo único que necesitaba era obtener, modificar y la capacidad del array. Así que pasé de programar de más a obtener una versión minimalista de la implementación.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/SimuladorLista.java#L5)|Atributo público innecesario para declarar el tamaño como constante, no es necesario implementarlo así, puede pasarse el tamaño directamente en el constructor. Además el método público `getCapacidad()` incumple YAGNI ya qué clases externas no necesitan saber que espacios le sobran al array y no es necesario en lo absoluto, no se usará.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/2)
