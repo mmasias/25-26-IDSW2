@@ -142,7 +142,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |-|-|-|-|
 |**Nombrado**|Ejemplo +|
 ||Ejemplo -|Al apuntar los dos scanner a un mismo flujo (System.in), no tiene sentido que se nombren de la manera scanner1 y scanner2. Además, los nombres de scanner1 y scanner2 no tienen un nombrado con significado propio. |[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/1)
-||Ejemplo -||PR corrección
+||Ejemplo -|Los términos numero1, numero2 y numero3 no tienen significado laro, Al cambiarlo por numeroCentenas, numeroDecenas y numeroUnidades al leerlo vas a entender mejor el contenido, el comportamiento y el contexto de las variable.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/1)
 |**Comentarios**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
