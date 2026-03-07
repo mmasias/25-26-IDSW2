@@ -141,7 +141,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |Categoría||Justificación||
 |-|-|-|-|
 |**Nombrado**|Ejemplo +|
-||Ejemplo -|Al apuntar los dos scanner a un mismo flujo (System.in), no tiene sentido que se nombren de la manera scanner1 y scanner2. Además, los nombres de scanner1 y scanner2 no tienen un nombrado con significado propio. |[Enlace PR corrección](https://github.com/xImRaul/23-24-prg1/blob/858887a791a45e3d40c45baaccee936e45bae3fe/entregas/garciaRaul/reto-003/Reto3.java#L16-L20)
+||Ejemplo -|Al apuntar los dos scanner a un mismo flujo (System.in), no tiene sentido que se nombren de la manera scanner1 y scanner2. Además, los nombres de scanner1 y scanner2 no tienen un nombrado con significado propio. |[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/1)
 ||Ejemplo -||PR corrección
 |**Comentarios**|Ejemplo +|
 ||Ejemplo -||PR corrección
