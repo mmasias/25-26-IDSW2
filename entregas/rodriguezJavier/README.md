@@ -9,7 +9,7 @@
 |Ejemplo -|Eliminé todos los comentarios que explicaban código que se entendía a simple vista y no aportaba nada y mejoré un comentario sobre el bucle del tiempo para decir algo mas concreto y simplificado|<a href="https://github.com/jerdier/23-24-prg2/pull/1">PR corrección</a>|
 |Ejemplo -|No he encontrado mas códigos con comentarios en varios de mis forks incluidas otras asignaturas|PR corrección|
 |**Formato**|
-|Ejemplo +|||
+|Ejemplo +|Indentación correcta en el código|<a href="https://github.com/jerdier/23-24-prg2/blob/main/entregas/RodriguezJavier/Reto-001/Cajeros.java">Archivo</a>|
 |Ejemplo -||PR corrección|
 |Ejemplo -||PR corrección|
 |**Estándares**|
