@@ -40,15 +40,15 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 |-|-|-|-|
 |**Nombrado**|[archivos](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg2-examen-final-mariaarroniz/tree/main/src)|Se ve claramente qué es cada uno
 ||[commit](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-parcial-mariaarroniz/commit/53d4759b17a854907dfb623b328cbe0dfe027472)|Nombre inapropiado para un examen|Repositorio de examen, no se puede pushear después de haberlo entregado
-||[language](https://github.com/mariaarroniz/23-24-prg2-ep/blob/main/ArronizMaria/Teacher.java)|Todo en inglés y de pronto castellano|[refactor: language changes on main and question classes](https://github.com/mariaarroniz/23-24-prg2-ep/pull/1) 
-|**Comentarios**|No encontrados|mmasias del pasado se avergonzaría si hubiera alguno||||||||
-|**Formato**|Ejemplo +|
+||[idiomas](https://github.com/mariaarroniz/23-24-prg2-ep/blob/main/ArronizMaria/Teacher.java)|Todo en inglés y de pronto nombres de variables y atributo de pregunta en castellano|[refactor: language changes on main and question classes](https://github.com/mariaarroniz/23-24-prg2-ep/pull/1) 
+|**Comentarios**|No encontrados|Mmasias del pasado se avergonzaría si hubiera alguno||||||||
+|**Formato**|[lista](https://github.com/mariaarroniz/24-25-EDA1/blob/main/entregas/mariaArroniz/10-07/List.java)|Los metodos ordenados
+||[números](https://github.com/mariaarroniz/23-24-prg1/blob/main/entregas/arronizMaria/Entrega-001/Reto004/reto004.java)|Espacios innecesarios|[refactor: less spaces better view](https://github.com/mariaarroniz/23-24-prg1/pull/1)
+||[library](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/2.Segundo%20cuatrimestre/Biblioteca/Library.java)|Falta mucho código|[refactor: changes in every class](https://github.com/mariaarroniz/Old-code/pull/1)
+|**Estándares**||
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Consistencia**|Ejemplo +|
+|**Consistencia**|[viaje de Marco](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/1.Primer%20cuatrimestre/ViajeDeMarco/ViajeDeMarco1.java)|Cada método de probabilidades es igual, más legible el código
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
 |**Código muerto**|Ejemplo +|
