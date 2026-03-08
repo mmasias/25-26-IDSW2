@@ -140,7 +140,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
+|**Nombrado**|Ejemplo +|  Términos como titulo, artista, duracion, favorita, son correctos del dominio de una canción, facilitando su lectura. |[Enlace a código](https://github.com/xImRaul/24-25-EDA1/blob/ada07e89535ab1fbc062ee34cfda70435950e826/entregas/garciaRaul/Reto-004/Cancion.java#L2-L5)
 ||Ejemplo -|Al apuntar los dos scanner a un mismo flujo (System.in), no tiene sentido que se nombren de la manera scanner1 y scanner2. Además, los nombres de scanner1 y scanner2 no tienen un nombrado con significado propio. |[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/1)
 ||Ejemplo -|Los términos numero1, numero2 y numero3 no tienen significado laro, Al cambiarlo por numeroCentenas, numeroDecenas y numeroUnidades al leerlo vas a entender mejor el contenido, el comportamiento y el contexto de las variable.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/3)
 |**Comentarios**|No tengo comentarios en mis scodigo debido a la insistencia del profesor desde el inicio, por lo que no puedo proporcionar ejemplos de buen o mal uso de ellos.|
