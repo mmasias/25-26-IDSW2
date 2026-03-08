@@ -21,9 +21,10 @@
 |**Código muerto**|[Ejemplo +](https://github.com/beatriizorozco/24-25-PRG2/blob/462cc50efc42469abbccfd2a0568627cac55cd23/entregas/orozcoBeatriz/reto004/Fecha.java#L22)|Aquí se usa el método compareTo, así que no es código muerto porque sí se llama desde otros métodos.
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Caracol.java#L69)|Hay un if vacío que no hace nada, así que ese bloque sobra y se puede considerar código muerto.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/8/changes)
 |**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
+||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Halloween.java#L37)|Antes se repetía el mismo bloque de código para cada niño. Se ha sacado esa lógica a un método (repartirCaramelos) y se usa un bucle para evitar repetir código.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/9/changes)
 |**YAGNI**|Ejemplo +|
 ||Ejemplo -||PR corrección
+
 
 
 
