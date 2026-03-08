@@ -151,13 +151,13 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -||PR corrección
 |**Estándares**|Ejemplo +|
 ||Ejemplo -|Recurso scanner sin cerrar, cerrado, estandar de gestión de recursos en java|<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
-||Ejemplo -||PR corrección
+||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
 |**Consistencia**|Ejemplo +|
-||Ejemplo -|
-||Ejemplo -||PR corrección
+||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
+||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
 |**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|List.java contenía el método findNode(String value) que no era utilizado por ninguna clase cliente.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 |**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|En Main.java, cada opción del switch repite la lógica de scanner.nextInt(), validación de rangos y mensajes de error.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 |**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
