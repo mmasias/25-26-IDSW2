@@ -149,9 +149,9 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -||PR corrección
 |**Estándares**|Ejemplo +|
 ||Ejemplo -|Mal uso de los estándares de Java al intentar asignar un valor null a un tipo primitivo int. El estandar de la comunidad aplicado a este caso es simplemente poner un valor 0.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/6)
-||Ejemplo -||PR corrección
+||Ejemplo -|El uso de la variable añadirClientes no es incorrecta del todo ya que java soporta unicode, pero se considera una mala práctica profesional. Para ello, la he cambiado por agregarClientes|[Enlace PR corrección](https://github.com/ximraul/24-25-eda1/pull/2)
 |**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Mal uso del principio de Consistencia. Se espera que, si has decidido gestionar el random mediante un objeto, se haga de la misma manera en todos los métodos. Además, crear múltiples instancias de Random innecesariamente es una mala práctica de rendimiento.|[Enlace PR corrección](https://github.com/ximraul/24-25-eda1/pull/1)
 ||Ejemplo -||PR corrección
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
