@@ -156,6 +156,6 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
 |**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Repetición del mismo proceso para los billetes una y otra vez para cada denominación. Para ello, se usa  un array con los valores de los billetes y un bucle para procesarlos todos con la misma lógica.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/7)
 |**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|El programa solo necesita mostrar el resultado, no guardarlo. Al crear la variable String mayor_Menor , estás ocupando un espacio en la memoria innecesario. Para solucionarlo, simplemente se pone la lógica dentro del System.out.println.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/8)
