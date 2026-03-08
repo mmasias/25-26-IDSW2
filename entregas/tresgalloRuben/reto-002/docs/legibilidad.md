@@ -140,24 +140,24 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
+|**Nombrado**|Ejemplo +| Ticket.java: numeroFila, numeroSala, numeroAsiento. Los nombres son sustantivos claros que describen perfectamente el dato, sin abreviaturas confusas. | <a href="https://github.com/rubentresgallob/23-24-prg2/blob/main/entregas/tresgalloRuben/reto-003/Ticket.java">Archivo</a>
 ||Ejemplo -|Según el principio “Los nombres deben revelar su intención”, un buen nombre debe indicar qué hace el código. “AdivinadorNumeros” comunica claramente que el programa adivina números, mejorando la mantenibilidad porque cualquier desarrollador entiende el propósito sin leer el código|<a href="https://github.com/rubentresgallob/23-24-prg1/pull/1">PR correción</a>
 ||Ejemplo -| El principio “Nombres no ambiguos” indica evitar nombres que puedan interpretarse de múltiples maneras. caja podría ser el objeto caja, el número de caja, o los clientes en la caja; clientesPorCaja elimina la ambigüedad.| <a href="https://github.com/rubentresgallob/23-24-prg2/pull/1">PR correción</a>
 |**Comentarios**|Ejemplo +|No hay comentarios
-||Ejemplo -|No hay comentarios|PR corrección
-||Ejemplo -|No hay comentarios|PR corrección
-|**Formato**|Ejemplo +|
+||Ejemplo -|No hay comentarios|
+||Ejemplo -|No hay comentarios|
+|**Formato**|Ejemplo +| Ejemplo.java: Sangría y espacios lógicos. El uso de espacios en blanco entre grupos lógicos hace visible la jerarquía del código.| <a href="https://github.com/rubentresgallob/24-25-EDA1/blob/main/entregas/tresgalloRuben/reto0710/Ejemplo.java">Archivo</a>
 ||Ejemplo -|Los System.out.println de las tarjetas no seguían la indentación del método main.  El principio de formato establece que “un código es una jerarquía” y “hay que sangrar las líneas de forma proporcional a su posición”. La indentación inconsistente dificulta ver la estructura lógica del código.|<a href="https://github.com/rubentresgallob/23-24-prg1/pull/1">PR correción</a>
 ||Ejemplo -|Ejemplo.java presentaba una estructura donde la jerarquía no era clara y el espaciado entre métodos era inconsistente.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
-|**Estándares**|Ejemplo +|
+|**Estándares**|Ejemplo +| Ticket.java: Constructor Ticket(). Sigue la convención estándar de Java donde el constructor coincide con el nombre de la clase.|  <a href="https://github.com/rubentresgallob/23-24-prg2/blob/main/entregas/tresgalloRuben/reto-003/Ticket.java">Archivo</a>
 ||Ejemplo -|Recurso scanner sin cerrar, cerrado, estandar de gestión de recursos en java|<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
 ||Ejemplo -|En Cine.java, el constructor contiene declaraciones de métodos (public boolean abierto()) y parámetros mal definidos.|<a href="https://github.com/rubentresgallob/23-24-prg2/pull/1">PR correción</a>
-|**Consistencia**|Ejemplo +|
+|**Consistencia**|Ejemplo +| Node.java: getValue(), setValue(), getNext(), setNext(). Sigue un patrón uniforme de acceso a datos (get/set). Es predecible y fácil de usar.|  <a href="https://github.com/rubentresgallob/24-25-EDA1/blob/main/entregas/tresgalloRuben/reto0710/Node.java">Archivo</a>
 ||Ejemplo -|En List.java y Node.java, algunos métodos usan getValue() pero otros acceden directamente a atributos o usan nombres distintos.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 ||Ejemplo -|En List.java, tenemos insertEnd y insertFront, pero luego deleteEnd y deleteFront. Sin embargo, en Main.java se usan nombres distintos para acciones de añadir.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
-|**Código muerto**|Ejemplo +|
+|**Código muerto**|Ejemplo +| List.java: Eliminación de findNode(). Al eliminar métodos no utilizados, evitamos que el código se anquilose y sea difícil de entender. |  <a href="https://github.com/rubentresgallob/24-25-EDA1/blob/main/entregas/tresgalloRuben/reto0710/List.java">Archivo</a>
 ||Ejemplo -|List.java contenía el método findNode(String value) que no era utilizado por ninguna clase cliente.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
-|**DRY**|Ejemplo +|
+|**DRY**|Ejemplo +| List.java: isEmpty() usa size. Centraliza la lógica de validación en lugar de repetir this.size == 0 en cada método.|  <a href="https://github.com/rubentresgallob/24-25-EDA1/blob/main/entregas/tresgalloRuben/reto0710/List.java">Archivo</a>
 ||Ejemplo -|En Main.java, cada opción del switch repite la lógica de scanner.nextInt(), validación de rangos y mensajes de error.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
-|**YAGNI**|Ejemplo +|
+|**YAGNI**|Ejemplo +| La clase List implementa exactamente las operaciones necesarias para gestionar una lista enlazada simple. No incluye métodos complejos de ordenamiento, búsqueda avanzada o iteradores complejos que no se están utilizando en el Main o en Ejemplo.java. |  <a href="https://github.com/rubentresgallob/24-25-EDA1/blob/main/entregas/tresgalloRuben/reto0710/List.java">Archivo</a>
 ||Ejemplo -|No es necesario tener métodos como eliminarCancionDeFavoritos o mostrarHistorial si el Main nunca los llama. Ni tener un atributo cancionAnterior en Reproductor si la lógica de "anterior" no está implementada o no se usa.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
