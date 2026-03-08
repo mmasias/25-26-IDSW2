@@ -45,15 +45,15 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 |**Formato**|[lista](https://github.com/mariaarroniz/24-25-EDA1/blob/main/entregas/mariaArroniz/10-07/List.java)|Los metodos ordenados
 ||[números](https://github.com/mariaarroniz/23-24-prg1/blob/main/entregas/arronizMaria/Entrega-001/Reto004/reto004.java)|Espacios innecesarios|[refactor: less spaces better view](https://github.com/mariaarroniz/23-24-prg1/pull/1)
 ||[library](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/2.Segundo%20cuatrimestre/Biblioteca/Library.java)|Falta mucho código|[refactor: changes in every class](https://github.com/mariaarroniz/Old-code/pull/1)
-|**Estándares**||
+|**Estándares**|[tarjetas](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/1.Primer%20cuatrimestre/Entrega-002/Reto-006/Tarjetas.java)|Asquerosamente clara la estructura que toma la operacion de cada tarjeta
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
 |**Consistencia**|[viaje de Marco](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/1.Primer%20cuatrimestre/ViajeDeMarco/ViajeDeMarco1.java)|Cada método de probabilidades es igual, más legible el código
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Código muerto**|[inundacion](https://github.com/mariaarroniz/Old-code/blob/main/2.Segundo/2.Segundo%20cuatrimestre/RellenoInundacion.java)|Bloques de código comentado pero eran otras formas de hacer lo mismo
+|**Código muerto**|[inundacion](https://github.com/mariaarroniz/Old-code/blob/main/2.Segundo/2.Segundo%20cuatrimestre/RellenoInundacion.java)|Bloques de código comentado... pero eran otras formas de hacer lo mismo
 ||[restaurante](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/2.Segundo%20cuatrimestre/Restaurante/Restaurante.java)|Métodos que ni existen, main?...|[refactor: added 'simulacion' and all the classes fixed](https://github.com/mariaarroniz/Old-code/pull/2)
-|**DRY**|Ejemplo +|
+|**DRY**|[manolito](https://github.com/mariaarroniz/Old-code/tree/main/1.Primero/1.Primer%20cuatrimestre/Manolito)|Re-diseño del código para hacerlo funcional
 ||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**YAGNI**|[inundacion](https://github.com/mariaarroniz/Old-code/blob/main/2.Segundo/2.Segundo%20cuatrimestre/RellenoInundacion.java)|Si quieres usas ese código o no
+||[snailGame](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/1.Primer%20cuatrimestre/SnailGame/SnailGame.java)|No necesitas parar en cada dia que pasa, puede ser solo en eventos importantes|[refactor: changed pauses](https://github.com/mariaarroniz/Old-code/pull/3)
