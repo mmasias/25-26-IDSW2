@@ -153,8 +153,8 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -|Recurso scanner sin cerrar, cerrado, estandar de gestión de recursos en java|<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
 ||Ejemplo -|En Cine.java, el constructor contiene declaraciones de métodos (public boolean abierto()) y parámetros mal definidos.|<a href="https://github.com/rubentresgallob/23-24-prg2/pull/1">PR correción</a>
 |**Consistencia**|Ejemplo +|
-||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
-||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
+||Ejemplo -|En List.java y Node.java, algunos métodos usan getValue() pero otros acceden directamente a atributos o usan nombres distintos.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
+||Ejemplo -|En List.java, tenemos insertEnd y insertFront, pero luego deleteEnd y deleteFront. Sin embargo, en Main.java se usan nombres distintos para acciones de añadir.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -|List.java contenía el método findNode(String value) que no era utilizado por ninguna clase cliente.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 |**DRY**|Ejemplo +|
