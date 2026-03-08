@@ -18,11 +18,12 @@
 |**Consistencia**|[Ejemplo +](https://github.com/beatriizorozco/24-25-PRG2/blob/f504f211ac734ba2370dc5d00103fdbd764b3ab6/entregas/orozcoBeatriz/reto003/Calculadora.java#L99)|Las operaciones (métodos) siguen una estructura parecida: primero comprueban operandos, luego los sacan y al final guardan el resultado. Eso hace que el código sea más consistente y fácil de seguir.
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/MercadonaASCII.java#L21)|En el primer if no hay espacios (if(minutos>=60)), pero en los demás sí (if (caja1 <= 0 ...)). Lo ideal sería usar siempre el mismo estilo para mantener el código consistente.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/6/changes)
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Edificio2.java#L66)|Casi todo el código usa llaves en los bloques, pero en este else no. Lo suyo sería seguir el mismo criterio en todos los casos para que quede más consistente.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/7/changes)
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**Código muerto**|[Ejemplo +](https://github.com/beatriizorozco/24-25-PRG2/blob/462cc50efc42469abbccfd2a0568627cac55cd23/entregas/orozcoBeatriz/reto004/Fecha.java#L22)|Aquí se usa el método compareTo, así que no es código muerto porque sí se llama desde otros métodos.
+||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Caracol.java#L69)|Hay un if vacío que no hace nada, así que ese bloque sobra y se puede considerar código muerto.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/8/changes)
 |**DRY**|Ejemplo +|
 ||Ejemplo -||PR corrección
 |**YAGNI**|Ejemplo +|
 ||Ejemplo -||PR corrección
+
 
 
