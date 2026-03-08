@@ -50,9 +50,9 @@ A partir del documento de [legibilidad](https://github.com/mmasias/25-26-IDSW2/b
 |**Estándares**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Consistencia**|[Ejemplo +](https://github.com/miguelrivasmorantes-devu/24-25-PRG2/blob/entrega-003/entregas/rivasMiguel/reto003/Calculadora.java)|Aquí se puede observar claraente como todas las funciones y variables siguen la misma nomenclatura y la misma estructura de utilización|
+||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/24-25-PRG2/blob/entrega-004/entregas/rivasMiguel/reto004/Tiempo.java)|Se evidencia claramente en funciones como [equals](https://github.com/miguelrivasmorantes-devu/24-25-PRG2/blob/entrega-004/entregas/rivasMiguel/reto004/Tiempo.java#L23) La disonancia en cuanto al resto de funciones, dado que la gran mayoria se encuentran en español y con un nombre que describe mejor su funcionalidad|PR corrección
+||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-001/entregas/rivasMiguel/src/Juego.java)|De igual manera al anterior, se ve en la función [participantsLength](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-001/entregas/rivasMiguel/src/Juego.java#L61) que no sigue el formato del resto de funciones de nombrarse en español, que no está mal de por sí sin embargo teniendo en cuenta el resto de funciones ese nombre no concuerda|PR corrección
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
 |**DRY**|Ejemplo +|
