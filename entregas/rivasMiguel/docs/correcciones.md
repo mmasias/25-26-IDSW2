@@ -41,9 +41,9 @@ A partir del documento de [legibilidad](https://github.com/mmasias/25-26-IDSW2/b
 |**Nombrado**|[Ejemplo +](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Nino.java)|La función [nombreEmpiezaPor](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Nino.java#L25) representa un buen nombramiento ya que podemos intuir cual es su funcionamiento 
 ||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Monitora.java)|La función [extraerMenoresConPosiciones](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Monitora.java#L118) no tiene un nombre claro, no se entiende que es lo que significa "con posiciones", podría referirse a los niños que tienen posición, o que extrae la posición|PR corrección
 ||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/24-25-PRG2/blob/entrega-004/entregas/rivasMiguel/reto004/Tiempo.java#)|De igual manera la función [compareTo](https://github.com/miguelrivasmorantes-devu/24-25-PRG2/blob/entrega-004/entregas/rivasMiguel/reto004/Tiempo.java#L44) no describe qué hace, qué compara o para que serviría. Un nombre mejor sería "compararTiempo"|PR corrección
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
+|**Comentarios**|[Ejemplo +](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-001/entregas/rivasMiguel/src/Monitora.java)|Considero que es una clase cun una legibilidad suficientemente buena para no requerir el uso de comentarios en ningún momento
+||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-005/entregas/rivasMiguel/src/ArbolPedidos.java)|Algunas de las funciones allí presentes tienen un nombre que consideraría correcto, sin embargo aún así no se entiende del todo que papel cumplen, tal como [insertarRec](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-005/entregas/rivasMiguel/src/ArbolPedidos.java#L15), donde un comentario podría ayudar a su coprensión|PR corrección
+||[Ejemplo -](https://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Nino.java#L25)|Misma historia en [modificarLetras](http://github.com/miguelrivasmorantes-devu/25-26-EDA1/blob/reto-002/entregas/rivasMiguel/src/Nino.java#L66), donde un comentario permitiría identificar rápidamente como se utiliza|PR corrección
 |**Formato**|Ejemplo +|
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
