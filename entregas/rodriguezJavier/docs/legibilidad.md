@@ -13,9 +13,9 @@
 |Ejemplo -|Las variables están declaradas lejos de su uso por ejemplo, boolean nuevoCliente = false; se declara en la línea 8, pero solo tiene sentido dentro de la iteración de cada minuto. Al declararla tan arriba, su "intervalo de vida" es todo el programa, cuando debería "morir" y "nacer" en cada iteración del bucle for.|<a href="https://github.com/jerdier/23-24-prg2/pull/1">PR corrección</a>|
 |Ejemplo -|Dentro del bloque del for la lógica de "generar cliente", "atender en caja" y "restar objetos" está un poco apretada. He separado sub-bloques para un formato que permita una lectura mas dinámica.|<a href="https://github.com/jerdier/23-24-prg2/pull/1">PR corrección</a>|
 |**Estándares**|
-|Ejemplo +|||
-|Ejemplo -||PR corrección|
-|Ejemplo -||PR corrección|
+|Ejemplo +|Buen uso de la nomenclatura de variables camelCase en casos como clientesAtendidos o nuevoCliente|<a href="https://github.com/jerdier/23-24-prg2/blob/main/entregas/RodriguezJavier/Reto-001/Cajeros.java">Archivo</a>|
+|Ejemplo -||<a href="">PR corrección</a>|
+|Ejemplo -||<a href="">PR corrección</a>|
 |**Consistencia**|
 |Ejemplo +|||
 |Ejemplo -||PR corrección|
