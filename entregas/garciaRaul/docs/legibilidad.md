@@ -140,14 +140,14 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|  Términos como titulo, artista, duracion, favorita, son correctos del dominio de una canción, facilitando su lectura. |[Enlace a código](https://github.com/xImRaul/24-25-EDA1/blob/ada07e89535ab1fbc062ee34cfda70435950e826/entregas/garciaRaul/Reto-004/Cancion.java#L2-L5)
+|**Nombrado**|Ejemplo +|  Términos como titulo, artista, duración, favorita, son correctos del dominio de una canción, facilitando su lectura. |[Enlace a código](https://github.com/xImRaul/24-25-EDA1/blob/ada07e89535ab1fbc062ee34cfda70435950e826/entregas/garciaRaul/Reto-004/Cancion.java#L2-L5)
 ||Ejemplo -|Al apuntar los dos scanner a un mismo flujo (System.in), no tiene sentido que se nombren de la manera scanner1 y scanner2. Además, los nombres de scanner1 y scanner2 no tienen un nombrado con significado propio. |[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/1)
 ||Ejemplo -|Los términos numero1, numero2 y numero3 no tienen significado laro, Al cambiarlo por numeroCentenas, numeroDecenas y numeroUnidades al leerlo vas a entender mejor el contenido, el comportamiento y el contexto de las variable.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/3)
 |**Comentarios**|No tengo comentarios en mis scodigo debido a la insistencia del profesor desde el inicio, por lo que no puedo proporcionar ejemplos de buen o mal uso de ellos.|
 |**Formato**|Ejemplo +|
 ||Ejemplo -|Mal uso de declaración de la variable billetes al principio del código, aumentando innecesariamente su intervalo de vida|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/4)
 ||Ejemplo -||PR corrección
-|**Estándares**|Ejemplo +|
+|**Estándares**|Ejemplo +|Sigue las convenciones comunes de Java: constantes en mayúsculas, métodos y variables en camelCase, las variables finales se realizan en SCREAMING_SNAKE_CASE, las variables de clase se declaran al inicio de la clase antes de los métodos, el código usa llaves {} de forma consistente y tiene una indentación constante y clara.|[Enlace a código](https://github.com/xImRaul/23-24-prg2/blob/0fb06d853c62cf43407e861e4ac5869ee92bb36c/entregas/garciaRaul/RETO-001/Centrocomercial.java#L1)
 ||Ejemplo -|Mal uso de los estándares de Java al intentar asignar un valor null a un tipo primitivo int. El estandar de la comunidad aplicado a este caso es simplemente poner un valor 0.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/6)
 ||Ejemplo -|El uso de la variable añadirClientes no es incorrecta del todo ya que java soporta unicode, pero se considera una mala práctica profesional. Para ello, la he cambiado por agregarClientes|[Enlace PR corrección](https://github.com/ximraul/24-25-eda1/pull/2)
 |**Consistencia**|Ejemplo +|
@@ -155,7 +155,7 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 ||Ejemplo -||PR corrección
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
-|**DRY**|Ejemplo +|
+|**DRY**|Ejemplo +| Reutilizión del nombre del método abierto para diferentes contextos (por hora o por fecha). Esto evita crear nombres de métodos inncesearios como estaAbiertoPorHora() o estaAbiertoPorFecha().|[Enlace a código](https://github.com/xImRaul/23-24-prg2/blob/0fb06d853c62cf43407e861e4ac5869ee92bb36c/entregas/garciaRaul/RETO-003/Cine.java#L17-L22)
 ||Ejemplo -|Repetición del mismo proceso para los billetes una y otra vez para cada denominación. Para ello, se usa  un array con los valores de los billetes y un bucle para procesarlos todos con la misma lógica.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/7)
-|**YAGNI**|Ejemplo +|
+|**YAGNI**|Ejemplo +|Se podría haber creado una clase Persona, una ColaDeClientes con nodos, etc. Pero para este contexto, solo se necesitaba saber cuántos hay. Por ello, el uso un simple int es una una utilización perfecta.|[Enlace a código](https://github.com/xImRaul/23-24-prg2/blob/0fb06d853c62cf43407e861e4ac5869ee92bb36c/entregas/garciaRaul/RETO-001/Centrocomercial.java#L10)
 ||Ejemplo -|El programa solo necesita mostrar el resultado, no guardarlo. Al crear la variable String mayor_Menor , estás ocupando un espacio en la memoria innecesario. Para solucionarlo, simplemente se pone la lógica dentro del System.out.println.|[Enlace PR corrección](https://github.com/ximraul/23-24-prg1/pull/8)
