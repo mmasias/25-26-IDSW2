@@ -51,8 +51,8 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 |**Consistencia**|[viaje de Marco](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/1.Primer%20cuatrimestre/ViajeDeMarco/ViajeDeMarco1.java)|Cada método de probabilidades es igual, más legible el código
 ||Ejemplo -||PR corrección
 ||Ejemplo -||PR corrección
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**Código muerto**|[inundacion](https://github.com/mariaarroniz/Old-code/blob/main/2.Segundo/2.Segundo%20cuatrimestre/RellenoInundacion.java)|Bloques de código comentado pero eran otras formas de hacer lo mismo
+||[restaurante](https://github.com/mariaarroniz/Old-code/blob/main/1.Primero/2.Segundo%20cuatrimestre/Restaurante/Restaurante.java)|Métodos que ni existen, main?...|[refactor: added 'simulacion' and all the classes fixed](https://github.com/mariaarroniz/Old-code/pull/2)
 |**DRY**|Ejemplo +|
 ||Ejemplo -||PR corrección
 |**YAGNI**|Ejemplo +|
