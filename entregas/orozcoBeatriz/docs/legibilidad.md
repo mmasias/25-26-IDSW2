@@ -22,8 +22,9 @@
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Caracol.java#L69)|Este método sí se utiliza dentro del programa, así que no es código muerto porque forma parte de la lógica del sistema.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/8/changes)
 |**DRY**|[Ejemplo +](https://github.com/beatriizorozco/24-25-PRG2/blob/6957ed2cdc918e49e4fc6a6f53d240271e5d48d9/entregas/orozcoBeatriz/reto001/CalculoEscalaYAcordeMayor.java#L46)|Aquí se usa un array con el patrón y se recorre con un bucle, evitando repetir el mismo código varias veces.
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Halloween.java#L37)|Antes se repetía el mismo bloque de código varias veces. Lo saco a un método para evitar duplicación y cumplir el principio DRY.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/9/changes)
-|**YAGNI**|[Ejemplo +]|El método solo implementa la funcionalidad necesaria, sin añadir lógica extra que ahora mismo no se necesita.
+|**YAGNI**|[Ejemplo +](https://github.com/beatriizorozco/24-25-PRG2/blob/6957ed2cdc918e49e4fc6a6f53d240271e5d48d9/entregas/orozcoBeatriz/reto001/CalculoEscalaYAcordeMayor.java#L25)|El método solo implementa la funcionalidad necesaria, sin añadir lógica extra que ahora mismo no se necesita.
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG2/blob/6957ed2cdc918e49e4fc6a6f53d240271e5d48d9/entregas/orozcoBeatriz/reto001/CalculoEscalaYAcordeMayor.java#L56)|Se vuelve a calcular la escala dentro de respuestaFinal cuando ya se había calculado antes en main, así que ese código no hacía falta.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG2/pull/2/changes)
+
 
 
 
