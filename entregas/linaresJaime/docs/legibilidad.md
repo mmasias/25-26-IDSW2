@@ -1,3 +1,4 @@
+
 # Legibilidad
 
 <big>***Una línea de código se escribe una vez y se lee cientos de veces***</big> — Tom Love
@@ -136,28 +137,31 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 - A menos que existan especificaciones y algún tipo de control de revisión, la función no puede ser conocida por los programadores que podrían hacer uso de ella.
 - Cualquier nueva característica impone restricciones en lo que se puede hacer en el futuro, por lo que una característica innecesaria puede interrumpir características necesarias que se agreguen en el futuro.
 
-### Justificaciones
+## Justificaciones
 
-|Categoría||Justificación||
-|-|-|-|-|
-|**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Formato**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+| Categoría | Tipo | Justificación | Enlace |
+|-----------|------|---------------|--------|
+| **Nombrado** | Ejemplo + | Variables como `getTitulo`, `anadirCancion`, `getCancionByIndex` siguen convención y expresan claramente el rol en la lógica del dominio musical. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Playlist.java#L1-L64) |
+| | Ejemplo - | El nombre de variable `n` es ambiguo y muy corto, lo que dificulta entender el propósito en métodos como `insertFront`. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/1) |
+| | Ejemplo - | El nombre `ventana` no representa bien que es una subcadena; sería mejor `substring` o `subcadena`. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/1) |
+|**Comentarios**|Ejemplo +|No hay comentarios
+||Ejemplo -|No hay comentarios|
+||Ejemplo -|No hay comentarios|
+| **Formato** | Ejemplo + | Formato consistente en métodos principales de `Biblioteca.java`, con bloques lógicos y separación clara entre métodos. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Biblioteca.java#L1-L103) |
+| | Ejemplo - | Lógica de cálculo de cambio repetida 7+ veces sin extraerla a un método en Reto001, Reto002 y Reto003, generando bloques innecesarios.  |[Enlace PR Corrección](https://github.com/jaimelinares6/23-24-prg1/pull/1) |
+| | Ejemplo - | Líneas en blanco innecesarias al final de Cadena.java. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/2) |
+| **Estándares** | Ejemplo + | Clase `Cancion` usa PascalCase y métodos camelCase (`getTitulo`, `toString`), respetando los estándares Java correctamente. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Cancion.java#L1-L32) |
+| | Ejemplo - | Clase `reto001` está en minúsculas; debería ser `Reto001` en PascalCase. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-PRG2/pull/1) |
+| | Ejemplo - | Clase `Primero` no tiene modificador `public` en su declaración. |[Enlace PR Corrección](https://github.com/jaimelinares6/23-24-prg1/pull/2) |
+| **Consistencia** | Ejemplo + | Todas las clases de la playlist siguen orden consistente: atributos → constructores → getters/setters → métodos. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Playlist.java#L1-L64) |
+| | Ejemplo - | El método `isEmpty()` devuelve `this.size > 0`, cuando debería ser `this.size == 0` (lógica invertida). |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/3) |
+| | Ejemplo - | Diferente uso de nombres para Scanner: `entrada` vs `scanner` en archivos similares. |[Enlace PR Corrección](https://github.com/jaimelinares6/23-24-prg1/pull/3) |
+| **Código muerto** | Ejemplo + | Todos los métodos en `Cancion.java` se utilizan correctamente sin código huérfano. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Cancion.java#L1-L32) |
+| | Ejemplo - | Clase `NodeWrapper` no se utiliza en ningún lado del proyecto. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/4) |
+| | Ejemplo - | Método `crearCancionYAnadir()` en `Biblioteca.java` duplica funcionalidad que ya existe en otros métodos como `anadirCancionAPlaylist()`, haciendo el método innecesario. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/4) |
+| **DRY** | Ejemplo + | El método `listAll()` centraliza la función de listar elementos para todas las listas, evitando repetición. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Lista.java#L1-L75) |
+| | Ejemplo - | Búsqueda de índices repetida en `getCancionByIndex()`, `eliminarCancion()`, `eliminarDeFavoritos()`|[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/7) |
+| | Ejemplo - | Repetición de búsqueda de índices en múltiples métodos dentro del mismo archivo. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/6) |
+| **YAGNI** | Ejemplo + | Implementación solo de métodos necesarios en `Cancion.java`: titulo, artista, duracion, favorita. | [Enlace a código](https://github.com/jaimelinares6/24-25-EDA1/blob/1e1520c500e03fb5d997dae2c23a73f49dd330d9/entregas/linaresJaime/Reto004/Cancion.java#L1-L32) |
+| | Ejemplo - | `NodeWrapper` implementada pero nunca usada en el proyecto. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/4) |
+| | Ejemplo - | El método `enFavoritos()` mezcla lógica y presentación, imprime directamente en vez de retornar. |[Enlace PR Corrección](https://github.com/jaimelinares6/24-25-EDA1/pull/5) |
