@@ -160,4 +160,4 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 |**DRY**|Ejemplo +|
 ||Ejemplo -|En Main.java, cada opción del switch repite la lógica de scanner.nextInt(), validación de rangos y mensajes de error.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
 |**YAGNI**|Ejemplo +|
-||Ejemplo -||<a href="https://github.com/rubentresgallob/24-25-EDA2/pull/1">PR correción</a>
+||Ejemplo -|No es necesario tener métodos como eliminarCancionDeFavoritos o mostrarHistorial si el Main nunca los llama. Ni tener un atributo cancionAnterior en Reproductor si la lógica de "anterior" no está implementada o no se usa.|<a href="https://github.com/rubentresgallob/24-25-EDA1/pull/1">PR correción</a>
