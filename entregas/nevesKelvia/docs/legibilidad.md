@@ -136,28 +136,36 @@ Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de f
 - A menos que existan especificaciones y algún tipo de control de revisión, la función no puede ser conocida por los programadores que podrían hacer uso de ella.
 - Cualquier nueva característica impone restricciones en lo que se puede hacer en el futuro, por lo que una característica innecesaria puede interrumpir características necesarias que se agreguen en el futuro.
 
+
 ### Justificaciones
 
 |Categoría||Justificación||
 |-|-|-|-|
-|**Nombrado**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Comentarios**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Formato**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Estándares**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+|**Nombrado**|Ejemplo + `Biblioteca.java` (`añadirCancion`)|Cumple el principio de que los métodos deben ser acciones (verbos) claros y directos. El código se autoexplica. Reduce la carga cognitiva y mejora la mantenibilidad al no requerir leer la implementación para saber qué hace.|
+||Ejemplo - `ListaEnlazada.java` (`tamaño`)|Viola el principio de nombrado seguro. Usar caracteres no-ASCII como la "ñ" en identificadores puede causar problemas de codificación (encoding) si el código se abre en otros sistemas o IDEs.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+||Ejemplo - `Main.java` (`cancionFavoritaEliminarIndex`)|El nombre es excesivamente largo y redundante. Viola el principio de legibilidad donde el contexto debe aportar significado. Estando ya en la opción de eliminar, algo como `indiceCancion` sería mucho más claro.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**Comentarios**|Ejemplo + Todo el proyecto|Excelente ejemplo del principio "el código es la mejor documentación". Al estar limpio de comentarios, se evita la deuda técnica de mantener comentarios desactualizados que acaben mintiendo al programador. Los buenos nombres suplen la necesidad de texto adicional.|
+||Ejemplo - *No aplica*|*Nota: No he puesto comentarios en el código de este repositorio(y ningún otro). Entonces no puedo mostrar una mala aplicación (como comentarios ruidosos o zombies), lo cual en la práctica demuestra un buen nivel de legibilidad intrínseca.*||
+||Ejemplo - *No aplica*|*Nota: Ídem al punto anterior.*||
+|**Formato**|Ejemplo + `Cancion.java` (Constructor)|Cumple con la alineación y sangría correcta. Las asignaciones están visualmente limpias, lo que facilita leer rápidamente el estado inicial del objeto.|
+||Ejemplo - `Main.java` (Líneas de `if-else` en menús)|Cadena densa de `if-else if` sin espacios en blanco. Viola el principio de agrupación visual ("párrafos de código"), cansando la vista del lector al no haber un respiro visual que separe los caminos lógicos.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+||Ejemplo - `Main.java` (`menuReproduccion`)|Exceso de anidamiento (Nesting). Hay un `if` dentro de otro `if` dentro de un `while`. Aumenta la complejidad ciclomática visual, dificultando seguir el flujo de ejecución.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**Estándares**|Ejemplo + `Reproductor.java`, `Cancion.java`|Aplicación impecable del estándar PascalCase para Clases y camelCase para variables y métodos. Esto es clave para la mantenibilidad porque cualquier desarrollador Java reconoce instantáneamente el rol de cada identificador.|
+||Ejemplo - `ListaEnlazada.java` (Declaración de clase)|Viola el estándar de visibilidad explícita en Java. La clase no tiene modificador (es package-private). No declarar explícitamente `public` o `private` genera ambigüedad sobre la intención de diseño de la API.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+||Ejemplo - `Main.java` (Uso de `Scanner`)|Se abre el recurso `Scanner` y solo se cierra al final. Viola estándares básicos de manejo de recursos: si ocurre una excepción en medio del bucle, el recurso quedará abierto (memory leak).|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**Consistencia**|Ejemplo + `Main.java` (Estructura de bucles)|Cumple el principio de sorpresa mínima. Al usar la misma estructura de control booleano (`while (!salir)`, `while(!volver)`) en los menús, el cerebro asimila el patrón y lo lee más rápido.|
+||Ejemplo - `Cancion.java` vs `Biblioteca.java`|Inconsistencia de estilo con la palabra clave `this.`. En `Cancion` se usa explícitamente para las asignaciones, pero en el constructor de `Biblioteca` se omite. Mezclar convenciones genera fricción visual.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+||Ejemplo - `Main.java` (Banderas `salir` vs `volver`)|Inconsistencia léxica. Usan nombres diferentes para el mismo propósito semántico (romper un menú). Obliga al lector a detenerse a pensar si hay una diferencia funcional oculta.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**Código muerto**|Ejemplo + `Nodo.java`|Clase mínima donde todos sus atributos y métodos son utilizados en el proyecto principal. No hay "grasa" extra, lo que agiliza su lectura.|
+||Ejemplo - `Album.java`|Clase completamente huérfana. Jamás se instancia ni se menciona en todo el programa. Obliga al lector a procesar un archivo intentando entender cómo encaja, para luego descubrir que no tiene uso.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**DRY**|Ejemplo + `Biblioteca.java` (`añadirAFavoritos`)|En lugar de recrear la lógica, delega en métodos existentes (`cancion.marcarComoFavorita()`). Centraliza el comportamiento, por lo que si el día de mañana la regla de favoritos cambia, se modifica en un solo sitio.|
+||Ejemplo - `Main.java` (Limpieza del buffer)|La secuencia `scanner.nextInt(); scanner.nextLine();` se repite más de 6 veces. Viola DRY. Debería encapsularse; al repetirse, multiplica el riesgo de olvidar un salto de línea y causar un bug visual.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+|**YAGNI**|Ejemplo + `Cancion.java`|La clase tiene exactamente los campos que se necesitan para el reproductor básico. No se añadieron campos como "año" o "carátula" "por si acaso" se necesitaban en el futuro. Diseño ajustado a la necesidad actual.|
+||Ejemplo - `Reproductor.java` (`historial`)|Se declara, inicializa y se van añadiendo canciones en él al reproducir, ¡pero no hay ningún método para ver o retroceder en el historial! Consumo de recursos innecesario en una funcionalidad fantasma.|https://github.com/KelviaBarros05/24-25-EDA1/pull/1
+
+
+### Categoría más difícil de identificar
+
+La categoría que me resultó más difícil de encontrar en mi propio código fue **Comentarios**, precisamente porque no suelo utilizar comentarios en mis proyectos. Encontrar una aplicación incorrecta fue imposible, ya que intento que los nombres de variables y funciones sean lo suficientemente descriptivos (el código como documentación). 
+
+También fue un reto identificar problemas de **YAGNI**, ya que cuando desarrollé el código, el historial de reproducción parecía una funcionalidad que usaría en el futuro, evidenciando cómo la *"ceguera del autor"* dificulta ver qué partes del sistema realmente no se están utilizando ni aportando valor actual.
