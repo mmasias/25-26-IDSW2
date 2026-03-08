@@ -24,8 +24,8 @@
 |Ejemplo +|No hay Código muerto, código limpio y buena lógica del ganar/perder del juego.|<a href="https://github.dev/jerdier/buscaminas/blob/correccion/src/rodriguezJavier/Juego.java">Archivo</a>|
 |Ejemplo -|No he encontrado código muerto en ningún trabajo de años pasados.||
 |**DRY**|
-|Ejemplo +||<a href="">Archivo</a>|
-|Ejemplo -||<a href="">PR corrección</a>|
+|Ejemplo +|Aquí tengo un buen ejemplo de no usar DRY porque he agrupado las tres condiciones de victoria en un solo bloque sin repetirme.|<a href="https://github.dev/jerdier/24-25-PRG1/blob/correccion/entregas/rodriguezJavier/Reto-002/PiedraPapelTijera.java">Archivo</a>|
+|Ejemplo -|He eliminado la repetición manual de las palabras 'piedra', 'papel' y 'tijera' en los mensajes y validaciones para evitar el DRY en el código. Ahora si en el futuro necesito añadir una nueva jugada, solo tendré que modificar esa lista en un único lugar, facilitando su mantenimiento.|<a href="https://github.com/jerdier/24-25-PRG1/pull/1">PR corrección</a>|
 |**YAGNI**|
 |Ejemplo +||<a href="">Archivo</a>|
 |Ejemplo -||<a href="">PR corrección</a>|
