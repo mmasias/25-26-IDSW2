@@ -21,11 +21,11 @@
 |Ejemplo -|Utilizo un numero 4 para los cajeros en vez de un .length y sin embargo, al final para los clientes utilizo un .length|<a href="https://github.com/jerdier/23-24-prg2/pull/1">PR corrección</a>|
 |Ejemplo -|No encuentro mas errores de consistencia, no estoy seguro de si puede haber más como el anterior||
 |**Código muerto**|
-|Ejemplo +|||
-|Ejemplo -||PR corrección|
+|Ejemplo +|No hay Código muerto, código limpio y buena lógica del ganar/perder del juego.|<a href="https://github.dev/jerdier/buscaminas/blob/correccion/src/rodriguezJavier/Juego.java">Archivo</a>|
+|Ejemplo -|No he encontrado código muerto en ningún trabajo de años pasados.||
 |**DRY**|
-|Ejemplo +|||
-|Ejemplo -||PR corrección|
+|Ejemplo +||<a href="">Archivo</a>|
+|Ejemplo -||<a href="">PR corrección</a>|
 |**YAGNI**|
-|Ejemplo +|||
-|Ejemplo -||PR corrección|
+|Ejemplo +||<a href="">Archivo</a>|
+|Ejemplo -||<a href="">PR corrección</a>|
