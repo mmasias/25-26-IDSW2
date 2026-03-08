@@ -4,4 +4,4 @@ El desarrollo del reto consistió en "auditar" el código histórico en todos lo
 
 A continuación se presenta la tabla con los ejemplos y justificaciones pertinentes:
 
-- [Legibilidad](/entregas/baquedanoBryan/docs/legibilidad.md)
+- [Legibilidad](docs/legibilidad.md)
