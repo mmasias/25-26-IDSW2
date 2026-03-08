@@ -51,11 +51,11 @@ A partir del documento de [legibilidad](legibilidad.md), se pide:
 ||Ejemplo -|Primero, viola el estándar de encapsulamiento: casi ningún atributo de la clase tiene modificador de acceso (deberían ser private). Segundo, viola los estándares de nombrado de Java al llamar a un método exactamente igual que a un atributo (eleccion()  vs int eleccion), y además usa un sustantivo para el método en lugar de un verbo de acción (ej. pedirEleccion()).|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
 ||Ejemplo -|Se centralizó la instanciación de Random en un único atributo de clase, evitando el alto coste de memoria por instanciaciones múltiples. Se eliminó el paso redundante del arreglo clientes por parámetro en métodos privados, aprovechando el acceso al atributo global. Se corrigieron los límites de los bucles for en los desplazamientos para evitar errores fatales de desbordamiento de índice (IndexOutOfBounds).|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
 |**Consistencia**|Ejemplo +|Mantiene una coherencia estricta en el idioma (todo en inglés) y en la nomenclatura, usando siempre camelCase para atributos y métodos. Aplica el mismo nivel de encapsulamiento (private) de manera uniforme a todos los atributos de la clase sin excepción. Resuelve el acceso a los datos utilizando un único patrón consistente en todo el archivo mediante métodos getters y setters.|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/blob/cebf62b928a9a29f52013811d23ff6eb4e37fa76/entregas/gutierrezMarcos/Reto-002/Node.java">Archivo</a>|
-||Ejemplo -||PR corrección
-||Ejemplo -||PR corrección
-|**Código muerto**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**DRY**|Ejemplo +|
-||Ejemplo -||PR corrección
-|**YAGNI**|Ejemplo +|
-||Ejemplo -||PR corrección
+||Ejemplo -|Mezcla idiomas en el nombrado de variables y métodos (currentSong vs canciones, mainMenu vs menuReproduccion).|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
+||Ejemplo -|Declara las variables con un patrón puramente textual (primeraCifra), pero intenta utilizarlas con un patrón alfanumérico (cifra1).|<a  target="_blank" href="https://github.com/marcosgutierrez6/23-24-prg1/pull/1">PR corección</a>
+|**Código muerto**|Ejemplo +|No tengo||
+||Ejemplo -|Contiene bloques catch vacíos (silenciados) sin ningún tipo de comentario o manejo del error.|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
+|**DRY**|Ejemplo +|No tengo||
+||Ejemplo -|Bloques idénticos de código para buscar playlists por teclado en múltiples métodos, en lugar de extraer esa lógica a una función reutilizable (pedirYBuscarPlaylist()).|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
+|**YAGNI**|Ejemplo +|No tengo|
+||Ejemplo -|Implementa variables de estado (aleatorioActivado, repetirActivado) y menús de interfaz para funciones que no tienen respaldo en la lógica de negocio|<a target="_blank" href="https://github.com/marcosgutierrez6/24-25-EDA1/pull/1">PR corrección</a>
