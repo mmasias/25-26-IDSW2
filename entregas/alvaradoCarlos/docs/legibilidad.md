@@ -1,0 +1,166 @@
+# Legibilidad
+
+<big>***Una línea de código se escribe una vez y se lee cientos de veces***</big> — Tom Love
+
+<div align=center>
+
+|Autoexplicativo|Consistente|Mínimo|
+|-|-|-|
+|Formato|Estándares|Código Muerto|
+|Comentarios|Consistencia|YAGNI|
+|Nombrado|Alertas|DRY|
+
+</div>
+
+## Nombrado
+
+|Principio|Descripción breve|
+|-|-|
+|Elige nombres descriptivos|Utiliza nombres que expresen claramente el propósito o función del elemento, evitando abreviaciones confusas o nombres genéricos.|
+|Elige nombres al nivel de abstracción apropiado|El nombre debe corresponder al nivel conceptual en el que opera el elemento, ni muy general ni muy específico.|
+|Usa nomenclatura estándar donde sea posible|Sigue las convenciones establecidas en el lenguaje o framework que utilizas para facilitar la comprensión del código.|
+|Nombres no ambiguos|Evita nombres que puedan interpretarse de múltiples maneras o confundirse con otros elementos del programa.|
+|Usa nombres largos para ámbitos largos|Cuanto mayor sea el alcance de una variable o función, más descriptivo y específico debe ser su nombre.|
+|Evita codificaciones|No uses prefijos o sufijos técnicos innecesarios que compliquen la lectura del código.|
+|Los nombres deberían describir los efectos laterales|Si una función produce efectos además de su propósito principal, el nombre debe sugerirlo.|
+|Los nombres deben revelar su intención|Deberían revelar por qué existe lo que existe, qué hace y cómo se utiliza para facilitar la legibilidad para el desarrollo y el mantenimiento correctivo, perfectivo y adaptativo.|
+|La elección de buenos nombres lleva tiempo, pero ahorra más de lo que toma|Así que ten cuidado con los nombres y cámbialos cuando encuentres otros mejores. Hay personas que tienen miedo de cambiar el nombre de las cosas por temor a que otros desarrolladores objeten.|
+|Los nombres de archivo|Un adecuado conjunto de nombres de archivo no solo revela la intención de cada archivo individual, sino la estructura de estados y transiciones del sistema completo.|
+|Nombres pronunciables que permitan mantener una conversación|Utiliza nombres que puedan pronunciarse fácilmente, facilitando las discusiones sobre el código entre desarrolladores.|
+|Mayúsculas en los caracteres inicio de palabra (CamelCase)|Sigue la convención de usar mayúsculas al inicio de cada palabra en identificadores compuestos para mejorar la legibilidad.|
+|Nombres del dominio del problema y de la solución|Emplea términos tanto del ámbito del problema (negocio) como de la solución técnica, según corresponda al contexto.|
+|Elige una palabra para un concepto abstracto y aferrarte a él|Mantén consistencia usando el mismo término para representar un concepto específico a lo largo de todo el código.|
+|Nombres de paquetes deben ser sustantivos y comenzar en minúsculas|Los paquetes se nombran con sustantivos en minúsculas, generalmente siguiendo estructura de dominio invertido.|
+|Nombres de clases deben ser sustantivos y comenzar en mayúsculas|Las clases se nombran con sustantivos que inician con mayúscula, representando entidades u objetos.|
+|Nombres de métodos deben ser verbos o una frase con verbo y comenzar en minúsculas|Los métodos deben expresar acciones, usando verbos en infinitivo que comienzan con minúscula.|
+|Nombres de métodos de acceso deben anteponer get(is para lógicos) y /set o put|Usa prefijos estándar para métodos accesores: "get" para obtener valores, "is" para booleanos, "set" o "put" para asignar valores.|
+|Si un nombre requiere un comentario, el nombre no revela su intención|Un identificador bien elegido no debería necesitar explicación adicional; si requiere comentario, debe ser replanteado.|
+|Nombres de una letra y muy en particular, 'O' y 'l' que se confunden con 0 y 1|Evita identificadores de una sola letra, especialmente 'O' y 'l', que pueden confundirse visualmente con los dígitos 0 y 1.|
+
+> **Excepcionalmente** en variables locales auxiliares de métodos. Un contador de bucle puede ser nombrado i o j o k (¡pero nunca l!) si su alcance es muy pequeño y no hay otros nombres que pueden entrar en conflicto con él. Esto se debe a que esos nombres de una sola letra para contadores de bucles son tradicionales.
+
+Es un estándar: allá donde fueres, haz lo que vieres.
+
+### Nombrado a evitar
+
+- Nombres acrónimos, a no ser que sean internacionales.
+- Nombres con códigos de tipo o información del ámbito (codificaciones y similares).
+- Nombre con palabras vacías de significado o redundantes.
+- Nombres en serie.
+- Nombres desinformativos que no son lo que dicen.
+- Nombres indistinguibles.
+- Nombres polisémicos en un mismo contexto.
+
+## Comentarios
+
+- Nada puede ser tan útil como un comentario bien colocado.
+- Nada puede ser tan perjudicial como un enrevesado comentario desactualizado que propaga mentiras y desinformación
+- Nada puede estorbar más encima de un módulo que frívolos comentarios dogmáticos.
+- Es simplemente una tontería tener una regla que dice que cada variable debe tener un comentario o que cada función debe tener un javadoc a a no ser que sea publicado como biblioteca
+- No comentes código malo, re-escríbelo — Kernighan & Plaugher
+
+<div align=center>
+
+|👍|😐|💩|
+|-|-|-|
+|Comentario aclaratorio|Comentario legal|Comentarios redundantes|
+|Otro|Comentario esporádico y "oportuno"|Comentarios de sección|
+|||Comentarios no mantenidos|
+|||Comentarios excesivos|
+|||Comentarios como documentación|
+|||Comentarios confusos|
+|||Comentarios inexactos|
+|||Comentarios de atribución|
+|||Código comentado / Otro|
+
+</div>
+
+## Formato
+
+El formateo de código trata sobre la comunicación y la comunicación es de primer orden para los desarrolladores profesionales
+
+Un equipo de desarrolladores debe ponerse de acuerdo sobre un único estilo de formato y luego todos los miembros de ese equipo debe usar ese estilo.
+
+- Un código es una jerarquía.
+  - Hay información que pertenece al archivo como un todo, a las clases individuales dentro del archivo, a los métodos dentro de las clases, a los bloques dentro de los métodos, y de forma recursiva a los bloques dentro de los bloques.
+  - Cada nivel de esta jerarquía es un ámbito en el que los nombres pueden ser declarados y en la que las declaraciones y sentencias ejecutables se interpretan. Para hacer esta jerarquía visible, hay que sangrar la líneas de código fuente de forma proporcional a su posición en la jerarquía.
+- Una línea entre grupos lógicos (atributos y cada método).
+- Los atributos deben declararse al principio de la clase
+- Las funciones dependientes en las que una llama a otra, deberían estar verticalmente cerca: primero la llamante y luego la llamada
+- Grupos de funciones que realizan operaciones parecidas, deberían permanecer juntas
+- Las variables deberían declararse tan cerca comos sea posible de su utilización: hay que minimizar el intervalo de vida de una variable
+- Los programadores prefieren líneas cortas (~40, máximo80/120)
+
+## Estándares
+
+- Sigue las convenciones estándar basadas en normas comunes de la industria.
+- Cada miembro del equipo debe ser lo suficientemente maduro como para darse cuenta de que no importa un ápice donde pones tus llaves, siempre y cuando todos estén de acuerdo en dónde ponerlos.
+- Se deben especificar cosas como:
+  - Dónde declarar variables de instancia;
+  - Cómo nombrar las clases, métodos y variables
+  - Dónde poner paréntesis, llaves; …​
+- No se necesita un documento para describir estos convenios porque su código proporciona los ejemplos.
+
+## Consistencia
+
+- Si haces algo de cierta manera, haz todas las cosas similares de la misma forma.
+- Una simple consistencia como esta, cuando se aplica de forma fiable, se puede conseguir código más fácil de leer y modificar.
+- Ten cuidado con los convenios que eliges.
+- Una vez elegidos, síguelos.
+
+## Código muerto
+
+- El código muerto se anquilosa y se endurece, rápidamente se hace imposible documentar el código o entender suficientemente su arquitectura para hacer mejoras.
+- Si no se elimina el código muerto, puede continuar proliferando según se reutiliza código en otras áreas
+- Puede haber crecimiento exponencial según los sucesivos desarrolladores, demasiado apremiados o intimidados por analizar los códigos originales, seguirán produciendo nuevos flujos secundarios en su intento de evitar los originales.
+- Fragmentos de código injustificables, inexplicables u obsoletos en el sistema: interfaces, clases, funciones o segmentos de código complejo con aspecto importante pero que no están relacionados con el sistema
+- Bloques de código comentado sin explicación o documentación
+- Bloques de código con comentarios
+- //TODO: "proceso de cambio", "para ser reemplazado", …
+
+## Don't repeat yourself - DRY
+
+- Evitar re-analizar, re-diseñar, re-codificar, re-probar y re-documentar soluciones que complican enormemente el mantenimiento correctivo, perfectivo y adaptativo
+- Cada pieza de conocimiento debe tener una única, inequívoca y autoritativa representación en un sistema.
+- El objetivo es reducir la repetición de la información de todo tipo, lo que hace que los sistemas de software sean más fácil de mantener
+- La consecuencia es que una modificación de cualquier elemento individual de un sistema no requiere un cambio en otros elementos lógicamente no relacionados.
+- Aplicable a todo: programación, esquemas de bases de datos, planes de prueba, el sistema de construcción, análisis y diseños, incluso la documentación.
+
+## YAGNI: You aren't going to need it
+
+- Las características innecesarias son inconveniente por el tiempo gastado que se toma para la adición, la prueba o la mejora de funcionalidad innecesaria.
+- Conduce a la hinchazón de código y el software se hace más grande y más complicado.
+- Añadir nuevas características puede sugerir otras nuevas características. Si estas nuevas funciones se implementan así, esto podría resultar en un efecto bola de nieve.
+- Siempre se debe implementar las cosas cuando realmente se necesite, no cuando se prevén que se necesiten. Por tanto, no se debe agregar funcionalidad hasta que se considere estrictamente necesario.
+- Hasta que la característica es realmente necesaria, es difícil definir completamente lo que debe hacer y probarla. Si la nueva característica no está bien definida y probada, puede que no funcione correctamente, incluso si eventualmente se necesitara.
+- A menos que existan especificaciones y algún tipo de control de revisión, la función no puede ser conocida por los programadores que podrían hacer uso de ella.
+- Cualquier nueva característica impone restricciones en lo que se puede hacer en el futuro, por lo que una característica innecesaria puede interrumpir características necesarias que se agreguen en el futuro.
+
+### Justificaciones
+
+|Categoría||Justificación||
+|-|-|-|-|
+|**Nombrado**|[Ejemplo +](https://github.com/carlos-alvarado-25/TicTacToe/blob/da696fed273dae9364967d81c78af0e260193bba/src/alvaradoCarlos/TresEnRaya.java#L1-L30)| Se puede ver claramente un buen nombrado de cada linea de código, jerarquizado y que va contando a través del mismo su función, que es iniciar el Juego del TicTacToe.
+||Ejemplo -|La palabra Simulador, la considero palabra "vacia" y redundante, ya que no es un simulador de una lista, esta clase es una implementación de una lista.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
+||Ejemplo -|La variable MULTIPLICADOR_ARRAY exactamente no "multiplica" y como tal no hace una operación, es más correcto denominarla como un factor de crecimiento|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/3)
+|**Comentarios**|Ejemplo +| No he encontrado comentarios, siguiendo la teoría, apropiadamente utilizados.
+||Ejemplo -| No he encontrado comentarios en mi código que reflejen un uso inapropiado de los mismos|PR corrección
+||Ejemplo -|...|PR corrección
+|**Formato**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L1-L14)| Tengo un uso correcto del formato de los atributos en esta implementación de una Monitora. Se puede ver claramente la sangría bien utilizada y jerarquizado de forma tal que sigue el formato definido que hemos tenido desde siempre. 
+||[Ejemplo -](https://github.com/carlos-alvarado-25/24-25-PRG2/blob/c11b921cd315988bcc6b9e679dca96cfa28a6152/entregas/alvaradoCarlos/reto001/Escalas.java#L8)|Mala práctica de formato, se prefieren líneas de como máximo 80/120 caracteres, y que siempre sean visibles sin necesidad de moverse en la pantalla.|[PR corrección](https://github.com/carlos-alvarado-25/24-25-PRG2/pull/1)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L189-L259)| Estos métodos estan muy mezclados y rompen el flujo de lectura "de arriba hacia abajo" en general para toda la clase del formato que tenemos definido, ya que `separarNiñosMenoresDe5` llama a `reorganizarCola`, pero este último está definido justo después. Re organicé todos los métodos y reduje lo innecesario.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/4)
+|**Estándares**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/Elemento.java#L1-L26)| Se puede ver claramente la utilización del estándar que hemos definido a lo largo de la carrera. Atributos privados, constructor simple y métodos que únicamente hacen lo que deben hacer. (Podría ser ejemplo positivo de YAGNI también)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L227-L238)|Este método `reorganizarCola` toca lógica que no debería de sera accesible por la vista pública de la clase, por lo que incumple el estándar de encapsulamiento. Debe cambiarse a private|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/5)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/390168be5ef7356a5e75dcf880d773b1f484f60d/entregas/alvaradoCarlos/src/Pedido.java#L12-L16)| Este método por más pequeño que sea no sigue el estándar de retornar si es que se activa la validación, como si lo hacemos en el resto del código y códigos que he presentado.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/7)
+|**Consistencia**|[Ejemplo +](https://github.com/carlos-alvarado-25/24-25-PRG2/blob/32be95fa2371c0b2b334052fc2d8bb760ac46d76/entregas/alvaradoCarlos/reto002/EscalasAcordes.java#L7-L20)| Se puede ver claramente como es consistente la asignación de la variable TONO y SEMITONO para construir la escala una única vez en todo el código.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L256)| Había aspectos notables de inconsistencia en esta clase, primero se usaba al mismo tiempo `monitora.nombre()` y `monitora.nombre`.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/6)
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/a45734ae16a1442be88928d3a81f68e0d8a1eefb/entregas/alvaradoCarlos/src/Monitora.java#L71-L81)|Además, en la misma clase se imprimían listas de niños de tres formas distintas. He unificado la impresión de nombres y edades para que sea idéntica en `separarNiñosMenoresDe5`, `mostrarEstado` y `mostrarGrupo`. Y he unificado el uso de `reorganizarCola` y `reacomodarNiños` para que el vaciado de los arrays siga siempre el mismo patrón de limpieza.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/6)
+|**Código muerto**|Ejemplo +| No he encontrado código muerto en ninguno de mis repositorios utilizado "apropiadamente" o documentado. Únicamente clases sin implementar como los de debajo.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/TicTacToe/blob/da696fed273dae9364967d81c78af0e260193bba/src/alvaradoCarlos/Turno.java#L3-L15)|El código de esta clase `Turno` no esta implementado, es una clase fantasma a la cual se le llaman sus funciones desde otras clases pero no sirve de nada.|[PR corrección](https://github.com/carlos-alvarado-25/TicTacToe/pull/2)
+|**DRY**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/390168be5ef7356a5e75dcf880d773b1f484f60d/entregas/alvaradoCarlos/src/Pedido.java#L6-L10)| En este código tengo una clase `Pedido` la cual en el constructor se le pasa un `TipoPlato` evitando tener que pasarle el tiempo de cocción, el nombre de plato y compactarlo todo a una nueva clase para no repetir lógica innecesaria. La definición de qué es un "Spaghetti" existe en un solo lugar. El `Pedido` solo refleja esa realidad.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/24-25-pyKlondike/blob/daaa7eee0492132ea0202f427ce87b7b9ae5cdee/src/alvaradoCarlos/Klondike.java#L263-L283)|Estamos duplicando la lógica de pedir una carta ya sea desde la columna o desde la fundación. Se debe centralizar la lógica de pedir para que únicamente los métodos de columna y fundación hagan una labor.|[PR corrección](https://github.com/carlos-alvarado-25/24-25-pyKlondike/pull/5)
+|**YAGNI**|[Ejemplo +](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/ArraySimulado.java#L1-L29)| En commits anteriores pude ver que agregué un par de métodos innecesarios dandome cuenta que en esta clase lo único que necesitaba era obtener, modificar y la capacidad del array. Así que pasé de programar de más a obtener una versión minimalista de la implementación.
+||[Ejemplo -](https://github.com/carlos-alvarado-25/25-26-EDA1/blob/c81c38f5117a577660681c9218e875b643002da4/entregas/alvaradoCarlos/src/SimuladorLista.java#L5)|Atributo público innecesario para declarar el tamaño como constante, no es necesario implementarlo así, puede pasarse el tamaño directamente en el constructor. Además el método público `getCapacidad()` incumple YAGNI ya qué clases externas no necesitan saber que espacios le sobran al array y no es necesario en lo absoluto, no se usará.|[PR corrección](https://github.com/carlos-alvarado-25/25-26-EDA1/pull/2)
+
+
+> Me resultó más complejo poder encontrar ejemplos concretos de la sección de *Código Muerto*, ya que por lo general, el código que presentamos casi siempre llega a ser completado y funcional de forma que son raras las veces las cuales nos podamos encontrar con código muerto entre los repositorios de entrega, y aún considerando a las duplicaciones, redundancias y demás "aspectos" posibles del código muerto, todas ellas irían mas apropiadamente en las demás categorias.
