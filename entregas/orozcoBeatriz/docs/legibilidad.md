@@ -17,7 +17,7 @@
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/RetoForIf.java#L6)|Se usa j = j + 1 y i = i + 1 en vez de j++ e i++. Funciona igual, pero no es la forma más común en Java.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/4/changes)
 ||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/Matrices.java#L19)|Cambio int matriz[][] por int[][] matriz, que es la forma más típica de declarar arrays en Java. También cambio imprime por imprimir para que el nombre del método sea correcto.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/5/changes)
 |**Consistencia**|Ejemplo +|
-||Ejemplo -||PR corrección
+||[Ejemplo -](https://github.com/beatriizorozco/24-25-PRG1/blob/b2e97ae9d129c018bb02ca39577b8005708127a7/entregas/orozcoBeatriz/entregas/src/MercadonaASCII.java#L21)|En el primer if no hay espacios (if(minutos>=60)), pero en los demás sí (if (caja1 <= 0 ...)). Lo ideal sería usar siempre el mismo estilo para mantener el código consistente.|[PR corrección](https://github.com/beatriizorozco/24-25-PRG1/pull/6/changes)
 ||Ejemplo -||PR corrección
 |**Código muerto**|Ejemplo +|
 ||Ejemplo -||PR corrección
