@@ -1,5 +1,5 @@
 # Ejercicios diversos, para ir practicando
 
-|Ejercicio|Concepto|Concepto|Concepto|Concepto|Concepto|Concepto|Concepto
-|-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|[Nombre del ejercicio](01-PaginaDelEjercicio.md)|☑️|☑️|☑️|🔲|🔲|🔲|😊
+|Ejercicio|Reflexión|
+|-|-|
+[Diseño](01-diseño.md)|[2Think](2Thinkdiseño.md)
