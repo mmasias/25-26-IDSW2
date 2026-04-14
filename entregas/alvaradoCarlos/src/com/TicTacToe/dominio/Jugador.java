@@ -20,6 +20,7 @@ public class Jugador {
         
         assert !tablero.estaVacio(origen) : "No hay ficha en el origen";
         assert !tablero.estaOcupado(destino) : "El destino está ocupado";
+        assert tablero.estaOcupadoPor(origen, color) : "Intento de mover ficha enemiga";
 
         tablero.sacarFicha(origen);
         this.ponerFicha(tablero, destino);

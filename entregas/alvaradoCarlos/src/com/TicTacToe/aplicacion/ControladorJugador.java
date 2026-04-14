@@ -1,31 +1,31 @@
-package com.TicTacToe.aplicacion.jugador;
+package com.TicTacToe.aplicacion;
 
 import com.TicTacToe.dominio.Jugador;
 import com.TicTacToe.dominio.Tablero;
 import com.TicTacToe.dominio.Coordenada;
-import com.TicTacToe.presentacion.VistaJugador;
+import com.TicTacToe.presentacion.IVistaJugador;
 
 public class ControladorJugador {
     
     private Jugador jugador;
-    private VistaJugador vista;
+    private IVistaJugador vista;
 
-    public ControladorJugador(Jugador jugador, VistaJugador vista) {
+    public ControladorJugador(Jugador jugador, IVistaJugador vista) {
         this.jugador = jugador;
         this.vista = vista;
     }
 
-    public void ejecutarTurno(Tablero tablero) {
-        Coordenada coordenada;
+    public char color() {
+        return jugador.color();
+    } 
 
+    public void ejecutarTurnoPoner(Tablero tablero) {
+        Coordenada coordenada;
         boolean turnoValido = false;
 
         do {
             coordenada = vista.recogerCoordenada();
-
-            if (!coordenada.esValida()) {
-                vista.mostrarError("Coordenada fuera del tablero");
-            } else if (tablero.estaOcupado(coordenada)) {
+            if (tablero.estaOcupado(coordenada)) {
                 vista.mostrarError("La casilla ya está ocupada.");
             } else {
                 turnoValido = true;
@@ -35,12 +35,44 @@ public class ControladorJugador {
         jugador.ponerFicha(tablero, coordenada);
     }
 
-    public void gestionarVictoria() {
-        vista.celebrar(jugador.color);
+    public void ejecutarTurnoMover(Tablero tablero) {
+        Coordenada origen;
+        Coordenada destino;
+        boolean origenValido = false;
+        boolean destinoValido = false;
+
+        vista.mostrarMensaje("Turno de mover ficha para las " + color() + ". Elige la ficha a sacar:");
+        do {
+            origen = vista.recogerCoordenada();
+            
+            if (tablero.estaVacio(origen)) {
+                vista.mostrarError("La casilla de origen está vacía.");
+            } else if (!tablero.estaOcupadoPor(origen, color())) {
+                vista.mostrarError("¡Oye! Esa ficha es del rival, no puedes moverla.");
+            } else {
+                origenValido = true;
+            }
+        } while (!origenValido);
+
+        vista.mostrarMensaje("Elige el nuevo destino:");
+
+        do {
+            destino = vista.recogerCoordenada();
+
+            if (destino.getFila() == origen.getFila() && destino.getColumna() == origen.getColumna()) {
+                vista.mostrarError("No puedes mover la ficha al mismo lugar donde ya estaba.");
+            } else if (tablero.estaOcupado(destino)) {
+                vista.mostrarError("La casilla de destino está ocupada.");
+            } else {
+                destinoValido = true;
+            }
+
+        } while (!destinoValido);
+
+        jugador.moverFicha(tablero, origen, destino);
     }
 
-    public char color() {
-        return jugador.color();
-    } 
-
+    public void gestionarVictoria() {
+        vista.celebrar(jugador.color());
+    }
 }

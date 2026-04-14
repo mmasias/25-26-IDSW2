@@ -1,6 +1,6 @@
 package com.TicTacToe.dominio;
 
-class Turno {
+public class Turno {
 
     private int valor;
 

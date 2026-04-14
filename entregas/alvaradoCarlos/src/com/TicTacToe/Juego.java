@@ -2,10 +2,10 @@ package com.TicTacToe;
 
 import com.TicTacToe.aplicacion.ControladorPartida;
 import com.TicTacToe.aplicacion.PartidaBuilder;
-import com.TicTacToe.presentacion.VistaJugador;
-import com.TicTacToe.presentacion.VistaTablero;
+import com.TicTacToe.presentacion.VistaConsolaJugador;
+import com.TicTacToe.presentacion.VistaConsolaTablero;
 
-class Juego {
+public class Juego {
     
     public static void main(String[] args) {
         
@@ -13,8 +13,8 @@ class Juego {
 
         try {
             ControladorPartida partida = new PartidaBuilder()
-                .conVistaTablero(new VistaTablero())
-                .conVistaJugador(new VistaJugador())
+                .conVistaTablero(new VistaConsolaTablero())
+                .conVistaJugador(new VistaConsolaJugador())
                 .conJugador('x')
                 .conJugador('o')
                 .construir();

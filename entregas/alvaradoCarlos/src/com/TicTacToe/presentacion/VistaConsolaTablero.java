@@ -1,12 +1,14 @@
 package com.TicTacToe.presentacion;
 
-public class VistaTablero {
+import com.TicTacToe.dominio.Tablero;
+
+public class VistaConsolaTablero implements IVistaTablero {
 
     public void mostrar(Tablero tablero) {
         cleanScreen();
         for (int i = 1; i <= 3; i++) {
             for (int j = 1; j <= 3; j++) {
-                System.out.print(" " + tablero.getFicha(i, j));
+                System.out.print(" " + tablero.ficha(i, j));
             }
             System.out.println();
         }

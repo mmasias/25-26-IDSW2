@@ -2,17 +2,17 @@ package com.TicTacToe.aplicacion;
 
 import com.TicTacToe.dominio.Tablero;
 import com.TicTacToe.dominio.Turno;
-import com.TicTacToe.aplicacion.jugador.ControladorJugador;
-import com.TicTacToe.presentacion.VistaTablero;
+import com.TicTacToe.aplicacion.ControladorJugador;
+import com.TicTacToe.presentacion.IVistaTablero;
 
 public class ControladorPartida {
 
     private final Tablero tablero;
     private final Turno turno;
     private final ControladorJugador[] jugadores;
-    private final VistaTablero vistaTablero;
+    private final IVistaTablero vistaTablero;
 
-    public ControladorPartida(Tablero tablero, Turno turno, ControladorJugador[] jugadores, VistaTablero vistaTablero) {
+    public ControladorPartida(Tablero tablero, Turno turno, ControladorJugador[] jugadores, IVistaTablero vistaTablero) {
         this.tablero = tablero;
         this.turno = turno;
         this.jugadores = jugadores;

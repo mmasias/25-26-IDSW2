@@ -1,6 +1,6 @@
 package com.TicTacToe.dominio;
 
-class Tablero {
+public class Tablero {
 
     private char[][] casillas;
     private static final char VACIA = '_';
@@ -32,6 +32,10 @@ class Tablero {
 
     public boolean estaOcupado(Coordenada coordenada) {
         return casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] != VACIA;
+    }
+
+    public boolean estaOcupadoPor(Coordenada coordenada, char color) {
+        return this.ficha(coordenada.getFila(), coordenada.getColumna()) == color;
     }
 
     public boolean estaVacio(Coordenada coordenada) {
@@ -77,7 +81,7 @@ class Tablero {
         return false;
     }
 
-    public char getFicha(int fila, int columna) {
+    public char ficha(int fila, int columna) {
         return casillas[fila - 1][columna - 1]; 
     }
 }
