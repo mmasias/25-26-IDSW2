@@ -13,18 +13,19 @@ public class TresEnRaya {
     }
 
     public void jugar() {
-
         do {
             VistaTablero.mostrar(tablero);
-            if (!tablero.estaCompleto(jugadores[turno.leToca()])){
-                jugadores[turno.leToca()].ponerFicha(tablero);
+            Jugador jugadorActual = jugadores[turno.leToca()];
+            
+            if (!tablero.estaCompleto(jugadorActual)){
+                jugadorActual.ponerFicha(tablero);
             } else {
-                jugadores[turno.leToca()].moverFicha(tablero);
+                jugadorActual.moverFicha(tablero);
             }
             turno.cambiar();
         } while(!tablero.hayTresEnRaya());
         
-        VistaTablero.mostrar(tablero); // Añadimos esto para ver cómo quedó el tablero final
-        jugadores[turno.noLeToca()].celebrar();
+        VistaTablero.mostrar(tablero); // Mostrar el tablero final
+        VistaJugador.celebrar(jugadores[turno.noLeToca()].getColor());
     }
 }

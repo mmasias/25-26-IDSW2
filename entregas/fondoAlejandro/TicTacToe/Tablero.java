@@ -24,7 +24,7 @@ class Tablero {
         int conteoFichas = 0;
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
-                if (casillas[i][j] == jugador.color()) {
+                if (casillas[i][j] == jugador.getColor()) { 
                     conteoFichas++;
                 }
             }

@@ -23,10 +23,10 @@ public class Jugador {
         Coordenada origen;
         do {
             origen = VistaJugador.pedirCoordenada(color);
-            if (tablero.estaVacio(origen)) {
-                Consola.imprimirLinea("No hay una ficha en esa coordenada.");
+            if (tablero.estaVacio(origen) || tablero.getColor(origen) != this.color) {
+                Consola.imprimirLinea("No hay una ficha tuya en esa coordenada.");
             }
-        } while (tablero.estaVacio(origen));
+        } while (tablero.estaVacio(origen) || tablero.getColor(origen) != this.color);
         
         tablero.sacarFicha(origen);
         
@@ -34,11 +34,7 @@ public class Jugador {
         this.ponerFicha(tablero);
     }
 
-    public void celebrar() {
-        VistaJugador.celebrar(color);
-    }
-
-    public char color() {
+    public char getColor() {
         return color;
     }
 }
