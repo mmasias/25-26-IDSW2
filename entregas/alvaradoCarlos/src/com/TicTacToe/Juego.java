@@ -9,8 +9,6 @@ public class Juego {
     
     public static void main(String[] args) {
         
-        System.out.println("Iniciando Tic-Tac-Toe...");
-
         try {
             ControladorPartida partida = new PartidaBuilder()
                 .conVistaTablero(new VistaConsolaTablero())
