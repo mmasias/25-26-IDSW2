@@ -24,6 +24,7 @@ public class Tablero {
     }
 
     public void sacarFicha(Coordenada coordenada) {
+        
         assert coordenada.esValida() : "Coordenada inválida";
         assert estaOcupado(coordenada) : "Casilla vacía";
         

@@ -25,11 +25,13 @@ public class ControladorJugador {
 
         do {
             coordenada = vista.recogerCoordenada();
+
             if (tablero.estaOcupado(coordenada)) {
                 vista.mostrarError("La casilla ya está ocupada.");
             } else {
                 turnoValido = true;
             }
+            
         } while (!turnoValido);
 
         jugador.ponerFicha(tablero, coordenada);
@@ -42,6 +44,7 @@ public class ControladorJugador {
         boolean destinoValido = false;
 
         vista.mostrarMensaje("Turno de mover ficha para las " + color() + ". Elige la ficha a sacar:");
+
         do {
             origen = vista.recogerCoordenada();
             
@@ -52,6 +55,7 @@ public class ControladorJugador {
             } else {
                 origenValido = true;
             }
+
         } while (!origenValido);
 
         vista.mostrarMensaje("Elige el nuevo destino:");
