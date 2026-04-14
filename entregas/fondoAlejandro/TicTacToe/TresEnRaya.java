@@ -1,4 +1,3 @@
-
 public class TresEnRaya {
 
     private Tablero tablero;
@@ -16,7 +15,7 @@ public class TresEnRaya {
     public void jugar() {
 
         do {
-            tablero.mostrar();
+            VistaTablero.mostrar(tablero);
             if (!tablero.estaCompleto(jugadores[turno.leToca()])){
                 jugadores[turno.leToca()].ponerFicha(tablero);
             } else {
@@ -24,6 +23,8 @@ public class TresEnRaya {
             }
             turno.cambiar();
         } while(!tablero.hayTresEnRaya());
+        
+        VistaTablero.mostrar(tablero); // Añadimos esto para ver cómo quedó el tablero final
         jugadores[turno.noLeToca()].celebrar();
     }
 }
