@@ -1,13 +1,12 @@
-
-public class Jugador {
+public class Player {
 
     private char color;
 
-    public Jugador(char color) {
+    public Player(char color) {
         this.color = color;
     }
 
-    public char color() {
+    public char getColor() {
         return color;
     }
 

@@ -1,0 +1,109 @@
+@startuml modeloDominio
+
+skinparam classAttributeIconSize 0
+skinparam PackageStyle rectangle
+
+
+package "View" #LightBlue {
+    interface View {
+        +displayBoard(cells: char[][])
+        +requestCoordinate(): Coordinate
+        +displayWinner(color: char)
+        +displayMessage(message: String)
+    }
+
+    class ConsoleView {
+        -scanner: Scanner
+        +displayBoard(cells: char[][])
+        +requestCoordinate(): Coordinate
+        +displayWinner(color: char)
+        +displayMessage(message: String)
+    }
+}
+
+package "Controller" #LightGreen {
+    class TicTacToe {
+        -board: Board
+        -players: Player[]
+        -turn: Turn
+        -view: View
+        +TicTacToe(view: View)
+        +play()
+        -placePiece(player: Player)
+        -movePiece(player: Player)
+        -requestOrigin(): Coordinate
+        -requestDestination(): Coordinate
+        -isValidDestination(coordinate: Coordinate): boolean
+        -isValidOrigin(coordinate: Coordinate): boolean
+        -displayResult()
+    }
+
+    class Main {
+        +{static} main(args: String[])
+    }
+}
+
+package "Builder" #Wheat {
+    class TicTacToeBuilder {
+        -view: View
+        +withView(view: View): TicTacToeBuilder
+        +build(): TicTacToe
+    }
+}
+
+package "Model" #LightYellow {
+    class Board {
+        -cells: char[][]
+        +Board()
+        +getCells(): char[][]
+        +isComplete(player: Player): boolean
+        +hasThreeInARow(): boolean
+        -hasThreeInARow(color: char): boolean
+        +isOccupied(coordinate: Coordinate): boolean
+        +placePiece(coordinate: Coordinate, color: char)
+        +isEmpty(coordinate: Coordinate): boolean
+        +removePiece(coordinate: Coordinate)
+    }
+
+    class Player {
+        -color: char
+        +Player(color: char)
+        +getColor(): char
+    }
+
+    class Turn {
+        -currentPlayer: int
+        +Turn()
+        +getCurrentPlayer(): int
+        +getNextPlayer(): int
+        +switchPlayer()
+    }
+
+    class Coordinate {
+        -row: int
+        -column: int
+        +Coordinate(row: int, column: int)
+        +isValid(): boolean
+        +getRow(): int
+        +getColumn(): int
+    }
+}
+
+ConsoleView ..|> View : implements
+
+TicTacToe ..> View : uses
+TicTacToeBuilder ..> View : configures
+
+TicTacToe --> Board : has
+TicTacToe --> "2" Player : has
+TicTacToe --> Turn : has
+
+TicTacToeBuilder ..> TicTacToe : <<creates>>
+
+Main ..> TicTacToeBuilder : uses
+Main ..> ConsoleView : creates
+
+Board --> Coordinate : uses
+ConsoleView ..> Coordinate : creates
+
+@enduml
