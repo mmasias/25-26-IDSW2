@@ -20,20 +20,27 @@ public class TresEnRaya {
     }
 
     public void jugar() {
-
         do {
-            interfazUsuario.limpiarPantalla();
-            tableroVista.mostrar(tablero);
-
-            Jugador jugadorActual = jugadores[turno.leToca()];
-            if (!tablero.estaCompleto(jugadorActual.color())) {
-                jugadorActual.ponerFicha(tablero);
-            } else {
-                jugadorActual.moverFicha(tablero);
-            }
-            turno.cambiar();
+            this.ejecutarTurno();
         } while (!tablero.hayTresEnRaya());
 
+        this.mostrarFinalYCelebrar();
+    }
+
+    private void ejecutarTurno() {
+        interfazUsuario.limpiarPantalla();
+        tableroVista.mostrar(tablero);
+
+        Jugador jugadorActual = jugadores[turno.leToca()];
+        if (!tablero.estaCompleto(jugadorActual.color())) {
+            jugadorActual.ponerFicha(tablero);
+        } else {
+            jugadorActual.moverFicha(tablero);
+        }
+        turno.cambiar();
+    }
+
+    private void mostrarFinalYCelebrar() {
         interfazUsuario.limpiarPantalla();
         tableroVista.mostrar(tablero);
         jugadores[turno.noLeToca()].celebrar(interfazUsuario);

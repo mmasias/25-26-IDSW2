@@ -10,27 +10,31 @@ class SelectorCoordenadaConsola implements SelectorCoordenada {
     public Coordenada solicitar(String contexto, Tablero tablero, char colorObjetivo) {
         interfazUsuario.mostrarLinea(contexto);
 
-        Coordenada coordenada;
         do {
-            int fila = interfazUsuario.leerEntero("> Fila? [1.." + Tablero.TAMANIO + "]");
-            int columna = interfazUsuario.leerEntero("> Columna? [1.." + Tablero.TAMANIO + "]");
-            coordenada = new Coordenada(fila, columna);
-            boolean coordenadaValida = coordenada.esValida(Tablero.TAMANIO);
-
-            boolean coincideConObjetivo;
-            if (colorObjetivo == Tablero.CASILLA_VACIA) {
-                coincideConObjetivo = tablero.estaVacio(coordenada);
-            } else {
-                coincideConObjetivo = tablero.estaOcupadoPor(coordenada, colorObjetivo);
-            }
-
-            if (!coordenadaValida || !coincideConObjetivo) {
+            Coordenada coordenada = this.leerCoordenada();
+            if (!this.esCoordenadaValida(coordenada, tablero, colorObjetivo)) {
                 interfazUsuario.mostrarLinea("Coordenada no valida para esta jugada. Intenta de nuevo.");
-            }
-
-            if (coordenadaValida && coincideConObjetivo) {
+            } else {
                 return coordenada;
             }
         } while (true);
+    }
+
+    private Coordenada leerCoordenada() {
+        int fila = interfazUsuario.leerEntero("> Fila? [1.." + Tablero.TAMANIO + "]");
+        int columna = interfazUsuario.leerEntero("> Columna? [1.." + Tablero.TAMANIO + "]");
+        return new Coordenada(fila, columna);
+    }
+
+    private boolean esCoordenadaValida(Coordenada coordenada, Tablero tablero, char colorObjetivo) {
+        boolean coordenadaValida = coordenada.esValida(Tablero.TAMANIO);
+        if (!coordenadaValida) {
+            return false;
+        }
+
+        if (colorObjetivo == Tablero.CASILLA_VACIA) {
+            return tablero.estaVacio(coordenada);
+        }
+        return tablero.estaOcupadoPor(coordenada, colorObjetivo);
     }
 }
