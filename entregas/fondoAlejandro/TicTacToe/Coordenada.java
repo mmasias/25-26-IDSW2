@@ -1,18 +1,11 @@
-
-import java.util.Scanner;
-
 public class Coordenada {
 
     private int fila;
     private int columna;
 
-    public void pedir() {
-        do {
-            System.out.print("> Fila? [1..3] ");
-            this.fila = new Scanner(System.in).nextInt();
-            System.out.print("> Columna? [1..3] ");
-            this.columna = new Scanner(System.in).nextInt();
-        } while (!this.esValida());
+    public Coordenada(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
     }
 
     public boolean esValida() {
@@ -26,5 +19,4 @@ public class Coordenada {
     public int getColumna() {
         return columna;
     }
-
 }
