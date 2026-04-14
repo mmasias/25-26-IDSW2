@@ -1,35 +1,39 @@
+public class Jugador implements IJugador {
 
-public class Jugador {
-
-    private char color;
+    private final char color;
+    private final java.util.Scanner scanner = new java.util.Scanner(System.in);
 
     public Jugador(char color) {
         this.color = color;
     }
 
-    public void ponerFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
+    @Override
+    public Coordenada elegirCoordenada(ITablero tablero) {
+        Coordenada c;
         do {
-            coordenada.pedir();
-        } while(!coordenada.esValida() || tablero.estaOcupado(coordenada));
-        tablero.ponerFicha(coordenada,color);
+            int fila = leerEntero("> Fila? [1..3] ");
+            int col  = leerEntero("> Columna? [1..3] ");
+            if (!Coordenada.esValida(fila, col)) {
+                System.out.println("Coordenada fuera de rango, repite.");
+                continue;
+            }
+            c = new Coordenada(fila, col);
+            if (tablero.estaOcupado(c))
+                System.out.println("Casilla ocupada, elige otra.");
+            else
+                return c;
+        } while (true);
     }
 
-    public void moverFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
-        do{
-            coordenada.pedir();
-        } while(!coordenada.esValida() || tablero.estaVacio(coordenada));
-        tablero.sacarFicha(coordenada);
-        this.ponerFicha(tablero);
-    }
+    @Override
+    public char color() { return color; }
 
-    public void celebrar() {
-        System.out.println("Hemos ganado los " + color);
+    private int leerEntero(String prompt) {
+        System.out.print(prompt);
+        try {
+            return Integer.parseInt(scanner.nextLine().trim());
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
-
-    public char color() {
-        return color;
-    }
-
 }

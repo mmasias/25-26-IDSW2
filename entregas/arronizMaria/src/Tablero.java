@@ -1,85 +1,61 @@
-class Tablero {
-
-    private char[][] casillas;
+public class Tablero implements ITablero {
+    private final char[][] casillas;
 
     public Tablero() {
         casillas = new char[3][3];
-
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                casillas[i][j] = '_';
-            }
-        }
+        for (char[] fila : casillas)
+            java.util.Arrays.fill(fila, '_');
     }
 
-    public void mostrar() {
-        cleanScreen();
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                System.out.print(" " + casillas[i][j]);
-            }
-            System.out.println();
-        }
+    @Override
+    public void ponerFicha(Coordenada c, char color) {
+        assert !estaOcupado(c) : "Precondición: casilla libre";
+        casillas[c.getFila() - 1][c.getColumna() - 1] = color;
     }
 
-    public boolean estaCompleto(Jugador jugador) {
-        int conteoFichas = 0;
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                if (casillas[i][j] == jugador.color()) {
-                    conteoFichas++;
-                }
-            }
-        }
-        return conteoFichas == 3;
+    @Override
+    public void sacarFicha(Coordenada c) {
+        assert estaOcupado(c) : "Precondición: casilla ocupada";
+        casillas[c.getFila() - 1][c.getColumna() - 1] = '_';
     }
 
+    @Override
+    public boolean estaOcupado(Coordenada c) {
+        return casillas[c.getFila() - 1][c.getColumna() - 1] != '_';
+    }
+
+    @Override
+    public boolean estaCompleto(char color) {
+        int count = 0;
+        for (char[] fila : casillas)
+            for (char celda : fila)
+                if (celda == color) count++;
+        return count == 3;
+    }
+
+    @Override
     public boolean hayTresEnRaya() {
-        return this.hayTresEnRaya('x') || this.hayTresEnRaya('o');
+        return hayTresEnRaya('x') || hayTresEnRaya('o');
+    }
+
+    @Override
+    public char[][] getCasillas() {
+        char[][] copia = new char[3][3];
+        for (int i = 0; i < 3; i++)
+            copia[i] = casillas[i].clone();
+        return copia;
     }
 
     private boolean hayTresEnRaya(char color) {
-        int[] filas = new int[3];
-        int[] columnas = new int[3];
-        int diagonal = 0;
-        int secundaria = 0;
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                if (color == casillas[i][j]) {
-                    filas[i]++;
-                    columnas[j]++;
-                    diagonal = diagonal + ((i == j) ? 1 : 0);
-                    secundaria = secundaria + ((i + j == 2) ? 1 : 0);
-
-                    if (filas[i] == 3 || columnas[j] == 3 || diagonal == 3 || secundaria == 3) {
-                        return true;
-                    }
-
+        int[] filas = new int[3], cols = new int[3];
+        int diag = 0, sec = 0;
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 3; j++)
+                if (casillas[i][j] == color) {
+                    if (++filas[i] == 3 || ++cols[j] == 3) return true;
+                    if (i == j && ++diag == 3) return true;
+                    if (i + j == 2 && ++sec == 3) return true;
                 }
-            }
-        }
         return false;
     }
-
-    public boolean estaOcupado(Coordenada coordenada) {
-        return casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] != '_';
-    }
-
-    public void ponerFicha(Coordenada coordenada, char color) {
-        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = color;
-    }
-
-    public boolean estaVacio(Coordenada coordenada) {
-        return !estaOcupado(coordenada);
-    }
-
-    public void sacarFicha(Coordenada coordenada) {
-        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = '_';
-    }
-
-    static void cleanScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-
 }
