@@ -1,7 +1,7 @@
 public class Main {
   public static void main(String[] args) {
     Tablero tablero = new Tablero();
-    Jugador[] jugadores = { new Jugador('x'), new Jugador('o') };
+    Jugador[] jugadores = { new Jugador('X'), new Jugador('O') };
     Turno turno = new Turno();
 
     VistaConsola vista = new VistaConsola();
