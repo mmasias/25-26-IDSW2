@@ -1,4 +1,6 @@
-class Turno {
+package tresEnRaya.modelo;
+
+public class Turno {
 
     private int valor;
 
@@ -17,4 +19,5 @@ class Turno {
     public void cambiar() {
         valor = this.noLeToca();
     }
+
 }

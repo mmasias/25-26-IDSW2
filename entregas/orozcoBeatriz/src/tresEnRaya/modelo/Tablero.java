@@ -1,10 +1,11 @@
-class Tablero {
+package tresEnRaya.modelo;
 
-    private char[][] casillas;
+public class Tablero {
+
+    private final char[][] casillas;
 
     public Tablero() {
         casillas = new char[3][3];
-
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
                 casillas[i][j] = '_';
@@ -13,7 +14,6 @@ class Tablero {
     }
 
     public void mostrar() {
-        cleanScreen();
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
                 System.out.print(" " + casillas[i][j]);
@@ -35,7 +35,7 @@ class Tablero {
     }
 
     public boolean hayTresEnRaya() {
-        return this.hayTresEnRaya('x') || this.hayTresEnRaya('o');
+        return hayTresEnRaya('x') || hayTresEnRaya('o');
     }
 
     private boolean hayTresEnRaya(char color) {
@@ -48,13 +48,11 @@ class Tablero {
                 if (color == casillas[i][j]) {
                     filas[i]++;
                     columnas[j]++;
-                    diagonal = diagonal + ((i == j) ? 1 : 0);
-                    secundaria = secundaria + ((i + j == 2) ? 1 : 0);
-
+                    diagonal += (i == j) ? 1 : 0;
+                    secundaria += (i + j == 2) ? 1 : 0;
                     if (filas[i] == 3 || columnas[j] == 3 || diagonal == 3 || secundaria == 3) {
                         return true;
                     }
-
                 }
             }
         }
@@ -65,21 +63,16 @@ class Tablero {
         return casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] != '_';
     }
 
-    public void ponerFicha(Coordenada coordenada, char color) {
-        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = color;
-    }
-
     public boolean estaVacio(Coordenada coordenada) {
         return !estaOcupado(coordenada);
     }
 
-    public void sacarFicha(Coordenada coordenada) {
-        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = '_';
+    public void ponerFicha(Coordenada coordenada, char color) {
+        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = color;
     }
 
-    static void cleanScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    public void sacarFicha(Coordenada coordenada) {
+        casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = '_';
     }
 
 }
