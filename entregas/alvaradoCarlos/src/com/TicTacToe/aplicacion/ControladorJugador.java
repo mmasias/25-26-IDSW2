@@ -39,4 +39,8 @@ public class ControladorJugador {
         vista.celebrar(jugador.color);
     }
 
+    public char color() {
+        return jugador.color();
+    } 
+
 }

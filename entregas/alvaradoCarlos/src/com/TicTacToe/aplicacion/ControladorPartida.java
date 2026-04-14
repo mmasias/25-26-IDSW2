@@ -25,7 +25,7 @@ public class ControladorPartida {
 
             ControladorJugador jugadorActual = jugadores[turno.leToca()];
 
-            if (!tablero.estaCompleto(jugadorActual.getColorJugador())) {
+            if (!tablero.estaCompleto(jugadorActual.color())) {
                 jugadorActual.ejecutarTurnoPoner(tablero);
             } else {
                 jugadorActual.ejecutarTurnoMover(tablero);
