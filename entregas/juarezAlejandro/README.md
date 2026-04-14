@@ -1,0 +1,1 @@
+Reto-003 corrigiendo el reto de TicTacToe hecho en [PRG2](https://github.com/Alejandrojuarez0105/23-24-prg2-PPT/tree/main/entregas/JuarezAlejandro/PPT/src) aplicando los principios de diseño modular, especialmente los **Patrones de indirección**
