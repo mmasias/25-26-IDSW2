@@ -14,16 +14,18 @@ class TableroClasico implements Tablero {
         
     }
 
+    @Override
     public char getFicha(int fila, int columna) {
         return this.casillas[fila][columna];
 
     }
 
 
-
+    @Override
     public boolean hayTresEnRaya() {
         return this.hayTresEnRaya('x') || this.hayTresEnRaya('o');
     }
+
 
     private boolean hayTresEnRaya(char color) {
         int[] filas = new int[DIMENSION];
@@ -50,6 +52,7 @@ class TableroClasico implements Tablero {
 
     }
 
+    @Override
     public boolean estaCompleto(Jugador jugador) {
         assert jugador != null;
         int conteoFichas = 0;
@@ -63,26 +66,31 @@ class TableroClasico implements Tablero {
         return conteoFichas == 3;
     }
 
+    @Override
     public boolean estaOcupado(Coordenada coordenada) {
         return !this.verificarColorFicha(coordenada, VACIO);
     }
 
+    @Override
     public void ponerFicha(Coordenada coordenada, char color) {
         int fila = coordenada.getFila();
         int columna = coordenada.getColumna();
         casillas[fila][columna] = color;
     }
 
+    @Override
     public boolean estaVacio(Coordenada coordenada) {
         return !this.estaOcupado(coordenada);
     }
 
+    @Override
     public boolean verificarColorFicha(Coordenada coordenada, char color) {
         int fila = coordenada.getFila();
         int columna = coordenada.getColumna();
         return casillas[fila][columna] == color;
     }
 
+    @Override
     public void sacarFicha(Coordenada coordenada) {
         int fila = coordenada.getFila();
         int columna = coordenada.getColumna();
