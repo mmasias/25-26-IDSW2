@@ -8,7 +8,7 @@ public class Coordenada {
 
     public Coordenada(int fila, int columna) {
         this.fila = fila;
-        this.columna = columna
+        this.columna = columna;
     }
 
     public boolean esValida() {
