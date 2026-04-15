@@ -14,7 +14,7 @@ public class VistaTableroConsola implements VistaTablero{
 
     @Override
     public void celebrar(char color) {
-        console.writeln("Los " + color + " somos unos cracks!!!!");
+        console.writeln("Los " + color + " somos unos cracks");
     }
 
     @Override
@@ -24,5 +24,4 @@ public class VistaTableroConsola implements VistaTablero{
         return new Coordenada(fila, columna);
     }
 
-    
 }   
