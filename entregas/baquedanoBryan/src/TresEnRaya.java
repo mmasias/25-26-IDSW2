@@ -5,12 +5,12 @@ class TresEnRaya {
     private Turno turno;
     private VistaTablero vista;
 
-    public TresEnRaya(VistaTablero vista) {
-        tablero = new Tablero();
+    public TresEnRaya(VistaTablero vista, Tablero tablero, Turno turno) {
+        this.tablero = tablero;
         jugadores = new Jugador[2];
         jugadores[0] = new Jugador('x');
         jugadores[1] = new Jugador('o');
-        turno = new Turno();
+        this.turno = turno;
         this.vista = vista;
     }
 

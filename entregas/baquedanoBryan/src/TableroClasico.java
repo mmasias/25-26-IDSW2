@@ -4,7 +4,7 @@ class TableroClasico implements Tablero {
     final private int DIMENSION = 3;
     final private char VACIO = '_';
 
-    public Tablero() {
+    public TableroClasico() {
         casillas = new char[DIMENSION][DIMENSION];
         for (int i = 0; i < DIMENSION; i++) {
             for (int j = 0; j < DIMENSION; j++) {
