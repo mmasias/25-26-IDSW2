@@ -6,21 +6,16 @@ import com.TicTacToe.presentacion.VistaConsolaJugador;
 import com.TicTacToe.presentacion.VistaConsolaTablero;
 
 public class Juego {
-    
+
     public static void main(String[] args) {
-        
-        try {
-            ControladorPartida partida = new PartidaBuilder()
+
+        ControladorPartida partida = new PartidaBuilder()
                 .conVistaTablero(new VistaConsolaTablero())
                 .conVistaJugador(new VistaConsolaJugador())
                 .conJugador('x')
                 .conJugador('o')
                 .construir();
 
-            partida.jugar();
-            
-        } catch (IllegalStateException e) {
-            System.err.println("No se pudo arrancar el juego. " + e.getMessage());
-        }
+        partida.jugar();
     }
 }
