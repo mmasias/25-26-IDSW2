@@ -25,13 +25,8 @@ public class PartidaBuilder {
     }
 
     public PartidaBuilder conJugador(char color) {
-        if (this.jugador1 == null) {
-            this.jugador1 = new Jugador(color);
-        } else if (this.jugador2 == null) {
-            this.jugador2 = new Jugador(color);
-        } else {
-            throw new IllegalStateException("Configuración inválida: El juego solo admite dos jugadores.");
-        }
+        this.jugador1 = new Jugador(color);
+        this.jugador2 = new Jugador(color);
         return this;
     }
 
