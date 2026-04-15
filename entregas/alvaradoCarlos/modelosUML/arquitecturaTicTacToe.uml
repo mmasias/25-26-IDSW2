@@ -1,0 +1,57 @@
+@startuml
+package "com.Main" <<Rectangle>> {
+    class Juego
+}
+
+package "com.TicTacToe.aplicacion" <<Rectangle>> {
+    class PartidaBuilder
+    class ControladorPartida
+    class ControladorJugador
+}
+
+package "com.TicTacToe.presentacion" <<Rectangle>> {
+    interface IVistaJugador
+    interface IVistaTablero
+    class VistaConsolaJugador
+    class VistaConsolaTablero
+}
+
+package "com.TicTacToe.dominio" <<Rectangle>> {
+    class Tablero
+    class Jugador
+    class Turno
+    class Coordenada
+}
+
+Juego ..> VistaConsolaTablero : instancia
+Juego ..> VistaConsolaJugador : instancia
+Juego ..> ControladorPartida : ejecuta
+Juego ..> PartidaBuilder : usa
+
+PartidaBuilder --> IVistaTablero : recolecta
+PartidaBuilder --> IVistaJugador : recolecta
+PartidaBuilder --> Jugador : instancia
+PartidaBuilder --> ControladorJugador : ensambla
+PartidaBuilder ..> ControladorPartida : construye
+
+VistaConsolaJugador ..|> IVistaJugador
+VistaConsolaTablero ..|> IVistaTablero
+
+ControladorPartida --> Tablero
+ControladorPartida --> Turno
+ControladorPartida --> "2" ControladorJugador
+ControladorPartida --> IVistaTablero
+
+ControladorJugador --> Jugador
+ControladorJugador --> IVistaJugador
+ControladorJugador ..> Tablero : modifica
+ControladorJugador ..> Coordenada : recibe
+
+IVistaJugador ..> Coordenada : devuelve
+IVistaTablero ..> Tablero : consulta
+
+Jugador ..> Tablero : interactúa
+Jugador ..> Coordenada : usa
+Tablero ..> Coordenada : evalúa
+
+@enduml
