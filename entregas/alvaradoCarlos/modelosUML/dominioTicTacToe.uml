@@ -1,0 +1,15 @@
+@startuml
+
+class Jugador
+class Tablero
+class Coordenada
+class Turno
+
+Jugador "2" --> "1" Tablero : compiten en 
+
+Jugador ..> Coordenada : eligen 
+Tablero ..> Coordenada : valida estado de 
+
+Turno ..> Jugador : alterna entre 
+
+@enduml
