@@ -2,33 +2,32 @@
 public class Jugador {
 
     private char color;
-    private Console console;
 
     public Jugador(char color) {
         assert color == 'x' || color == 'o' : "Mal!!!";
         this.color = color;
-        console = new Console();
+        
     }
 
-    public void ponerFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
+    public void ponerFicha(Tablero tablero, VistaTablero vista) {
+        Coordenada coordenada;
         do {
-            coordenada.pedir();
+            coordenada = vista.recibirCoordenada();
         } while (!coordenada.esValida() || tablero.estaOcupado(coordenada)); 
         tablero.ponerFicha(coordenada,color);
     }
 
-    public void moverFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
+    public void moverFicha(Tablero tablero, VistaTablero vista) {
+        Coordenada coordenada;
         do {
-            coordenada.pedir();
+            coordenada = vista.recibirCoordenada();
         }while(!coordenada.esValida() || tablero.estaVacio(coordenada) || tablero.verificarColorFicha(coordenada, color));
         tablero.sacarFicha(coordenada);
-        this.ponerFicha(tablero);
+        this.ponerFicha(tablero, vista);
     }
 
-    public void celebrar() {
-        console.writeln("Los " + color + " somos unos cracks!!!!");
+    public void celebrar(VistaTablero vista) {
+        vista.celebrar(color);
     }
 
     public char color() {

@@ -1,24 +1,23 @@
 
 public class Coordenada {
+    private int fila;
+    private int columna;
 
-    public void pedir() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pedir'");
+    public Coordenada(int fila, int columna) {
+        this.fila = fila;
+        this.columna = columna;
     }
 
     public boolean esValida() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'esValida'");
+        return fila >= 0 && fila < 3 && columna >= 0 && columna < 3;
     }
 
-    public int getFila() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFila'");
+    public int getFila() { 
+        return fila; 
     }
 
-    public int getColumna() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getColumna'");
+    public int getColumna() { 
+        return columna; 
     }
 
 }
