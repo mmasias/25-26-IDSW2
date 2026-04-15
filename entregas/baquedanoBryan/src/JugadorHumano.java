@@ -11,11 +11,20 @@ public class JugadorHumano implements Jugador {
 
     @Override
     public void ponerFicha(Tablero tablero, VistaTablero vista) {
-        Coordenada coordenada;
+        boolean movimientoValido = false;
+
         do {
-            coordenada = vista.recibirCoordenada();
-        } while (!coordenada.esValida() || tablero.estaOcupado(coordenada)); 
-        tablero.ponerFicha(coordenada,color);
+            Coordenada coordenada = vista.recibirCoordenada();
+            try {
+                tablero.ponerFicha(coordenada, this.color);
+                movimientoValido = true; 
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                System.out.println("Por favor, elige otra coordenada.");
+            }
+
+        } while (!movimientoValido);
     }
 
     @Override

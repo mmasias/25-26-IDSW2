@@ -73,6 +73,10 @@ class TableroClasico implements Tablero {
 
     @Override
     public void ponerFicha(Coordenada coordenada, char color) {
+        if (this.estaOcupado(coordenada)) {
+            throw new IllegalArgumentException("¡Movimiento ilegal! La casilla [" 
+                + coordenada.getFila() + "," + coordenada.getColumna() + "] ya está ocupada.");
+        }
         int fila = coordenada.getFila();
         int columna = coordenada.getColumna();
         casillas[fila][columna] = color;
