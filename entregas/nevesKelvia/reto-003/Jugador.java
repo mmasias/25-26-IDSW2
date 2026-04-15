@@ -1,4 +1,3 @@
-
 public class Jugador {
 
     private char color;
@@ -7,25 +6,42 @@ public class Jugador {
         this.color = color;
     }
 
-    public void ponerFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
+    public void ponerFicha(Tablero tablero, GestorIO io) {
+        Coordenada coordenada;
         do {
-            coordenada.pedir();
+            int fila = io.leerEntero("> Fila? [1..3] ");
+            int columna = io.leerEntero("> Columna? [1..3] ");
+            coordenada = new Coordenada(fila, columna);
+            
+            if (!coordenada.esValida() || tablero.estaOcupado(coordenada)) {
+                io.mostrarLinea("Error: Coordenada inválida o casilla ya ocupada. Inténtalo de nuevo.");
+            }
         } while(!coordenada.esValida() || tablero.estaOcupado(coordenada));
-        tablero.ponerFicha(coordenada,color);
+        
+        tablero.ponerFicha(coordenada, color);
     }
 
-    public void moverFicha(Tablero tablero) {
-        Coordenada coordenada = new Coordenada();
-        do{
-            coordenada.pedir();
+    public void moverFicha(Tablero tablero, GestorIO io) {
+        io.mostrarLinea("Jugador " + color + ", ¿Qué ficha deseas mover?");
+        Coordenada coordenada;
+        do {
+            int fila = io.leerEntero("> Fila a retirar? [1..3] ");
+            int columna = io.leerEntero("> Columna a retirar? [1..3] ");
+            coordenada = new Coordenada(fila, columna);
+            
+            if (!coordenada.esValida() || tablero.estaVacio(coordenada)) {
+                io.mostrarLinea("Error: Coordenada inválida o casilla vacía. Inténtalo de nuevo.");
+            }
         } while(!coordenada.esValida() || tablero.estaVacio(coordenada));
+        
         tablero.sacarFicha(coordenada);
-        this.ponerFicha(tablero);
+        
+        io.mostrarLinea("¿Dónde deseas colocar la ficha?");
+        this.ponerFicha(tablero, io);
     }
 
-    public void celebrar() {
-        System.out.println("Hemos ganado los " + color);
+    public void celebrar(GestorIO io) {
+        io.mostrarLinea("Hemos ganado los " + color);
     }
 
     public char color() {
