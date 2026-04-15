@@ -12,21 +12,15 @@ class Tablero {
         }
     }
 
-    public void mostrar() {
-        cleanScreen();
-        for (int i = 0; i < casillas.length; i++) {
-            for (int j = 0; j < casillas[i].length; j++) {
-                System.out.print(" " + casillas[i][j]);
-            }
-            System.out.println();
-        }
+    public char getFicha(int fila, int columna) {
+        return casillas[fila][columna];
     }
 
-    public boolean estaCompleto(Jugador jugador) {
+    public boolean estaCompleto(char color) {
         int conteoFichas = 0;
         for (int i = 0; i < casillas.length; i++) {
             for (int j = 0; j < casillas[i].length; j++) {
-                if (casillas[i][j] == jugador.color()) {
+                if (casillas[i][j] == color) {
                     conteoFichas++;
                 }
             }
@@ -54,7 +48,6 @@ class Tablero {
                     if (filas[i] == 3 || columnas[j] == 3 || diagonal == 3 || secundaria == 3) {
                         return true;
                     }
-
                 }
             }
         }
@@ -75,11 +68,6 @@ class Tablero {
 
     public void sacarFicha(Coordenada coordenada) {
         casillas[coordenada.getFila() - 1][coordenada.getColumna() - 1] = '_';
-    }
-
-    static void cleanScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
     }
 
 }
