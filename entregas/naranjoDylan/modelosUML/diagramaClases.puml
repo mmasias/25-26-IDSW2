@@ -1,0 +1,92 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Juego {
+  +main(args: String[]): void
+}
+
+class TresEnRaya {
+  -partida: Partida
+  +jugar(): void
+}
+
+class Partida {
+  -tablero: Tablero
+  -jugadores: Jugador[2]
+  -turno: Turno
+  -arbitro: Arbitro
+  -vista: VistaConsola
+  +iniciar(): void
+  +estaTerminada(): boolean
+  +obtenerJugadorActual(): Jugador
+  +obtenerGanador(): Jugador
+}
+
+class Arbitro {
+  +ejecutarTurno(partida: Partida): void
+  +esMovimientoInicial(tablero: Tablero, jugador: Jugador): boolean
+  +hayGanador(tablero: Tablero): boolean
+  +validarOrigen(tablero: Tablero, coordenada: Coordenada, jugador: Jugador): boolean
+  +validarDestino(tablero: Tablero, coordenada: Coordenada): boolean
+}
+
+class VistaConsola {
+  +mostrarTablero(tablero: Tablero): void
+  +pedirCoordenada(mensaje: String): Coordenada
+  +mostrarGanador(jugador: Jugador): void
+  +mostrarError(mensaje: String): void
+}
+
+class Tablero {
+  -casillas: char[][]
+  +Tablero()
+  +estaOcupado(coordenada: Coordenada): boolean
+  +estaVacio(coordenada: Coordenada): boolean
+  +ponerFicha(coordenada: Coordenada, color: char): void
+  +sacarFicha(coordenada: Coordenada): void
+  +estaCompleto(jugador: Jugador): boolean
+  +hayTresEnRaya(color: char): boolean
+  +obtenerColor(coordenada: Coordenada): char
+}
+
+class Jugador {
+  -color: char
+  +Jugador(color: char)
+  +color(): char
+}
+
+class Turno {
+  -valor: int
+  +Turno()
+  +actual(): int
+  +siguiente(): void
+  +opuesto(): int
+}
+
+class Coordenada {
+  -fila: int
+  -columna: int
+  +Coordenada(fila: int, columna: int)
+  +esValida(): boolean
+  +getFila(): int
+  +getColumna(): int
+}
+
+Juego --> TresEnRaya
+TresEnRaya *-- Partida
+Partida *-- Tablero
+Partida *-- Turno
+Partida *-- Arbitro
+Partida *-- VistaConsola
+Partida *-- "2" Jugador
+
+Arbitro --> Partida
+Arbitro --> Tablero
+Arbitro --> Jugador
+Arbitro --> Coordenada
+VistaConsola --> Coordenada
+VistaConsola --> Tablero
+VistaConsola --> Jugador
+Tablero --> Coordenada
+Turno ..> Jugador
+@enduml
